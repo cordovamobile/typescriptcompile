@@ -1,0 +1,8 @@
+{
+  "name": "HostBooksGST",
+  "app_id": "32d73387",
+  "type": "ionic-angular",
+  "integrations": {
+    "cordova": {}
+  }
+}
