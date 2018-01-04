@@ -1,0 +1,57 @@
+<ion-header>
+	<ion-navbar>
+		<button ion-button menuToggle>
+			<ion-icon name="menu"></ion-icon>
+		</button>
+		<ion-title>Dashboard</ion-title>
+	</ion-navbar>
+</ion-header>
+
+
+<ion-content padding>
+	
+	
+	<ion-grid>
+		
+		<ion-row>
+			<ion-col>
+				<button (click)="goto_business_add_page()" ion-button color="danger" small>
+					<ion-icon name="add"></ion-icon>
+					&nbsp;
+					Add Business
+				</button>
+			</ion-col>
+		</ion-row>
+		
+		<h3 text-center>My Businesses</h3>
+		
+		<div *ngFor="let b of business_list" style="border-bottom: 3px #333 solid;">
+			<ion-row>
+				<ion-col text-left>
+					{{b.business_name}}
+				</ion-col>
+				<ion-col text-right>
+					<button (click)="open_business_page()" ion-button color="danger" small>
+						View
+						&nbsp;
+						<ion-icon name="arrow-dropright"></ion-icon>
+					</button>
+				</ion-col>
+			</ion-row>
+		</div>
+		
+		<ion-row>
+			<ion-col text-center>
+				<button (click)="goto_business_list_page()" ion-button color="primary" small>
+					View All
+					&nbsp;
+					<ion-icon name="arrow-dropright"></ion-icon>
+				</button>
+			</ion-col>
+		</ion-row>
+		
+	</ion-grid>
+	
+	
+	
+</ion-content>

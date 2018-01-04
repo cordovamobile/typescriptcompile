@@ -1,0 +1,153 @@
+<ion-header>
+	<ion-navbar>
+		<button ion-button menuToggle>
+			<ion-icon name="menu"></ion-icon>
+		</button>
+		<ion-title *ngIf="current_ui == 'question'">Select Your Business Type</ion-title>
+		<ion-title *ngIf="current_ui == 'ca_firm'">Edit Business Details</ion-title>
+		<ion-title *ngIf="current_ui == 'tax_consultancy'">Edit Business Details</ion-title>
+	</ion-navbar>
+</ion-header>
+
+
+<ion-content padding>
+	
+	
+	
+	<form class="login" *ngIf="current_ui == 'question'">
+		
+		<h3 text-center>Are you a CA Firm or a Tax Consultancy ?</h3>
+		
+		<ion-grid>
+			<ion-row>
+				<ion-col text-center>
+					<button (click)="change_ui('ca_firm')" ion-button>
+						CA Firm
+					</button>
+				</ion-col>
+				<ion-col text-center>
+					<button (click)="change_ui('tax_consultancy')" ion-button color="secondary">
+						Tax Consultancy
+					</button>
+				</ion-col>
+			</ion-row>
+			
+		</ion-grid>
+		
+	</form>
+	
+	
+	
+	<form class="login" *ngIf="current_ui == 'ca_firm'">
+		
+		<ion-grid>
+			<ion-row>
+				<ion-col>
+					<h3>
+						Business Type: 
+						<b>CA Firm</b>
+						<a (click)="change_ui('question')">
+							Edit
+							<ion-icon ios="ios-create" md="md-create"></ion-icon>
+						</a>
+					</h3>
+				</ion-col>
+			</ion-row>
+			<ion-row>
+				<ion-col>
+					<h3>To secure your account, please add these details:</h3>
+				</ion-col>
+			</ion-row>
+		</ion-grid>
+	
+		<ion-item>
+			<ion-label floating>Mobile Number</ion-label>
+			<ion-input type="text" id="mobileno" name="mobileno" [(ngModel)]="ca_firm_details.mobileno"></ion-input>
+		</ion-item>
+	
+		<ion-item>
+			<ion-label floating>Practice Name</ion-label>
+			<ion-input type="text" id="practice_name" name="practice_name" [(ngModel)]="ca_firm_details.practice_name"></ion-input>
+		</ion-item>
+	
+		<ion-item>
+			<ion-label floating>Your Name</ion-label>
+			<ion-input type="text" id="name" name="name" [(ngModel)]="ca_firm_details.name"></ion-input>
+		</ion-item>
+	
+		<ion-item>
+			<ion-label floating>PAN</ion-label>
+			<ion-input type="text" id="pan" name="pan" [(ngModel)]="ca_firm_details.pan"></ion-input>
+		</ion-item>
+		
+		<ion-grid>
+			<ion-row>
+				<ion-col text-right>
+					<button (click)="save_details('CA Firm')" ion-button color="secondary">
+						Start
+					</button>
+				</ion-col>
+			</ion-row>
+		</ion-grid>
+		
+	</form>
+	
+	
+	
+	<form class="login" *ngIf="current_ui == 'tax_consultancy'">
+		
+		<ion-grid>
+			<ion-row>
+				<ion-col>
+					<h3>
+						Business Type: 
+						<b>Tax Consultancy</b>
+						<a (click)="change_ui('question')">
+							Edit
+							<ion-icon ios="ios-create" md="md-create"></ion-icon>
+						</a>
+					</h3>
+				</ion-col>
+			</ion-row>
+			<ion-row>
+				<ion-col>
+					<h3>To secure your account, please add these details:</h3>
+				</ion-col>
+			</ion-row>
+		</ion-grid>
+	
+		<ion-item>
+			<ion-label floating>Mobile Number</ion-label>
+			<ion-input type="text" id="email" name="email" [(ngModel)]="tax_consultancy_details.email"></ion-input>
+		</ion-item>
+	
+		<ion-item>
+			<ion-label floating>Business Name</ion-label>
+			<ion-input type="text" id="email" name="email" [(ngModel)]="tax_consultancy_details.email"></ion-input>
+		</ion-item>
+	
+		<ion-item>
+			<ion-label floating>Your Name</ion-label>
+			<ion-input type="text" id="email" name="email" [(ngModel)]="tax_consultancy_details.email"></ion-input>
+		</ion-item>
+	
+		<ion-item>
+			<ion-label floating>PAN</ion-label>
+			<ion-input type="text" id="email" name="email" [(ngModel)]="tax_consultancy_details.email"></ion-input>
+		</ion-item>
+		
+		<ion-grid>
+			<ion-row>
+				<ion-col text-right>
+					<button (click)="save_details('Tax Consultancy')" ion-button color="secondary">
+						Start
+					</button>
+				</ion-col>
+			</ion-row>
+		</ion-grid>
+		
+	</form>
+	
+	
+	
+</ion-content>

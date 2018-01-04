@@ -18,7 +18,5 @@
 	<p>
 		You can create sales invoices and purchase invoices using this mobile app.
 	</p>
-
-	<button ion-button secondary menuToggle>Go To Menu</button>
 	
 </ion-content>

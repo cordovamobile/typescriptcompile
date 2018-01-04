@@ -1,0 +1,160 @@
+<ion-header>
+	<ion-navbar>
+		<button ion-button menuToggle>
+			<ion-icon name="menu"></ion-icon>
+		</button>
+		<ion-title *ngIf="current_form == 'login'">Login Page</ion-title>
+		<ion-title *ngIf="current_form == 'signup'">SignUp Page</ion-title>
+		<ion-title *ngIf="current_form == 'reset_password'">Reset Password</ion-title>
+	</ion-navbar>
+</ion-header>
+
+
+<ion-content padding>
+	
+	
+	
+	<form class="login" *ngIf="current_form == 'login'">
+		
+		<ion-grid>
+			<ion-row>
+				<ion-col>
+					<h5>Enter Your Login Details</h5>
+				</ion-col>
+			</ion-row>
+			<ion-row>
+				<ion-col [innerHtml]="login_form.message"></ion-col>
+			</ion-row>
+		</ion-grid>
+	
+		<ion-item>
+			<ion-label floating>Email</ion-label>
+			<ion-input type="text" id="email" name="email" [(ngModel)]="login_form.email"></ion-input>
+		</ion-item>
+	
+		<ion-item>
+			<ion-label floating>Password</ion-label>
+			<ion-input type="{{password_field_type}}" id="password" name="password" [(ngModel)]="login_form.password"></ion-input>
+		</ion-item>
+		
+		<ion-item>
+			<ion-label>View Password</ion-label>
+			<ion-checkbox (ionChange)="toggle_show_password()" [(ngModel)]="view_password" name="view_password"></ion-checkbox>
+		</ion-item>
+		
+		<ion-grid>
+			<ion-row>
+				<ion-col>
+					<button (click)="login()" ion-button small>
+						Log In
+					</button>
+				</ion-col>
+				<ion-col>
+					<button (click)="show_sign_up_form()" ion-button color="secondary" small>
+						Create An Account
+					</button>
+				</ion-col>
+			</ion-row>
+			<ion-row>
+				<ion-col>
+					<button (click)="show_reset_password_form()" ion-button color="danger" small>
+						Reset Password
+					</button>
+				</ion-col>
+				<ion-col>
+				</ion-col>
+			</ion-row>
+		</ion-grid>
+		
+	</form>
+
+	
+	<form class="signup" *ngIf="current_form == 'signup'">
+		
+		<ion-grid>
+			<ion-row>
+				<ion-col>
+					<h5>Create New Login Details</h5>
+				</ion-col>
+			</ion-row>
+		</ion-grid>
+	
+		<ion-item>
+			<ion-label floating>First Name</ion-label>
+			<ion-input type="text" id="first_name" name="first_name" [(ngModel)]="signup_form.first_name"></ion-input>
+		</ion-item>
+	
+		<ion-item>
+			<ion-label floating>Last Name</ion-label>
+			<ion-input type="text" id="last_name" name="last_name" [(ngModel)]="signup_form.last_name"></ion-input>
+		</ion-item>
+	
+		<ion-item>
+			<ion-label floating>Email</ion-label>
+			<ion-input type="text" id="email" name="email" [(ngModel)]="signup_form.email"></ion-input>
+		</ion-item>
+	
+		<ion-item>
+			<ion-label floating>Password</ion-label>
+			<ion-input type="{{password_field_type}}" id="password" name="password" [(ngModel)]="signup_form.password"></ion-input>
+		</ion-item>
+		
+		<ion-item>
+			<ion-label>View Password</ion-label>
+			<ion-checkbox (ionChange)="toggle_show_password()" [(ngModel)]="view_password" name="view_password"></ion-checkbox>
+		</ion-item>
+			
+		<ion-grid>
+			<ion-row>
+				<ion-col>
+					<button (click)="signup()" ion-button color="secondary" small>Sign Up</button>
+				</ion-col>
+				<ion-col>
+					<button (click)="show_log_in_form()" ion-button small>I Have An Account</button>
+				</ion-col>
+			</ion-row>
+		</ion-grid>
+  
+	</form>
+
+	
+	<form class="reset_password" *ngIf="current_form == 'reset_password'">
+		
+		<ion-grid>
+			<ion-row>
+				<ion-col>
+					<h5>Reset Password</h5>
+				</ion-col>
+			</ion-row>
+			<ion-row>
+				<ion-col>
+					<p>{{reset_password_form.message}}</p>
+				</ion-col>
+			</ion-row>
+		</ion-grid>
+	
+		<ion-item>
+			<ion-label floating>Email/Username</ion-label>
+			<ion-input type="text" id="username_email" name="username_email" [(ngModel)]="reset_password_form.username_email"></ion-input>
+		</ion-item>
+			
+		<ion-grid>
+			<ion-row>
+				<ion-col>
+					<button (click)="reset_password()" ion-button color="danger" small>Reset Password</button>
+				</ion-col>
+				<ion-col>
+					<button (click)="show_log_in_form()" ion-button small>
+						<ion-icon name="arrow-back"></ion-icon>
+						&nbsp;
+						Back To Log In
+					</button>
+				</ion-col>
+			</ion-row>
+		</ion-grid>
+  
+	</form>
+	
+	
+	
+</ion-content>

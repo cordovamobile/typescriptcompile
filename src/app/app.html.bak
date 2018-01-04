@@ -115,7 +115,6 @@
 					class="home_menu" 
 					menuClose 
 					ion-item 
-					(click)="openComponent('DashboardPage')"
 				>
 					<span class="menu_item_icon">
 						<!--img src="assets/imgs/menu/icons/home.png" /-->

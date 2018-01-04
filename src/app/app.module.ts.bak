@@ -35,7 +35,6 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 		UserDetailsSavePage,
 		DashboardPage,
 		BusinessAddPage,
-		BusinessListPage,
 	],
 	imports: [
 		BrowserModule,
@@ -52,7 +51,6 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 		UserDetailsSavePage,
 		DashboardPage,
 		BusinessAddPage,
-		BusinessListPage,
 	],
 	providers: [
 		StatusBar,
