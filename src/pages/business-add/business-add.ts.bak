@@ -53,7 +53,7 @@ export class BusinessAddPage {
 		console.log('requestAPI being called...');
 		self.dataprovider.requestAPI(
 			'get',
-			'programming/hbapi/api/addbusiness',
+			'programming/hbgstapi/api/addbusiness',
 			{
 				business_name : self.business.business_name,
 				pan : self.business.pan,
