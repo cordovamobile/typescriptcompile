@@ -18,7 +18,7 @@
 				<button (click)="goto_business_add_page()" ion-button color="danger" small>
 					<ion-icon name="add"></ion-icon>
 					&nbsp;
-					Add Business
+					Adds Business
 				</button>
 			</ion-col>
 		</ion-row>
