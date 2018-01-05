@@ -23,6 +23,8 @@ import { BusinessListPage } from '../../pages/business-list/business-list';
 export class DashboardPage {
 	
 	business_list: any;
+	busiess_or_client: string;
+	name: string;
 
 	constructor(
 		public navCtrl: NavController,
@@ -33,6 +35,18 @@ export class DashboardPage {
 		public nav: Nav,
 		public application_service: ApplicationService
 	) {
+		
+		
+		var userdata = JSON.parse(localStorage.getItem("userdata"));
+		if( userdata.bu_type == 'CA' ) {
+			this.busiess_or_client = 'Client';
+		} else {
+			this.busiess_or_client = 'Business';
+		}
+		this.name = userdata.full_name;
+		
+		
+		
 		
 		this.business_list = [];
 		/* 

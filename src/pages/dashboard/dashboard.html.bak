@@ -15,7 +15,7 @@
 		
 		<ion-row>
 			<ion-col>
-				<h5>Welcome Message...</h5>
+				<h5>Welcome {{name}}</h5>
 			</ion-col>
 		</ion-row>
 		
@@ -24,12 +24,12 @@
 				<button (click)="goto_business_add_page()" ion-button color="danger" small>
 					<ion-icon name="add"></ion-icon>
 					&nbsp;
-					Adds Business
+					Adds {{busiess_or_client}}
 				</button>
 			</ion-col>
 		</ion-row>
 		
-		<h3 text-center>My Businesses</h3>
+		<h3 text-center>My {{busiess_or_client}}</h3>
 		
 		<div *ngFor="let b of business_list" style="border-bottom: 3px #333 solid;">
 			<ion-row>
