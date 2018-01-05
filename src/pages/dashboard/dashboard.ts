@@ -24,6 +24,7 @@ export class DashboardPage {
 	
 	business_list: any;
 	busiess_or_client: string;
+	busiess_or_client_plural: string;
 	name: string;
 
 	constructor(
@@ -40,8 +41,10 @@ export class DashboardPage {
 		var userdata = JSON.parse(localStorage.getItem("userdata"));
 		if( userdata.bu_type == 'CA' ) {
 			this.busiess_or_client = 'Client';
+			this.busiess_or_client_plural = 'Clients';
 		} else {
 			this.busiess_or_client = 'Business';
+			this.busiess_or_client_plural = 'Businesses';
 		}
 		this.name = userdata.full_name;
 		

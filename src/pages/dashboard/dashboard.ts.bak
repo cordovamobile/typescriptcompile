@@ -24,6 +24,7 @@ export class DashboardPage {
 	
 	business_list: any;
 	busiess_or_client: string;
+	busiess_or_client_plural: string;
 	name: string;
 
 	constructor(
@@ -43,6 +44,7 @@ export class DashboardPage {
 		} else {
 			this.busiess_or_client = 'Business';
 		}
+		this.name = userdata.full_name;
 		
 		
 		
