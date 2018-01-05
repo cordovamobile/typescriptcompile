@@ -105,18 +105,28 @@ export class LoginPage {
 	login() {
 		
 		
-		if(	
-				this.login_form.email == ''
-			||	this.login_form.password == ''
-		) {
+		if(	! this.validateEmail( this.login_form.email ) ) {
 			let toast = this.toastCtrl.create({
-				message: 'Please fill all the fields.',
-				duration: 3000,
+				message: 'Please enter a valid email address.',
+				duration: 5000,
 				cssClass: "toast-success"
 			});
 			toast.present();
 			return;
 		}
+		
+		
+		if(	this.login_form.password == '' ) {
+			let toast = this.toastCtrl.create({
+				message: 'Please enter a valid password.',
+				duration: 5000,
+				cssClass: "toast-success"
+			});
+			toast.present();
+			return;
+		}
+		
+		
 		
 		var self = this;
 
@@ -171,8 +181,12 @@ export class LoginPage {
 						cssClass:	"toast-success"
 					});
 					toast.present();
+					
+					
+					
+					// Logout if logged in
+					localStorage.removeItem("userdata");
 					self.application_service.logged_in_or_not();
-					//self.events.publish( 'set_logged_in' , false );
 					
 				}
 				
@@ -226,41 +240,24 @@ export class LoginPage {
 					/* Deciding Where To Redirect */
 					var redirect_page;
 					
-					if( typeof response.login_count !== 'undefined' ) { // If login_count does not exist
+					if( typeof response.login_count == 'undefined' ) { // If login_count does not exist
 						return;
-					} else if( response.login_count == 0 ) { // If first time login
+					} else if( parseInt(response.login_count) == 0 ) { // If first time login
 						redirect_page = UserDetailsSavePage;
-					} else if( response.login_count > 0 ) { // If NOT the first time login
+					} else if( parseInt(response.login_count) > 0 ) { // If NOT the first time login
 						redirect_page = DashboardPage;
 					}
 					
-					/*
-					if (localStorage.getItem("userdata") !== null) {
-						//alert(localStorage.getItem("userdata"));
-						var userdata = JSON.parse( localStorage.getItem("userdata") );	
-						if (
-								typeof(userdata.bu_type) != "undefined"
-							&&	(
-										userdata.bu_type == 'CA'
-									||	userdata.bu_type == 'OC'
-								)
-						) {
-							redirect_page = DashboardPage;
-						} else {
-							redirect_page = UserDetailsSavePage;
-						}
-						if (
-								typeof(response.token) != "undefined"
-						) {
-							userdata.api_token = response.token;
-							localStorage.setItem("userdata", JSON.stringify( userdata ));
-						}
-					} else {
-						redirect_page = UserDetailsSavePage;
-					}
-					*/
 					
-					
+					self.login_form.email = '';
+					self.login_form.password = '';
+					self.login_form.view_password = false;
+					let toast = self.toastCtrl.create({
+						message:	response.message,
+						duration:	3000,
+						cssClass:	"toast-success"
+					});
+					toast.present();
 					
 					
 					
@@ -281,9 +278,10 @@ export class LoginPage {
 						cssClass:	"toast-success"
 					});
 					toast.present();
+					
+					// Logout if logged in
 					localStorage.removeItem("userdata");
 					self.application_service.logged_in_or_not();
-					//self.events.publish( 'set_logged_in' , false );
 					
 				}
 				
@@ -299,6 +297,50 @@ export class LoginPage {
 	
 	
 	signup() {
+		
+		
+		if(	this.signup_form.first_name == '' ) {
+			let toast = this.toastCtrl.create({
+				message: 'Please enter a valid first name.',
+				duration: 5000,
+				cssClass: "toast-success"
+			});
+			toast.present();
+			return;
+		}
+		
+		
+		if(	this.signup_form.last_name == '' ) {
+			let toast = this.toastCtrl.create({
+				message: 'Please enter a valid last name.',
+				duration: 5000,
+				cssClass: "toast-success"
+			});
+			toast.present();
+			return;
+		}
+		
+		
+		if(	! this.validateEmail( this.signup_form.email ) ) {
+			let toast = this.toastCtrl.create({
+				message: 'Please enter a valid email address.',
+				duration: 5000,
+				cssClass: "toast-success"
+			});
+			toast.present();
+			return;
+		}
+		
+		
+		if(	this.signup_form.password == '' ) {
+			let toast = this.toastCtrl.create({
+				message: 'Please enter a valid password.',
+				duration: 5000,
+				cssClass: "toast-success"
+			});
+			toast.present();
+			return;
+		}
 		
 		
 		if(
@@ -475,6 +517,21 @@ export class LoginPage {
 	}
 
 	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	validateEmail(email) {
+		var re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+		return re.test(email);
+	}
 	
 	
 	
