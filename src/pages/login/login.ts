@@ -99,6 +99,20 @@ export class LoginPage {
 
 	login() {
 		
+		
+		if(	
+				this.login_form.email == ''
+			||	this.login_form.password == ''
+		) {
+			let toast = this.toastCtrl.create({
+				message: 'Please fill all the fields.',
+				duration: 3000,
+				cssClass: "toast-success"
+			});
+			toast.present();
+			return;
+		}
+		
 		var self = this;
 
 		console.log('requestAPI being called...');
@@ -166,6 +180,23 @@ export class LoginPage {
 	
 	
 	signup() {
+		
+		
+		if(
+				this.signup_form.first_name == ''
+			||	this.signup_form.last_name == ''
+			||	this.signup_form.email == ''
+			||	this.signup_form.password == ''
+		) {
+			let toast = this.toastCtrl.create({
+				message: 'Please fill all the fields.',
+				duration: 3000,
+				cssClass: "toast-success"
+			});
+			toast.present();
+			return;
+		}
+		
 		
 		var self = this;
 

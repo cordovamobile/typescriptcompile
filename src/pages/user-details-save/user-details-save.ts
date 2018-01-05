@@ -51,6 +51,47 @@ export class UserDetailsSavePage {
 	
 	save_details(business_type) {
 		
+		
+		if(
+				business_type == 'CA Firm'
+			&&	(
+					this.ca_firm_details.mobileno == ''
+				||	this.ca_firm_details.practice_name == ''
+				||	this.ca_firm_details.name == ''
+				||	this.ca_firm_details.pan == ''
+			)
+		) {
+			let toast = this.toastCtrl.create({
+				message: 'Please fill all the fields.',
+				duration: 3000,
+				cssClass: "toast-success"
+			});
+			toast.present();
+			return;
+		}
+		
+		
+		if(
+				business_type == 'Tax Consultancy'
+			&&	(
+					this.tax_consultancy_details.mobileno == ''
+				||	this.tax_consultancy_details.business_name == ''
+				||	this.tax_consultancy_details.name == ''
+				||	this.tax_consultancy_details.pan == ''
+			)
+		) {
+			let toast = this.toastCtrl.create({
+				message: 'Please fill all the fields.',
+				duration: 3000,
+				cssClass: "toast-success"
+			});
+			toast.present();
+			return;
+		}
+		
+		
+		
+		
 		var user_details;
 		var bu_type;
 		

@@ -4,8 +4,8 @@
 			<ion-icon name="menu"></ion-icon>
 		</button>
 		<ion-title *ngIf="current_ui == 'question'">Select Your Business Type</ion-title>
-		<ion-title *ngIf="current_ui == 'ca_firm'">Edit Business Details</ion-title>
-		<ion-title *ngIf="current_ui == 'tax_consultancy'">Edit Business Details</ion-title>
+		<ion-title *ngIf="current_ui == 'CA Firm'">Edit Business Details</ion-title>
+		<ion-title *ngIf="current_ui == 'Tax Consultancy'">Edit Business Details</ion-title>
 	</ion-navbar>
 </ion-header>
 
@@ -21,12 +21,12 @@
 		<ion-grid>
 			<ion-row>
 				<ion-col text-center>
-					<button (click)="change_ui('ca_firm')" ion-button>
+					<button (click)="change_ui('CA Firm')" ion-button>
 						CA Firm
 					</button>
 				</ion-col>
 				<ion-col text-center>
-					<button (click)="change_ui('tax_consultancy')" ion-button color="secondary">
+					<button (click)="change_ui('Tax Consultancy')" ion-button color="secondary">
 						Tax Consultancy
 					</button>
 				</ion-col>
@@ -38,7 +38,7 @@
 	
 	
 	
-	<form class="login" *ngIf="current_ui == 'ca_firm'">
+	<form class="login" *ngIf="current_ui == 'CA Firm'">
 		
 		<ion-grid>
 			<ion-row>
@@ -94,7 +94,7 @@
 	
 	
 	
-	<form class="login" *ngIf="current_ui == 'tax_consultancy'">
+	<form class="login" *ngIf="current_ui == 'Tax Consultancy'">
 		
 		<ion-grid>
 			<ion-row>
@@ -118,12 +118,12 @@
 	
 		<ion-item>
 			<ion-label floating>Mobile Number</ion-label>
-			<ion-input type="text" id="email" name="email" [(ngModel)]="tax_consultancy_details.email"></ion-input>
+			<ion-input type="text" id="mobileno" name="mobileno" [(ngModel)]="tax_consultancy_details.mobileno"></ion-input>
 		</ion-item>
 	
 		<ion-item>
 			<ion-label floating>Business Name</ion-label>
-			<ion-input type="text" id="email" name="email" [(ngModel)]="tax_consultancy_details.email"></ion-input>
+			<ion-input type="text" id="business_name" name="business_name" [(ngModel)]="tax_consultancy_details.business_name"></ion-input>
 		</ion-item>
 	
 		<ion-item>
