@@ -111,7 +111,7 @@ export class UserDetailsSavePage {
 				pan : self.ca_firm_details.pan,
 				primary_contact_person : self.ca_firm_details.name,
 				primary_contact_personph : self.ca_firm_details.mobileno,
-				bu_type : 'ca'
+				bu_type : 'CA'
 			};
 		}
 		
@@ -122,7 +122,7 @@ export class UserDetailsSavePage {
 				pan : self.non_ca_firm_details.pan,
 				primary_contact_person : self.non_ca_firm_details.name,
 				primary_contact_personph : self.non_ca_firm_details.mobileno,
-				bu_type : 'oc'
+				bu_type : 'OC'
 			};
 		}
 		
@@ -157,6 +157,15 @@ export class UserDetailsSavePage {
 						cssClass:	"toast-success"
 					});
 					toast.present();
+					
+					
+					if( data.bu_type == 'CA' ) {
+						this.nav.setRoot( DashboardPage );
+					} else if( data.bu_type == 'OC' ) {
+						this.nav.setRoot( DashboardPage );
+					}
+					
+					
 					
 					
 				} else {
@@ -298,6 +307,8 @@ export class UserDetailsSavePage {
 	}
 	
 	
+	
+	// Source of code : https://stackoverflow.com/questions/37251151/pancard-structure-validation-in-javascript-and-php-also
 	validatePAN(field) {
 		if (field.match(/^([a-zA-Z]){5}([0-9]){4}([a-zA-Z]){1}?$/)) {
 			 return true;

@@ -111,7 +111,7 @@ export class UserDetailsSavePage {
 				pan : self.ca_firm_details.pan,
 				primary_contact_person : self.ca_firm_details.name,
 				primary_contact_personph : self.ca_firm_details.mobileno,
-				bu_type : 'ca'
+				bu_type : 'CA'
 			};
 		}
 		
@@ -122,7 +122,7 @@ export class UserDetailsSavePage {
 				pan : self.non_ca_firm_details.pan,
 				primary_contact_person : self.non_ca_firm_details.name,
 				primary_contact_personph : self.non_ca_firm_details.mobileno,
-				bu_type : 'oc'
+				bu_type : 'OC'
 			};
 		}
 		
@@ -159,6 +159,15 @@ export class UserDetailsSavePage {
 					toast.present();
 					
 					
+					if( data.bu_type == 'CA' ) {
+						this.nav.setRoot( DashboardPage );
+					} else if( data.bu_type == 'OC' ) {
+						this.nav.setRoot( DashboardPage );
+					}
+					
+					
+					
+					
 				} else {
 					
 					let toast = self.toastCtrl.create({
@@ -181,60 +190,6 @@ export class UserDetailsSavePage {
 		
 		
 		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		var user_details;
-		var bu_type;
-		
-		if( business_type == 'CA Firm' ) {
-			
-			user_details = this.ca_firm_details;
-			user_details.business_type = business_type;
-			
-			bu_type = 'CA';
-			
-		}
-		
-		if( business_type == 'Non CA Firm' ) {
-			
-			user_details = this.non_ca_firm_details;
-			user_details.business_type = business_type;
-			
-			bu_type = 'OC';
-			
-		}
-		
-		
-		
-		//alert('You have logged in successfully.');
-		localStorage.setItem("user_details", JSON.stringify( user_details ));
-		
-		var userdata = JSON.parse(localStorage.getItem("userdata"));
-		userdata.bu_type = bu_type;
-		localStorage.setItem("userdata", JSON.stringify( userdata ));
-		
-		this.nav.setRoot( DashboardPage );
 		
 	}
 	
