@@ -78,7 +78,7 @@ export class DashboardPage {
 		console.log('requestAPI being called...');
 		self.dataprovider.requestAPI(
 			'get',
-			'programming/hbapi/api/getbusinesslist/' + user_id, 
+			'programming/hbgstapi/api/getbusinesslist/' + user_id, 
 			{},
 			'Getting businesses list...',
 			false, /* Token To Not Be Sent To API */

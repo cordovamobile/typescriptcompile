@@ -35,7 +35,7 @@ export class DashboardPage {
 	) {
 		
 		this.business_list = [];
-		/*
+		/* 
 		this.business_list = [
 			{
 				"buid": "48",
