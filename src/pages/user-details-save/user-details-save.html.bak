@@ -5,7 +5,7 @@
 		</button>
 		<ion-title *ngIf="current_ui == 'question'">Select Your Business Type</ion-title>
 		<ion-title *ngIf="current_ui == 'CA Firm'">Edit Business Details</ion-title>
-		<ion-title *ngIf="current_ui == 'Tax Consultancy'">Edit Business Details</ion-title>
+		<ion-title *ngIf="current_ui == 'Non CA Firm'">Edit Business Details</ion-title>
 	</ion-navbar>
 </ion-header>
 
@@ -26,7 +26,7 @@
 					</button>
 				</ion-col>
 				<ion-col text-center>
-					<button (click)="change_ui('Not CA Firm')" ion-button color="secondary">
+					<button (click)="change_ui('Non CA Firm')" ion-button color="secondary">
 						No
 					</button>
 				</ion-col>
@@ -94,7 +94,7 @@
 	
 	
 	
-	<form class="login" *ngIf="current_ui == 'Not CA Firm'">
+	<form class="login" *ngIf="current_ui == 'Non CA Firm'">
 		
 		<ion-grid>
 			<ion-row>
@@ -118,7 +118,7 @@
 	
 		<ion-item>
 			<ion-label floating>Mobile Number</ion-label>
-			<ion-input type="text" id="mobileno" name="mobileno" [(ngModel)]="non_ca_firm_details.mobileno"></ion-input>
+			<ion-input type="text" id="mobileno" name="mobileno" [(ngModel)]="non_ca_firm_details.mobileno" maxlength="10"></ion-input>
 		</ion-item>
 	
 		<ion-item>
@@ -139,7 +139,7 @@
 		<ion-grid>
 			<ion-row>
 				<ion-col text-right>
-					<button (click)="save_details('Tax Consultancy')" ion-button color="secondary">
+					<button (click)="save_details('Non CA Firm')" ion-button color="secondary">
 						Start
 					</button>
 				</ion-col>

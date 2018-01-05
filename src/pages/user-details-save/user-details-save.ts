@@ -36,8 +36,20 @@ export class UserDetailsSavePage {
 		
 		this.current_ui = 'question';
 		
-		this.ca_firm_details = {};
-		this.non_ca_firm_details = {};
+		this.ca_firm_details = {
+			practice_name : '',
+			pan : '',
+			name : '',
+			mobileno : ''
+		};
+		this.non_ca_firm_details = {
+			business_name : '',
+			pan : '',
+			name : '',
+			mobileno : ''
+		};
+		
+		
 		
 	}
 
@@ -76,42 +88,7 @@ export class UserDetailsSavePage {
 		
 		var self = this;
 		
-		var error_message = '';
-		
-		if( business_type == 'CA Firm' ) {
-			
-			if( self.ca_firm_details.mobileno == '' ) {
-				error_message = 'Enter a valid mobile number.';
-			}
-			if( self.ca_firm_details.practice_name == '' ) {
-				error_message = 'Enter a valid practice name.';
-			}
-			if( self.ca_firm_details.name == '' ) {
-				error_message = 'Enter a valid name.';
-			}
-			if( self.ca_firm_details.pan == '' ) {
-				error_message = 'Enter a valid PAN number.';
-			}
-		}
-		
-		
-		if( business_type == 'Non CA Firm' ) {
-			
-			if( self.non_ca_firm_details.mobileno == '' ) {
-				error_message = 'Enter a valid mobile number.';
-			}
-			if( self.non_ca_firm_details.business_name == '' ) {
-				error_message = 'Enter a valid business name.';
-			}
-			if( self.non_ca_firm_details.name == '' ) {
-				error_message = 'Enter a valid name.';
-			}
-			if( self.non_ca_firm_details.pan == '' ) {
-				error_message = 'Enter a valid PAN number.';
-			}
-		}
-		
-		
+		var error_message = self.validate_form(business_type);
 		if( error_message != '' ) {
 			let toast = self.toastCtrl.create({
 				message: error_message,
@@ -121,6 +98,8 @@ export class UserDetailsSavePage {
 			toast.present();
 			return;
 		}
+		
+		
 		
 		
 		
@@ -258,6 +237,84 @@ export class UserDetailsSavePage {
 		this.nav.setRoot( DashboardPage );
 		
 	}
+	
+	
+	
+	
+	
+	
+	validate_form(business_type) {
+		
+		var self = this;
+		
+		if( business_type == 'CA Firm' ) {
+			
+			if( self.validatePhone(self.ca_firm_details.mobileno) == '' ) {
+				return 'Enter a valid 10 digit mobile number.';
+			}
+			if( self.ca_firm_details.practice_name == '' ) {
+				return 'Enter a valid practice name.';
+			}
+			if( self.ca_firm_details.name == '' ) {
+				return 'Enter a valid name.';
+			}
+			if( self.validatePAN( self.ca_firm_details.pan ) == '' ) {
+				return 'Enter a valid PAN number.';
+			}
+		}
+		
+		
+		if( business_type == 'Non CA Firm' ) {
+			
+			if( self.validatePhone(self.non_ca_firm_details.mobileno) == '' ) {
+				return 'Enter a valid 10 digit mobile number.';
+			}
+			if( self.non_ca_firm_details.business_name == '' ) {
+				return 'Enter a valid business name.';
+			}
+			if( self.non_ca_firm_details.name == '' ) {
+				return 'Enter a valid name.';
+			}
+			if( self.validatePAN( self.non_ca_firm_details.pan ) == '' ) {
+				return 'Enter a valid PAN number.';
+			}
+		}
+		
+		return '';
+		
+	}
+	
+	
+	
+	
+	
+	
+	
+	validatePhone(field) {
+		if (field.match(/^\d{10}/)) {
+			 return true;
+		} 
+		return false;
+	}
+	
+	
+	
+	// Source of code : https://stackoverflow.com/questions/37251151/pancard-structure-validation-in-javascript-and-php-also
+	validatePAN(field) {
+		if (field.match(/^([a-zA-Z]){5}([0-9]){4}([a-zA-Z]){1}?$/)) {
+			 return true;
+		} 
+		return false;
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	
 	
 	
