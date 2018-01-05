@@ -39,6 +39,8 @@ export class DashboardPage {
 		
 		
 		var userdata = JSON.parse(localStorage.getItem("userdata"));
+		var user_id = userdata.api_token;
+		
 		if( userdata.bu_type == 'CA' ) {
 			this.busiess_or_client = 'Client';
 			this.busiess_or_client_plural = 'Clients';
@@ -47,7 +49,6 @@ export class DashboardPage {
 			this.busiess_or_client_plural = 'Businesses';
 		}
 		this.name = userdata.full_name;
-		
 		
 		
 		
@@ -84,9 +85,6 @@ export class DashboardPage {
 		];
 		*/
 		
-		
-		var userdata = JSON.parse( localStorage.getItem("userdata") );
-		var user_id = userdata.api_token;
 		
 		
 		

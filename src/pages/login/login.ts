@@ -84,6 +84,8 @@ export class LoginPage {
 	
 	
 	
+	
+	
 	show_sign_up_form() {
 		this.current_form = 'signup';
 	}
@@ -95,8 +97,11 @@ export class LoginPage {
 	show_reset_password_form() {
 		this.current_form = 'reset_password';
 	}
-
-
+	
+	
+	
+	
+	
 	login() {
 		
 		
@@ -177,6 +182,120 @@ export class LoginPage {
 		);
 
 	}
+	
+	
+	
+	
+	
+	login_validate() {
+		
+		var token = false;
+		if (localStorage.getItem("userdata") !== null) {
+			//alert(localStorage.getItem("userdata"));
+			var userdata = JSON.parse( localStorage.getItem("userdata") );
+			if (
+					typeof(userdata.token) != "undefined"
+			) {
+				token = userdata.token;
+			}
+		}
+		
+		var self = this;
+
+		console.log('requestAPI being called...');
+		self.dataprovider.requestAPI(
+			'post',
+			'programming/hbgstapi/api/loginvalidate', 
+			{
+				user_account_no:	token
+			},
+			'Getting Authorization.',
+			false, /* Token To Not Be Sent To API */
+			
+			function(response) {
+				
+				/* Logging 'Request Has Responded' event */
+				console.log( 'requestAPI responded...' );
+				console.log( 'requestAPI Response: "' + JSON.stringify( response ) + '"' );
+				console.log( 'requestAPI Response Type: ' + response.type );
+				
+				
+				if( response.status == 'success' ) {
+					
+					
+					/* Deciding Where To Redirect */
+					var redirect_page;
+					
+					if( typeof response.login_count !== 'undefined' ) { // If login_count does not exist
+						return;
+					} else if( response.login_count == 0 ) { // If first time login
+						redirect_page = UserDetailsSavePage;
+					} else if( response.login_count > 0 ) { // If NOT the first time login
+						redirect_page = DashboardPage;
+					}
+					
+					/*
+					if (localStorage.getItem("userdata") !== null) {
+						//alert(localStorage.getItem("userdata"));
+						var userdata = JSON.parse( localStorage.getItem("userdata") );	
+						if (
+								typeof(userdata.bu_type) != "undefined"
+							&&	(
+										userdata.bu_type == 'CA'
+									||	userdata.bu_type == 'OC'
+								)
+						) {
+							redirect_page = DashboardPage;
+						} else {
+							redirect_page = UserDetailsSavePage;
+						}
+						if (
+								typeof(response.token) != "undefined"
+						) {
+							userdata.api_token = response.token;
+							localStorage.setItem("userdata", JSON.stringify( userdata ));
+						}
+					} else {
+						redirect_page = UserDetailsSavePage;
+					}
+					*/
+					
+					
+					
+					
+					
+					/* Redirecting */
+					self.nav.setRoot(redirect_page);
+					
+					
+					
+					
+				} else {
+					
+					self.login_form.email = '';
+					self.login_form.password = '';
+					self.login_form.view_password = false;
+					let toast = self.toastCtrl.create({
+						message:	response.message,
+						duration:	10000,
+						cssClass:	"toast-success"
+					});
+					toast.present();
+					localStorage.removeItem("userdata");
+					self.application_service.logged_in_or_not();
+					//self.events.publish( 'set_logged_in' , false );
+					
+				}
+				
+				
+
+			}
+		);
+		
+	}
+	
+	
+	
 	
 	
 	signup() {
@@ -352,110 +471,6 @@ export class LoginPage {
 		
 		
 		
-		
-	}
-	
-	
-	
-	
-	login_validate() {
-		
-		var token = false;
-		if (localStorage.getItem("userdata") !== null) {
-			//alert(localStorage.getItem("userdata"));
-			var userdata = JSON.parse( localStorage.getItem("userdata") );
-			if (
-					typeof(userdata.token) != "undefined"
-			) {
-				token = userdata.token;
-			}
-		}
-		
-		var self = this;
-
-		console.log('requestAPI being called...');
-		self.dataprovider.requestAPI(
-			'post',
-			'programming/hbgstapi/api/loginvalidate', 
-			{
-				user_account_no:	token
-			},
-			'Checking login details...',
-			false, /* Token To Not Be Sent To API */
-			
-			function(response) {
-				
-				/* Logging 'Request Has Responded' event */
-				console.log( 'requestAPI responded...' );
-				console.log( 'requestAPI Response: "' + JSON.stringify( response ) + '"' );
-				console.log( 'requestAPI Response Type: ' + response.type );
-				
-				
-				if( response.status == 'success' ) {
-					
-					
-					/* Deciding Where To Redirect */
-					var redirect_page;
-					if (localStorage.getItem("userdata") !== null) {
-						//alert(localStorage.getItem("userdata"));
-						var userdata = JSON.parse( localStorage.getItem("userdata") );
-						
-						
-						if (
-								typeof(userdata.bu_type) != "undefined"
-							&&	(
-										userdata.bu_type == 'CA'
-									||	userdata.bu_type == 'OC'
-								)
-						) {
-							redirect_page = DashboardPage;
-						} else {
-							redirect_page = UserDetailsSavePage;
-						}
-						
-						if (
-								typeof(response.token) != "undefined"
-						) {
-							userdata.api_token = response.token;
-							localStorage.setItem("userdata", JSON.stringify( userdata ));
-						}
-						
-						
-					} else {
-						redirect_page = UserDetailsSavePage;
-					}
-					
-					
-					
-					
-					
-					/* Redirecting */
-					self.nav.setRoot(redirect_page);
-					
-					
-					
-					
-				} else {
-					
-					self.login_form.email = '';
-					self.login_form.password = '';
-					self.login_form.view_password = false;
-					let toast = self.toastCtrl.create({
-						message:	response.message,
-						duration:	10000,
-						cssClass:	"toast-success"
-					});
-					toast.present();
-					localStorage.removeItem("userdata");
-					self.application_service.logged_in_or_not();
-					//self.events.publish( 'set_logged_in' , false );
-					
-				}
-				
-				
-
-			}
-		);
 		
 	}
 
