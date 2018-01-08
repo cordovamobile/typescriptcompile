@@ -73,15 +73,7 @@ export class ApplicationService {
 	) {
 		console.log('Hello ApplicationService Provider');
 		
-		this.userdata = {
-			"logged_in": false,
-			"user_id": "",
-			"full_name": "",
-			"token": "",
-			"pkey": "",
-			"api_token": "",
-			"bu_type": ""
-		};
+		this.userdata = {};
 		
 	}
 	
@@ -109,11 +101,11 @@ export class ApplicationService {
 		var logged_in;
 		if (localStorage.getItem("userdata") !== null) {
 			//alert(localStorage.getItem("userdata"));
-			self.userdata = JSON.parse(localStorage.getItem("userdata"));
+			this.userdata = JSON.parse(localStorage.getItem("userdata"));
 			if (
-				typeof(self.userdata.logged_in) != "undefined" &&
-				typeof(self.userdata.token) != "undefined" &&
-				self.userdata.logged_in == true
+				typeof(this.userdata.logged_in) != "undefined" &&
+				typeof(this.userdata.token) != "undefined" &&
+				this.userdata.logged_in == true
 			) {
 				logged_in = true;
 				/* setTimeout(function(){ $j('.logged_out_menu_item').hide(); }, 500); */

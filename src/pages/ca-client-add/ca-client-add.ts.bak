@@ -64,6 +64,7 @@ export class CaClientAddPage {
 					
 				} else {
 					
+					self.business = {};
 					let toast = self.toastCtrl.create({
 						message:	response.message,
 						duration:	10000,

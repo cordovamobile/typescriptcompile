@@ -94,18 +94,16 @@ export class ApplicationService {
 
 
 	logged_in_or_not() {
-		
-		self = this;
 
 		//alert('This Is Logged In Or Not Inside AplicationService Provider...');
 		var logged_in;
 		if (localStorage.getItem("userdata") !== null) {
 			//alert(localStorage.getItem("userdata"));
-			self.userdata = JSON.parse(localStorage.getItem("userdata"));
+			this.userdata = JSON.parse(localStorage.getItem("userdata"));
 			if (
-				typeof(self.userdata.logged_in) != "undefined" &&
-				typeof(self.userdata.token) != "undefined" &&
-				self.userdata.logged_in == true
+				typeof(this.userdata.logged_in) != "undefined" &&
+				typeof(this.userdata.token) != "undefined" &&
+				this.userdata.logged_in == true
 			) {
 				logged_in = true;
 				/* setTimeout(function(){ $j('.logged_out_menu_item').hide(); }, 500); */

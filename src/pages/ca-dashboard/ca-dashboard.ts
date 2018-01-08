@@ -5,6 +5,8 @@ import { Nav, /*IonicPage,*/ NavController, NavParams, ToastController, AlertCon
 import { Dataprovider } from '../../providers/dataprovider';
 import { ApplicationService } from '../../providers/application-service';
 
+import { CaClientAddPage } from '../../pages/ca-client-add/ca-client-add';
+import { CaClientSinglePage } from '../../pages/ca-client-single/ca-client-single';
 /*
 import { BusinessAddPage } from '../../pages/business-add/business-add';
 import { BusinessListPage } from '../../pages/business-list/business-list';
@@ -131,11 +133,10 @@ export class CaDashboardPage {
 	}
 	
 	open_client_single_page(c) {
-		
 	}
 	
 	open_client_add_page(c) {
-		
+		this.nav.push(CaClientAddPage);
 	}
 	
 	/*

@@ -15,7 +15,7 @@
 		
 		<ion-row>
 			<ion-col>
-				<h5>Welcome to {{userdata.full_name}}'s Dashboard.</h5>
+				<h5>Welcome to {{application_service.userdata.full_name}}'s Dashboard.</h5>
 			</ion-col>
 		</ion-row>
 		

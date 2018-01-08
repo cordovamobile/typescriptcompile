@@ -27,12 +27,22 @@
 	
 		<ion-item>
 			<ion-label floating>Business Name</ion-label>
-			<ion-input type="text" id="business_name" name="business_name" [(ngModel)]="business.businessname"></ion-input>
+			<ion-input type="text" id="business_name" name="business_name" [(ngModel)]="business.business_name"></ion-input>
 		</ion-item>
 	
 		<ion-item>
 			<ion-label floating>Business PAN</ion-label>
-			<ion-input type="text" id="pan" name="pan" [(ngModel)]="business.pannumber"></ion-input>
+			<ion-input type="text" id="pan" name="pan" [(ngModel)]="business.pan"></ion-input>
+		</ion-item>
+	
+		<ion-item>
+			<ion-label floating>Primary Contact Person</ion-label>
+			<ion-input type="text" id="primary_contact_person" name="primary_contact_person" [(ngModel)]="business.primary_contact_person"></ion-input>
+		</ion-item>
+	
+		<ion-item>
+			<ion-label floating>Primary Contact Phone</ion-label>
+			<ion-input type="text" id="primary_contact_personph" name="primary_contact_personph" [(ngModel)]="business.primary_contact_personph"></ion-input>
 		</ion-item>
 		
 		<ion-grid>
