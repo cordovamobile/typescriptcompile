@@ -263,7 +263,6 @@ export class LoginPage {
 					if( typeof response.token !== 'undefined' ) { // If login_count does not exist
 						userdata = JSON.parse( localStorage.getItem("userdata") );
 						userdata.api_token = response.token;
-						alert(response.token);
 						localStorage.setItem("userdata", JSON.stringify( userdata ));
 					}					
 					
@@ -279,6 +278,7 @@ export class LoginPage {
 					toast.present();
 					
 					
+					self.application_service.logged_in_or_not();
 					
 					/* Redirecting */
 					self.nav.setRoot(redirect_page);
@@ -287,6 +287,8 @@ export class LoginPage {
 					
 					
 				} else {
+					
+					self.application_service.logged_in_or_not();
 					
 					self.login_form.email = '';
 					self.login_form.password = '';

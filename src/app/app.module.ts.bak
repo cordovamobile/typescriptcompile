@@ -11,10 +11,10 @@ import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { LoginPage } from '../pages/login/login';
 import { UserDetailsSavePage } from '../pages/user-details-save/user-details-save';
-import { CADashboardPage } from '../pages/ca-dashboard/ca-dashboard';
-import { OCDashboardPage } from '../pages/oc-dashboard/oc-dashboard';
-import { BusinessAddPage } from '../pages/business-add/business-add';
-import { BusinessListPage } from '../pages/business-list/business-list';
+import { CaDashboardPage } from '../pages/ca-dashboard/ca-dashboard';
+import { OcDashboardPage } from '../pages/oc-dashboard/oc-dashboard';
+import { CaClientAddPage } from '../pages/ca-client-add/ca-client-add';
+import { CaClientSinglePage } from '../pages/ca-client-single/ca-client-single';
 
 
 /* Providers */
@@ -34,10 +34,10 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 		HomePage,
 		LoginPage,
 		UserDetailsSavePage,
-		CADashboardPage,
-		OCDashboardPage,
-		BusinessAddPage,
-		BusinessListPage,
+		CaDashboardPage,
+		OcDashboardPage,
+		CaClientAddPage,
+		CaClientSinglePage,
 	],
 	imports: [
 		BrowserModule,
@@ -52,10 +52,10 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 		HomePage,
 		LoginPage,
 		UserDetailsSavePage,
-		CADashboardPage,
-		OCDashboardPage,
-		BusinessAddPage,
-		BusinessListPage,
+		CaDashboardPage,
+		OcDashboardPage,
+		CaClientAddPage,
+		CaClientSinglePage,
 	],
 	providers: [
 		StatusBar,

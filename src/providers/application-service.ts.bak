@@ -73,7 +73,15 @@ export class ApplicationService {
 	) {
 		console.log('Hello ApplicationService Provider');
 		
-		this.userdata = {};
+		this.userdata = {
+			"logged_in": false,
+			"user_id": "",
+			"full_name": "",
+			"token": "",
+			"pkey": "",
+			"api_token": "",
+			"bu_type": ""
+		};
 		
 	}
 	

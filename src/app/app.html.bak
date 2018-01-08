@@ -11,6 +11,7 @@
 			[class.hide]="!logged_in"
 			text-center
 		>
+			<Logged in as <b>{{applicationservice.userdata.full_name}}</b>.
 		</h5>
 		
 	</ion-header>

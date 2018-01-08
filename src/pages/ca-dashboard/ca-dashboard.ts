@@ -24,7 +24,7 @@ import { BusinessListPage } from '../../pages/business-list/business-list';
 })
 export class CaDashboardPage {
 	
-	userdata: string;
+	userdata: any;
 	clients: any;
 
 	constructor(
@@ -36,9 +36,6 @@ export class CaDashboardPage {
 		public nav: Nav,
 		public application_service: ApplicationService
 	) {
-		
-		this.userdata = {};
-		this.userdata = JSON.parse(localStorage.getItem("userdata"));
 		
 		
 		
@@ -83,7 +80,7 @@ export class CaDashboardPage {
 		console.log('requestAPI being called...');
 		self.dataprovider.requestAPI(
 			'get',
-			'programming/hbgstapi/api/getbusinessbyid/' + self.userdata.api_token, 
+			'programming/hbgstapi/api/getbusinessbyid/' + self.application_service.userdata.api_token, 
 			{},
 			'Getting businesses list...',
 			true, /* Token To Not Be Sent To API */
@@ -131,6 +128,14 @@ export class CaDashboardPage {
 
 	ionViewDidLoad() {
 		console.log('ionViewDidLoad DashboardPage');
+	}
+	
+	open_client_single_page(c) {
+		
+	}
+	
+	open_client_add_page(c) {
+		
 	}
 	
 	/*

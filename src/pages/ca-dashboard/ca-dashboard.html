@@ -15,13 +15,13 @@
 		
 		<ion-row>
 			<ion-col>
-				<h5>Welcome to {{userdata.full_name}}'s Dashboard.</h5>
+				<h5>Welcome to {{application_service.userdata.full_name}}'s Dashboard.</h5>
 			</ion-col>
 		</ion-row>
 		
 		<ion-row>
 			<ion-col>
-				<button (click)="goto_business_add_page()" ion-button color="danger" small>
+				<button (click)="open_client_add_page()" ion-button color="danger" small>
 					<ion-icon name="add"></ion-icon>
 					&nbsp;
 					Add Client
@@ -31,10 +31,10 @@
 		
 		<h3 text-center>My Clients</h3>
 		
-		<div *ngFor="let c of client_list" style="border-bottom: 3px #333 solid;">
+		<div *ngFor="let c of clients" style="border-bottom: 3px #333 solid;">
 			<ion-row>
 				<ion-col text-left>
-					{{c.name}}
+					{{c.business_name}}
 				</ion-col>
 				<ion-col text-right>
 					<button (click)="open_client_page(c)" ion-button color="danger" small>
@@ -48,7 +48,7 @@
 		
 		<ion-row>
 			<ion-col text-center>
-				<button (click)="goto_client_list_page()" ion-button color="primary" small>
+				<button (click)="open_client_single_page()" ion-button color="primary" small>
 					View All
 					&nbsp;
 					<ion-icon name="arrow-dropright"></ion-icon>

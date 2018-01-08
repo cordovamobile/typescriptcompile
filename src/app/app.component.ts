@@ -29,8 +29,6 @@ export class MyApp {
 	public logged_in: boolean;
 	
 	public components: any;
-	
-	public userdata: any;
 
 	constructor(
 		public platform: Platform, 
@@ -44,10 +42,9 @@ export class MyApp {
 		this.initializeApp();
 		
 		
-		this.userdata = {};
-		if( this.logged_in ) {
-			this.userdata = JSON.parse( localStorage.getItem("userdata") );
-		}
+		/* Calling the login check function */
+		applicationservice.logged_in_or_not();
+		this.logged_in_or_not();
 		
 		
 		
@@ -56,9 +53,6 @@ export class MyApp {
 			console.log('Event of MyAPP Class called.\nName of event: "set_logged_in"\nParameter passed: logged_in='+logged_in);
 			this.logged_in = logged_in;
 		});
-		
-		/* Calling the login check function */
-		this.logged_in_or_not();
 		
 		
 		/* List of pages for menu */
@@ -100,12 +94,17 @@ export class MyApp {
 		
 		var userdata = JSON.parse( localStorage.getItem("userdata") );
 		
-		if( userdata.bu_type == 'CA' ) {
-			redirect_page = CaDashboardPage;
-		} else if( userdata.bu_type == 'OC' ) {
-			redirect_page = OcDashboardPage;
-		}
 		
+		if( typeof userdata.bu_type == 'undefined' ) { // If login_count does not exist
+			redirect_page = UserDetailsSavePage;
+		} else {
+			if( userdata.bu_type == 'CA' ) {
+				redirect_page = CaDashboardPage;
+			} else if( userdata.bu_type == 'OC' ) {
+				redirect_page = OcDashboardPage;
+			}
+		}
+			
 		this.nav.setRoot( redirect_page );
 	}
 	

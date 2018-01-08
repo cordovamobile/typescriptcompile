@@ -13,13 +13,14 @@ import { LoginPage } from '../pages/login/login';
 import { UserDetailsSavePage } from '../pages/user-details-save/user-details-save';
 import { CaDashboardPage } from '../pages/ca-dashboard/ca-dashboard';
 import { OcDashboardPage } from '../pages/oc-dashboard/oc-dashboard';
-import { BusinessAddPage } from '../pages/business-add/business-add';
-import { BusinessListPage } from '../pages/business-list/business-list';
+import { CaClientAddPage } from '../pages/ca-client-add/ca-client-add';
+import { CaClientSinglePage } from '../pages/ca-client-single/ca-client-single';
 
 
 /* Providers */
 //import { ApplicationService } from '../providers/application-service';
 import { Dataprovider } from '../providers/dataprovider';
+import { ApplicationService } from '../providers/application-service';
 
 /* Angular Modules */
 import { HttpModule } from '@angular/http';
@@ -36,8 +37,8 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 		UserDetailsSavePage,
 		CaDashboardPage,
 		OcDashboardPage,
-		BusinessAddPage,
-		BusinessListPage,
+		CaClientAddPage,
+		CaClientSinglePage,
 	],
 	imports: [
 		BrowserModule,
@@ -54,8 +55,8 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 		UserDetailsSavePage,
 		CaDashboardPage,
 		OcDashboardPage,
-		BusinessAddPage,
-		BusinessListPage,
+		CaClientAddPage,
+		CaClientSinglePage,
 	],
 	providers: [
 		StatusBar,
@@ -65,6 +66,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 			useClass: IonicErrorHandler,
 		},
 		Dataprovider,
+		ApplicationService,
 	]
 })
 export class AppModule {}
