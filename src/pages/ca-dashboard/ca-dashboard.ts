@@ -5,8 +5,10 @@ import { Nav, /*IonicPage,*/ NavController, NavParams, ToastController, AlertCon
 import { Dataprovider } from '../../providers/dataprovider';
 import { ApplicationService } from '../../providers/application-service';
 
+/*
 import { BusinessAddPage } from '../../pages/business-add/business-add';
 import { BusinessListPage } from '../../pages/business-list/business-list';
+*/
 
 /**
  * Generated class for the DashboardPage page.
@@ -17,15 +19,13 @@ import { BusinessListPage } from '../../pages/business-list/business-list';
 
 //@IonicPage()
 @Component({
-	selector: 'page-dashboard',
-	templateUrl: 'dashboard.html',
+	selector: 'page-ca-dashboard',
+	templateUrl: 'ca-dashboard.html',
 })
-export class DashboardPage {
+export class CaDashboardPage {
 	
-	business_list: any;
-	busiess_or_client: string;
-	busiess_or_client_plural: string;
-	name: string;
+	userdata: string;
+	clients: any;
 
 	constructor(
 		public navCtrl: NavController,
@@ -37,22 +37,12 @@ export class DashboardPage {
 		public application_service: ApplicationService
 	) {
 		
-		
-		var userdata = JSON.parse(localStorage.getItem("userdata"));
-		var user_id = userdata.api_token;
-		
-		if( userdata.bu_type == 'CA' ) {
-			this.busiess_or_client = 'Client';
-			this.busiess_or_client_plural = 'Clients';
-		} else {
-			this.busiess_or_client = 'Business';
-			this.busiess_or_client_plural = 'Businesses';
-		}
-		this.name = userdata.full_name;
+		this.userdata = {};
+		this.userdata = JSON.parse(localStorage.getItem("userdata"));
 		
 		
 		
-		this.business_list = [];
+		this.clients = [];
 		/* 
 		this.business_list = [
 			{
@@ -93,10 +83,10 @@ export class DashboardPage {
 		console.log('requestAPI being called...');
 		self.dataprovider.requestAPI(
 			'get',
-			'programming/hbgstapi/api/getbusinesslist/' + user_id, 
+			'programming/hbgstapi/api/getbusinessbyid/' + self.userdata.api_token, 
 			{},
 			'Getting businesses list...',
-			false, /* Token To Not Be Sent To API */
+			true, /* Token To Not Be Sent To API */
 			
 			function(response) {
 				
@@ -106,16 +96,12 @@ export class DashboardPage {
 				console.log( 'requestAPI Response Type: ' + response.status );
 				
 				
-				//if( response.status == 'success' ) {
+				if( response.status != 'failed' ) { // If success
 					
+					self.clients = response;
 					
-					self.business_list = response;
+				} else {
 					
-					
-					
-					
-				//} else {
-					/*
 					self.login_form.email = '';
 					self.login_form.password = '';
 					self.login_form.view_password = false;
@@ -125,8 +111,8 @@ export class DashboardPage {
 						cssClass:	"toast-success"
 					});
 					toast.present();
-					*/
-				//}
+					
+				}
 				
 				
 
@@ -147,6 +133,7 @@ export class DashboardPage {
 		console.log('ionViewDidLoad DashboardPage');
 	}
 	
+	/*
 	goto_business_add_page() {
 		this.nav.push( BusinessAddPage );
 	}
@@ -154,5 +141,6 @@ export class DashboardPage {
 	goto_business_list_page() {
 		this.nav.push( BusinessListPage );
 	}
-
+	*/
+	
 }

@@ -4,7 +4,8 @@ import { Nav, /*IonicPage,*/ NavController, NavParams, ToastController, AlertCon
 
 import { Dataprovider } from '../../providers/dataprovider';
 import { ApplicationService } from '../../providers/application-service';
-import { DashboardPage } from '../../pages/dashboard/dashboard';
+import { CaDashboardPage } from '../../pages/ca-dashboard/ca-dashboard';
+import { OcDashboardPage } from '../../pages/oc-dashboard/oc-dashboard';
 
 /**
  * Generated class for the UserDetailsSavePage page.
@@ -136,7 +137,7 @@ export class UserDetailsSavePage {
 			'programming/hbgstapi/api/addbusiness',
 			data,
 			'Saving businesses details...',
-			false, /* Token To Not Be Sent To API */
+			true, /* Token To Not Be Sent To API */
 			
 			function(response) {
 				
@@ -148,9 +149,6 @@ export class UserDetailsSavePage {
 				
 				if( response.status == 'success' ) {
 					
-					
-					self.nav.setRoot( DashboardPage );
-					
 					let toast = self.toastCtrl.create({
 						message:	response.message,
 						duration:	10000,
@@ -159,13 +157,19 @@ export class UserDetailsSavePage {
 					toast.present();
 					
 					
+					var redirect_page;
+					
+					var userdata = JSON.parse( localStorage.getItem("userdata") );
+					userdata.bu_type = data.bu_type;
+					localStorage.setItem("userdata", JSON.stringify( userdata ));
+				
 					if( data.bu_type == 'CA' ) {
-						this.nav.setRoot( DashboardPage );
+						redirect_page = CaDashboardPage;
 					} else if( data.bu_type == 'OC' ) {
-						this.nav.setRoot( DashboardPage );
+						redirect_page = OcDashboardPage;
 					}
 					
-					
+					self.nav.setRoot( redirect_page );
 					
 					
 				} else {
@@ -191,60 +195,6 @@ export class UserDetailsSavePage {
 		
 		
 		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		var user_details;
-		var bu_type;
-		
-		if( business_type == 'CA Firm' ) {
-			
-			user_details = this.ca_firm_details;
-			user_details.business_type = business_type;
-			
-			bu_type = 'CA';
-			
-		}
-		
-		if( business_type == 'Non CA Firm' ) {
-			
-			user_details = this.non_ca_firm_details;
-			user_details.business_type = business_type;
-			
-			bu_type = 'OC';
-			
-		}
-		
-		
-		
-		//alert('You have logged in successfully.');
-		localStorage.setItem("user_details", JSON.stringify( user_details ));
-		
-		var userdata = JSON.parse(localStorage.getItem("userdata"));
-		userdata.bu_type = bu_type;
-		localStorage.setItem("userdata", JSON.stringify( userdata ));
-		
-		this.nav.setRoot( DashboardPage );
-		
 	}
 	
 	
@@ -258,7 +208,7 @@ export class UserDetailsSavePage {
 		
 		if( business_type == 'CA Firm' ) {
 			
-			if( self.validatePhone(self.ca_firm_details.mobileno) == '' ) {
+			if( ! self.validatePhone(self.ca_firm_details.mobileno) ) {
 				return 'Enter a valid 10 digit mobile number.';
 			}
 			if( self.ca_firm_details.practice_name == '' ) {
@@ -267,7 +217,7 @@ export class UserDetailsSavePage {
 			if( self.ca_firm_details.name == '' ) {
 				return 'Enter a valid name.';
 			}
-			if( self.validatePAN( self.ca_firm_details.pan ) == '' ) {
+			if( ! self.validatePAN( self.ca_firm_details.pan ) ) {
 				return 'Enter a valid PAN number.';
 			}
 		}
@@ -275,7 +225,7 @@ export class UserDetailsSavePage {
 		
 		if( business_type == 'Non CA Firm' ) {
 			
-			if( self.validatePhone(self.non_ca_firm_details.mobileno) == '' ) {
+			if( ! self.validatePhone(self.non_ca_firm_details.mobileno) ) {
 				return 'Enter a valid 10 digit mobile number.';
 			}
 			if( self.non_ca_firm_details.business_name == '' ) {
@@ -284,7 +234,7 @@ export class UserDetailsSavePage {
 			if( self.non_ca_firm_details.name == '' ) {
 				return 'Enter a valid name.';
 			}
-			if( self.validatePAN( self.non_ca_firm_details.pan ) == '' ) {
+			if( ! self.validatePAN( self.non_ca_firm_details.pan ) ) {
 				return 'Enter a valid PAN number.';
 			}
 		}

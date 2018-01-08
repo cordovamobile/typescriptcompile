@@ -3,7 +3,7 @@
 		<button ion-button menuToggle>
 			<ion-icon name="menu"></ion-icon>
 		</button>
-		<ion-title>Dashboard</ion-title>
+		<ion-title>CA Dashboard</ion-title>
 	</ion-navbar>
 </ion-header>
 
@@ -15,7 +15,7 @@
 		
 		<ion-row>
 			<ion-col>
-				<h5>Welcome to {{name}}'s Dashboard.</h5>
+				<h5>Welcome to {{userdata.full_name}}'s Dashboard.</h5>
 			</ion-col>
 		</ion-row>
 		
@@ -24,20 +24,20 @@
 				<button (click)="goto_business_add_page()" ion-button color="danger" small>
 					<ion-icon name="add"></ion-icon>
 					&nbsp;
-					Adds {{busiess_or_client}}
+					Add Client
 				</button>
 			</ion-col>
 		</ion-row>
 		
-		<h3 text-center>My {{busiess_or_client_plural}}</h3>
+		<h3 text-center>My Clients</h3>
 		
-		<div *ngFor="let b of business_list" style="border-bottom: 3px #333 solid;">
+		<div *ngFor="let c of client_list" style="border-bottom: 3px #333 solid;">
 			<ion-row>
 				<ion-col text-left>
-					{{b.business_name}}
+					{{c.name}}
 				</ion-col>
 				<ion-col text-right>
-					<button (click)="open_business_page()" ion-button color="danger" small>
+					<button (click)="open_client_page(c)" ion-button color="danger" small>
 						View
 						&nbsp;
 						<ion-icon name="arrow-dropright"></ion-icon>
@@ -48,7 +48,7 @@
 		
 		<ion-row>
 			<ion-col text-center>
-				<button (click)="goto_business_list_page()" ion-button color="primary" small>
+				<button (click)="goto_client_list_page()" ion-button color="primary" small>
 					View All
 					&nbsp;
 					<ion-icon name="arrow-dropright"></ion-icon>

@@ -11,7 +11,8 @@ import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { LoginPage } from '../pages/login/login';
 import { UserDetailsSavePage } from '../pages/user-details-save/user-details-save';
-import { DashboardPage } from '../pages/dashboard/dashboard';
+import { CADashboardPage } from '../pages/ca-dashboard/ca-dashboard';
+import { OCDashboardPage } from '../pages/oc-dashboard/oc-dashboard';
 import { BusinessAddPage } from '../pages/business-add/business-add';
 import { BusinessListPage } from '../pages/business-list/business-list';
 
@@ -33,8 +34,10 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 		HomePage,
 		LoginPage,
 		UserDetailsSavePage,
-		DashboardPage,
+		CADashboardPage,
+		OCDashboardPage,
 		BusinessAddPage,
+		BusinessListPage,
 	],
 	imports: [
 		BrowserModule,
@@ -49,8 +52,10 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 		HomePage,
 		LoginPage,
 		UserDetailsSavePage,
-		DashboardPage,
+		CADashboardPage,
+		OCDashboardPage,
 		BusinessAddPage,
+		BusinessListPage,
 	],
 	providers: [
 		StatusBar,

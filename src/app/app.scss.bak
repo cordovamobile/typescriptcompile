@@ -243,7 +243,7 @@ ion-list.list.primary_menu{
 
 .toolbar-title img {
 	height: 70px;
-	width: auto;
+	width: auto !important;
 }
 
 
@@ -304,6 +304,31 @@ ion-list.list.primary_menu{
 .no_p {
     padding: 0px !important;
 }
+
+
+.toolbar-background {
+	background-color: #256C9B;
+}
+
+ion-header .bar-buttons ,
+ion-header .bar-buttons:hover ,
+.bar-button-default-md:hover:not(.disable-hover) ,
+ion-header .back-button ,
+ion-header .back-button:hover ,
+.bar-button-default-md:hover:not(.disable-hover) {
+	color: #fff;
+}
+
+
+ion-header .toolbar-title {
+	color: #fff;
+}
+
+
+
+
+
+
 
 
 

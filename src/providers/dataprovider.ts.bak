@@ -113,7 +113,7 @@ export class Dataprovider {
 		console.log('Starting http request...');
 		var self = this;
 		
-		if( request_type == post ) {
+		if( request_type == 'post' ) {
 			this.http[request_type]( self.request_url , data , options )
 			.timeout( 30000 )
 			/* If request was SUCCESSFUL */
@@ -133,7 +133,7 @@ export class Dataprovider {
 			});			
 		}
 		
-		if( request_type == get ) {
+		if( request_type == 'get' ) {
 			this.http[request_type]( self.request_url , options )
 			.timeout( 30000 )
 			/* If request was SUCCESSFUL */

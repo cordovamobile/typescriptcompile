@@ -13,7 +13,8 @@ import { LoginPage } from '../pages/login/login';
 import { ApplicationService } from '../providers/application-service';
 import { Dataprovider } from '../providers/dataprovider';
 import { UserDetailsSavePage } from '../pages/user-details-save/user-details-save';
-import { DashboardPage } from '../pages/dashboard/dashboard';
+import { CaDashboardPage } from '../pages/ca-dashboard/ca-dashboard';
+import { OcDashboardPage } from '../pages/oc-dashboard/oc-dashboard';
 
 
 @Component({
@@ -28,6 +29,8 @@ export class MyApp {
 	public logged_in: boolean;
 	
 	public components: any;
+	
+	public userdata: any;
 
 	constructor(
 		public platform: Platform, 
@@ -39,6 +42,12 @@ export class MyApp {
 		public dataprovider: Dataprovider
 	) {
 		this.initializeApp();
+		
+		
+		this.userdata = {};
+		if( this.logged_in ) {
+			this.userdata = JSON.parse( localStorage.getItem("userdata") );
+		}
 		
 		
 		
@@ -57,7 +66,8 @@ export class MyApp {
 			HomePage : HomePage,
 			LoginPage : LoginPage,
 			UserDetailsSavePage : UserDetailsSavePage,
-			DashboardPage : DashboardPage,
+			CaDashboardPage : CaDashboardPage,
+			OcDashboardPage : OcDashboardPage,
 		};
 
 	}
@@ -81,6 +91,22 @@ export class MyApp {
 		} else {
 			this.nav.push(this.components[component]);
 		}
+	}
+	
+	
+	openDashboard() {
+		
+		var redirect_page;
+		
+		var userdata = JSON.parse( localStorage.getItem("userdata") );
+		
+		if( userdata.bu_type == 'CA' ) {
+			redirect_page = CaDashboardPage;
+		} else if( userdata.bu_type == 'OC' ) {
+			redirect_page = OcDashboardPage;
+		}
+		
+		this.nav.setRoot( redirect_page );
 	}
 	
 	

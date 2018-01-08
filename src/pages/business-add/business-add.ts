@@ -6,7 +6,7 @@ import { Dataprovider } from '../../providers/dataprovider';
 import { ApplicationService } from '../../providers/application-service';
 
 //import { BusinessListPage } from '../../pages/business-list/business-list';
-import { DashboardPage } from '../../pages/dashboard/dashboard';
+import { CaDashboardPage } from '../../pages/ca-dashboard/ca-dashboard';
 
 /**
  * Generated class for the BusinessAddPage page.
@@ -75,7 +75,7 @@ export class BusinessAddPage {
 				if( response.status == 'success' ) {
 					
 					
-					self.nav.setRoot( DashboardPage );
+					self.nav.setRoot( CaDashboardPage );
 					
 					
 				} else {

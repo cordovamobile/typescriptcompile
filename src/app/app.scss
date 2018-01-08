@@ -306,6 +306,30 @@ ion-list.list.primary_menu{
 }
 
 
+.toolbar-background {
+	background-color: #256C9B;
+}
+
+ion-header .bar-buttons ,
+ion-header .bar-buttons:hover ,
+.bar-button-default-md:hover:not(.disable-hover) ,
+ion-header .back-button ,
+ion-header .back-button:hover {
+	color: #fff;
+}
+
+
+ion-header .toolbar-title {
+	color: #fff;
+}
+
+
+
+
+
+
+
+
 
 
 

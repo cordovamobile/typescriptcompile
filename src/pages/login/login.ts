@@ -6,7 +6,8 @@ import { Dataprovider } from '../../providers/dataprovider';
 import { ApplicationService } from '../../providers/application-service';
 
 import { UserDetailsSavePage } from '../../pages/user-details-save/user-details-save';
-import { DashboardPage } from '../../pages/dashboard/dashboard';
+import { CaDashboardPage } from '../../pages/ca-dashboard/ca-dashboard';
+import { OcDashboardPage } from '../../pages/oc-dashboard/oc-dashboard';
 
 
 /**
@@ -239,14 +240,32 @@ export class LoginPage {
 					
 					/* Deciding Where To Redirect */
 					var redirect_page;
+					var userdata;
 					
 					if( typeof response.login_count == 'undefined' ) { // If login_count does not exist
 						return;
 					} else if( parseInt(response.login_count) == 0 ) { // If first time login
 						redirect_page = UserDetailsSavePage;
 					} else if( parseInt(response.login_count) > 0 ) { // If NOT the first time login
-						redirect_page = DashboardPage;
+					
+						userdata = JSON.parse( localStorage.getItem("userdata") );
+						userdata.bu_type = response.bu_type;
+						localStorage.setItem("userdata", JSON.stringify( userdata ));
+					
+						if( response.bu_type == 'CA' ) {
+							redirect_page = CaDashboardPage;
+						} else if( response.bu_type == 'OC' ) {
+							redirect_page = OcDashboardPage;
+						}
+						
 					}
+					
+					if( typeof response.token !== 'undefined' ) { // If login_count does not exist
+						userdata = JSON.parse( localStorage.getItem("userdata") );
+						userdata.api_token = response.token;
+						alert(response.token);
+						localStorage.setItem("userdata", JSON.stringify( userdata ));
+					}					
 					
 					
 					self.login_form.email = '';
