@@ -29,6 +29,18 @@ export class CaClientAddPage {
 		
 		this.business = {};
 		
+		this.business.gstins = [
+			{
+				"gstin" : "",
+				"displayname" : "",
+			},
+
+			{
+				"gstin" : "",
+				"displayname" : "",
+			},
+		];
+		
 	}
 
 	ionViewDidLoad() {
@@ -36,6 +48,8 @@ export class CaClientAddPage {
 	}
 	
 	save_business() {
+		
+		console.log( JSON.stringify(this.business) );
 		
 		
 		var self = this;

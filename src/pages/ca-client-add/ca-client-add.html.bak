@@ -23,27 +23,37 @@
 	
 	
 	
-	<form>
+	<div>
 	
 		<ion-item>
 			<ion-label floating>Business Name</ion-label>
-			<ion-input type="text" id="business_name" name="business_name" [(ngModel)]="business.business_name"></ion-input>
+			<ion-input type="text" id="business_name" name="business_name" [(ngModel)]="business.businessname"></ion-input>
 		</ion-item>
 	
 		<ion-item>
 			<ion-label floating>Business PAN</ion-label>
-			<ion-input type="text" id="pan" name="pan" [(ngModel)]="business.pan"></ion-input>
+			<ion-input type="text" id="pan" name="pan" [(ngModel)]="business.pannumber"></ion-input>
 		</ion-item>
 	
-		<ion-item>
-			<ion-label floating>Primary Contact Person</ion-label>
-			<ion-input type="text" id="primary_contact_person" name="primary_contact_person" [(ngModel)]="business.primary_contact_person"></ion-input>
-		</ion-item>
-	
-		<ion-item>
-			<ion-label floating>Primary Contact Phone</ion-label>
-			<ion-input type="text" id="primary_contact_personph" name="primary_contact_personph" [(ngModel)]="business.primary_contact_personph"></ion-input>
-		</ion-item>
+		<ion-grid>
+			<ion-row>
+				<ion-label>GSTINs</ion-label>
+			</ion-row>
+			<ion-row *ngFor="let g of business.gstins; let i = index">
+				<ion-col>
+					<ion-item>
+						<ion-label floating>GSTIN</ion-label>
+						<ion-input type="text" [(ngModel)]="g.value"></ion-input>
+					</ion-item>
+				</ion-col>
+				<ion-col>
+					<ion-item>
+						<ion-label floating>Display Name</ion-label>
+						<ion-input type="text" [(ngModel)]="g.value"></ion-input>
+					</ion-item>
+				</ion-col>
+			</ion-row>
+		</ion-grid>
 		
 		<ion-grid>
 			<ion-row>
@@ -55,6 +65,6 @@
 			</ion-row>
 		</ion-grid>
 		
-	</form>
+	</div>
 
 </ion-content>
