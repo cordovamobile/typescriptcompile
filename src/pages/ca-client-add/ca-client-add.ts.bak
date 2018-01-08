@@ -50,7 +50,6 @@ export class CaClientAddPage {
 	save_business() {
 		
 		console.log( JSON.stringify(this.business) );
-		return;
 		
 		
 		var self = this;
@@ -96,5 +95,20 @@ export class CaClientAddPage {
 		
 		
 	}
+	
+	
+	add_gstin() {
+		
+		this.business.gstins.push({
+			"gstin" : "",
+			"displayname" : "",
+		});
+		
+	}
+	
+	remove_gstin(i) {
+		
+	}
+	
 
 }

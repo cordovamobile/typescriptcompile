@@ -52,6 +52,16 @@
 						<ion-input type="text" [(ngModel)]="g.displayname"></ion-input>
 					</ion-item>
 				</ion-col>
+				<ion-col>
+					<button (click)="remove_gstin(i)" ion-button color="danger" small style="position: absolute; bottom: 0;">
+						Remove
+					</button>
+				</ion-col>
+			</ion-row>
+			<ion-row>
+				<button (click)="add_gstin()" ion-button color="primary" small>
+					Add GSTIN
+				</button>
 			</ion-row>
 		</ion-grid>
 		

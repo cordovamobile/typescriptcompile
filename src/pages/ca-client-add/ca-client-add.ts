@@ -95,5 +95,20 @@ export class CaClientAddPage {
 		
 		
 	}
+	
+	
+	add_gstin() {
+		
+		this.business.gstins.push({
+			"gstin" : "",
+			"displayname" : "",
+		});
+		
+	}
+	
+	remove_gstin(i) {
+		this.business.gstins.splice(i, 1);
+	}
+	
 
 }

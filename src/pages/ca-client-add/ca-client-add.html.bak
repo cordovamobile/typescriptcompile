@@ -43,15 +43,25 @@
 				<ion-col>
 					<ion-item>
 						<ion-label floating>GSTIN</ion-label>
-						<ion-input type="text" [(ngModel)]="g.value"></ion-input>
+						<ion-input type="text" [(ngModel)]="g.gstin"></ion-input>
 					</ion-item>
 				</ion-col>
 				<ion-col>
 					<ion-item>
 						<ion-label floating>Display Name</ion-label>
-						<ion-input type="text" [(ngModel)]="g.value"></ion-input>
+						<ion-input type="text" [(ngModel)]="g.displayname"></ion-input>
 					</ion-item>
 				</ion-col>
+				<ion-col>
+					<button (click)="remove_gstin(i)" ion-button color="danger" small>
+						Remove
+					</button>
+				</ion-col>
+			</ion-row>
+			<ion-row>
+				<button (click)="add_gstin()" ion-button color="primary" small>
+					Add GSTIN
+				</button>
 			</ion-row>
 		</ion-grid>
 		
