@@ -10,10 +10,10 @@ import { OcDashboardPage } from '../../pages/oc-dashboard/oc-dashboard';
 
 @IonicPage()
 @Component({
-  selector: 'page-oc-client-add',
-  templateUrl: 'oc-client-add.html',
+  selector: 'page-oc-business-add',
+  templateUrl: 'oc-business-add.html',
 })
-export class OcClientAddPage {
+export class OcBusinessAddPage {
 	
 	business: any;
 
@@ -44,7 +44,7 @@ export class OcClientAddPage {
 	}
 
 	ionViewDidLoad() {
-		console.log('ionViewDidLoad OcClientAddPage');
+		console.log('ionViewDidLoad OcBusinessAddPage');
 	}
 	
 	save_business() {
@@ -57,7 +57,7 @@ export class OcClientAddPage {
 		console.log('requestAPI being called...');
 		self.dataprovider.requestAPI(
 			'post',
-			'programming/hbgstapi/api/addbusiness',
+			'programming/hbgstapi/api/addbulkgstin',
 			self.business,
 			'Saving businesses details...',
 			true, /* Token To Not Be Sent To API */

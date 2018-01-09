@@ -101,9 +101,6 @@ export class CaDashboardPage {
 					
 				} else {
 					
-					self.login_form.email = '';
-					self.login_form.password = '';
-					self.login_form.view_password = false;
 					let toast = self.toastCtrl.create({
 						message:	response.message,
 						duration:	10000,
@@ -133,6 +130,7 @@ export class CaDashboardPage {
 	}
 	
 	open_client_single_page(c) {
+		this.nav.push(CaClientSinglePage);
 	}
 	
 	open_client_add_page(c) {

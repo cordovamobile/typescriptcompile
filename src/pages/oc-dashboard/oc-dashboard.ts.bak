@@ -5,8 +5,8 @@ import { Nav, /*IonicPage,*/ NavController, NavParams, ToastController, AlertCon
 import { Dataprovider } from '../../providers/dataprovider';
 import { ApplicationService } from '../../providers/application-service';
 
-import { OcClientAddPage } from '../../pages/oc-client-add/oc-client-add';
-import { OcClientSinglePage } from '../../pages/oc-client-single/oc-client-single';
+import { OcBusinessAddPage } from '../../pages/oc-business-add/oc-business-add';
+import { OcBusinessSinglePage } from '../../pages/oc-business-single/oc-business-single';
 /*
 import { BusinessAddPage } from '../../pages/business-add/business-add';
 import { BusinessListPage } from '../../pages/business-list/business-list';
@@ -27,7 +27,7 @@ import { BusinessListPage } from '../../pages/business-list/business-list';
 export class OcDashboardPage {
 	
 	userdata: any;
-	clients: any;
+	businesss: any;
 
 	constructor(
 		public navCtrl: NavController,
@@ -41,7 +41,7 @@ export class OcDashboardPage {
 		
 		
 		
-		this.clients = [];
+		this.businesss = [];
 		/* 
 		this.business_list = [
 			{
@@ -97,13 +97,10 @@ export class OcDashboardPage {
 				
 				if( response.status != 'failed' ) { // If success
 					
-					self.clients = response;
+					self.businesss = response;
 					
 				} else {
 					
-					self.login_form.email = '';
-					self.login_form.password = '';
-					self.login_form.view_password = false;
 					let toast = self.toastCtrl.create({
 						message:	response.message,
 						duration:	10000,
@@ -132,11 +129,11 @@ export class OcDashboardPage {
 		console.log('ionViewDidLoad DashboardPage');
 	}
 	
-	open_client_single_page(c) {
+	open_business_single_page(c) {
 	}
 	
-	open_client_add_page(c) {
-		this.nav.push(OcClientAddPage);
+	open_business_add_page(c) {
+		this.nav.push(OcBusinessAddPage);
 	}
 	
 	/*

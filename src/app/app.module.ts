@@ -15,6 +15,8 @@ import { CaDashboardPage } from '../pages/ca-dashboard/ca-dashboard';
 import { OcDashboardPage } from '../pages/oc-dashboard/oc-dashboard';
 import { CaClientAddPage } from '../pages/ca-client-add/ca-client-add';
 import { CaClientSinglePage } from '../pages/ca-client-single/ca-client-single';
+import { OcBusinessAddPage } from '../pages/oc-business-add/oc-business-add';
+import { OcBusinessSinglePage } from '../pages/oc-business-single/oc-business-single';
 
 
 /* Providers */
@@ -39,6 +41,8 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 		OcDashboardPage,
 		CaClientAddPage,
 		CaClientSinglePage,
+		OcBusinessAddPage,
+		OcBusinessSinglePage,
 	],
 	imports: [
 		BrowserModule,
@@ -57,6 +61,8 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 		OcDashboardPage,
 		CaClientAddPage,
 		CaClientSinglePage,
+		OcBusinessAddPage,
+		OcBusinessSinglePage,
 	],
 	providers: [
 		StatusBar,

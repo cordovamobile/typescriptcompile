@@ -26,12 +26,27 @@
 	<div>
 	
 		<ion-item>
-			<ion-label floating>Business Name</ion-label>
+			<ion-label floating>Client's Business Name</ion-label>
 			<ion-input type="text" id="business_name" name="business_name" [(ngModel)]="business.businessname"></ion-input>
 		</ion-item>
 	
 		<ion-item>
-			<ion-label floating>Business PAN</ion-label>
+			<ion-label floating>Client's PAN</ion-label>
+			<ion-input type="text" id="pan" name="pan" [(ngModel)]="business.pannumber"></ion-input>
+		</ion-item>
+	
+		<ion-item>
+			<ion-label floating>Client's Name</ion-label>
+			<ion-input type="text" id="pan" name="pan" [(ngModel)]="business.pannumber"></ion-input>
+		</ion-item>
+	
+		<ion-item>
+			<ion-label floating>Email Address</ion-label>
+			<ion-input type="text" id="pan" name="pan" [(ngModel)]="business.pannumber"></ion-input>
+		</ion-item>
+	
+		<ion-item>
+			<ion-label floating>Phone Number</ion-label>
 			<ion-input type="text" id="pan" name="pan" [(ngModel)]="business.pannumber"></ion-input>
 		</ion-item>
 	
@@ -53,7 +68,7 @@
 					</ion-item>
 				</ion-col>
 				<ion-col>
-					<button (click)="remove_gstin(i)" ion-button color="danger" small>
+					<button (click)="remove_gstin(i)" ion-button color="danger" small style="position: absolute; bottom: 0;">
 						Remove
 					</button>
 				</ion-col>
