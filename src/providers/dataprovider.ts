@@ -69,7 +69,7 @@ export class Dataprovider {
 			
 			var userdata = JSON.parse( localStorage.getItem("userdata") );
 			
-			request_data.user_id = userdata.api_token;
+			request_data.userid = userdata.api_token;
 			
 			
 			

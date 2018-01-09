@@ -17,7 +17,7 @@ import { LoadingController, ToastController } from 'ionic-angular';
 export class Dataprovider {
 	
 	/* Some Global Constants */
-	readonly WEBSITE_NAME					= 'Wordpress Blogger Ionic App Demo';
+	readonly WEBSITE_NAME					= 'HBGST';
 	readonly WEBSITE_URL					= 'localhost/host_books_gst';
 	readonly WEBSITE_SECURE_URL				= 'http://localhost/host_books_gst'; // This one is most important
 	readonly WEBSITE_UNSECURE_URL			= 'http://localhost/host_books_gst';
