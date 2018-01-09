@@ -10,10 +10,10 @@ import { OcDashboardPage } from '../../pages/oc-dashboard/oc-dashboard';
 
 @IonicPage()
 @Component({
-  selector: 'page-oc-business-add',
-  templateUrl: 'oc-business-add.html',
+  selector: 'page-oc-client-add',
+  templateUrl: 'oc-client-add.html',
 })
-export class OcBusinessAddPage {
+export class OcClientAddPage {
 	
 	business: any;
 
@@ -44,7 +44,7 @@ export class OcBusinessAddPage {
 	}
 
 	ionViewDidLoad() {
-		console.log('ionViewDidLoad OcBusinessAddPage');
+		console.log('ionViewDidLoad OcClientAddPage');
 	}
 	
 	save_business() {
