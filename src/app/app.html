@@ -66,6 +66,107 @@
 			
 			
 			
+			
+			
+			
+			
+			
+			
+		
+			<div><!-- HomePage Page -->
+			
+				<a 
+					[class.hide]="!logged_in"
+					class="home_menu" 
+					menuClose 
+					ion-item 
+					(click)="openDashboard()"
+				>
+					<span class="menu_item_icon">
+						<ion-icon name="apps"></ion-icon>
+					</span>
+					<span class="menu_item_title">
+						Dashboard
+					</span>
+				</a>
+				
+			</div>
+		
+			<div><!-- HomePage Page -->
+			
+				<a 
+					[class.hide]="!logged_in"
+					class="home_menu" 
+					menuClose 
+					ion-item 
+				>
+					<span class="menu_item_icon">
+						<ion-icon name="cart"></ion-icon>
+					</span>
+					<span class="menu_item_title">
+						Sales
+					</span>
+				</a>
+				
+			</div>
+		
+			<div><!-- HomePage Page -->
+			
+				<a 
+					[class.hide]="!logged_in"
+					class="home_menu" 
+					menuClose 
+					ion-item 
+				>
+					<span class="menu_item_icon">
+						<ion-icon name="cash"></ion-icon>
+					</span>
+					<span class="menu_item_title">
+						Purchase
+					</span>
+				</a>
+				
+			</div>
+		
+			<div><!-- HomePage Page -->
+			
+				<a 
+					[class.hide]="!logged_in"
+					class="home_menu" 
+					menuClose 
+					ion-item 
+				>
+					<span class="menu_item_icon">
+						<ion-icon name="list-box"></ion-icon>
+					</span>
+					<span class="menu_item_title">
+						Items
+					</span>
+				</a>
+				
+			</div>
+		
+			<div><!-- HomePage Page -->
+			
+				<a 
+					[class.hide]="!logged_in"
+					class="home_menu" 
+					menuClose 
+					ion-item 
+				>
+					<span class="menu_item_icon">
+						<ion-icon name="contacts"></ion-icon>
+					</span>
+					<span class="menu_item_title">
+						Contacts
+					</span>
+				</a>
+				
+			</div>
+			
+			
+			
+			
 		
 			<div><!-- Login Page -->
 			
@@ -77,8 +178,7 @@
 					(click)="openComponent('LoginPage')"
 				>
 					<span class="menu_item_icon">
-						<!--img src="assets/imgs/menu/icons/login.png" /-->
-						<ion-icon name="arrow-round-forward"></ion-icon>
+						<ion-icon name="log-in"></ion-icon>
 					</span>
 					<span class="menu_item_title">
 						Log In
@@ -97,130 +197,10 @@
 					(click)="logout()"
 				>
 					<span class="menu_item_icon">
-						<!--img src="assets/imgs/menu/icons/logout.png" /-->
-						<ion-icon name="arrow-round-back"></ion-icon>
+						<ion-icon name="log-out"></ion-icon>
 					</span>
 					<span class="menu_item_title">
 						Log Out
-					</span>
-				</a>
-				
-			</div>
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-		
-			<div><!-- HomePage Page -->
-			
-				<a 
-					[class.hide]="!logged_in"
-					class="home_menu" 
-					menuClose 
-					ion-item 
-					(click)="openDashboard()"
-				>
-					<span class="menu_item_icon">
-						<!--img src="assets/imgs/menu/icons/home.png" /-->
-					</span>
-					<span class="menu_item_title">
-						Dashboard
-					</span>
-				</a>
-				
-			</div>
-		
-			<div><!-- HomePage Page -->
-			
-				<a 
-					[class.hide]="!logged_in"
-					class="home_menu" 
-					menuClose 
-					ion-item 
-				>
-					<span class="menu_item_icon">
-						<!--img src="assets/imgs/menu/icons/home.png" /-->
-					</span>
-					<span class="menu_item_title">
-						Sales
-					</span>
-				</a>
-				
-			</div>
-		
-			<div><!-- HomePage Page -->
-			
-				<a 
-					[class.hide]="!logged_in"
-					class="home_menu" 
-					menuClose 
-					ion-item 
-				>
-					<span class="menu_item_icon">
-						<!--img src="assets/imgs/menu/icons/home.png" /-->
-					</span>
-					<span class="menu_item_title">
-						Purchase
-					</span>
-				</a>
-				
-			</div>
-		
-			<div><!-- HomePage Page -->
-			
-				<a 
-					[class.hide]="!logged_in"
-					class="home_menu" 
-					menuClose 
-					ion-item 
-				>
-					<span class="menu_item_icon">
-						<!--img src="assets/imgs/menu/icons/home.png" /-->
-					</span>
-					<span class="menu_item_title">
-						Returns
-					</span>
-				</a>
-				
-			</div>
-		
-			<div><!-- HomePage Page -->
-			
-				<a 
-					[class.hide]="!logged_in"
-					class="home_menu" 
-					menuClose 
-					ion-item 
-				>
-					<span class="menu_item_icon">
-						<!--img src="assets/imgs/menu/icons/home.png" /-->
-					</span>
-					<span class="menu_item_title">
-						Items
-					</span>
-				</a>
-				
-			</div>
-		
-			<div><!-- HomePage Page -->
-			
-				<a 
-					[class.hide]="!logged_in"
-					class="home_menu" 
-					menuClose 
-					ion-item 
-				>
-					<span class="menu_item_icon">
-						<!--img src="assets/imgs/menu/icons/home.png" /-->
-					</span>
-					<span class="menu_item_title">
-						Clients
 					</span>
 				</a>
 				

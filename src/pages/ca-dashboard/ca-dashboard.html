@@ -11,42 +11,53 @@
 <ion-content padding>
 	
 	
-	<ion-grid>
+	
+	<ion-card>
+
+		<ion-card-header>
+			Welcome to {{application_service.userdata.full_name}}'s Dashboard.
+		</ion-card-header>
+
+		<ion-card-content>
+			
+			<button (click)="open_client_add_page()" ion-button color="danger" small>
+				<ion-icon name="add"></ion-icon>
+				&nbsp;
+				Add Client
+			</button>
+			
+		</ion-card-content>
+
+	</ion-card>
+	
+	
 		
-		<ion-row>
-			<ion-col>
-				<h5>Welcome to {{application_service.userdata.full_name}}'s Dashboard.</h5>
-			</ion-col>
-		</ion-row>
-		
-		<ion-row>
-			<ion-col>
-				<button (click)="open_client_add_page()" ion-button color="danger" small>
-					<ion-icon name="add"></ion-icon>
-					&nbsp;
-					Add Client
-				</button>
-			</ion-col>
-		</ion-row>
-		
-		<h3 text-center>My Clients</h3>
-		
-		<div *ngFor="let c of clients" style="border-bottom: 3px #333 solid;">
-			<ion-row>
-				<ion-col text-left>
-					{{c.business_name}}
-				</ion-col>
-				<ion-col text-right>
-					<button (click)="open_client_single_page(c)" ion-button color="danger" small>
-						View
-						&nbsp;
-						<ion-icon name="arrow-dropright"></ion-icon>
-					</button>
-				</ion-col>
-			</ion-row>
-		</div>
-		
-	</ion-grid>
+	<ion-card>
+
+		<ion-card-header>
+			My Clients
+		</ion-card-header>
+
+		<ion-card-content>
+			
+			<div *ngFor="let c of clients" style="border-bottom: 1px rgba(0,0,0,.15) solid;">
+				<ion-row class="vertical-center">
+					<ion-col text-left>
+						{{c.business_name}}
+					</ion-col>
+					<ion-col text-right>
+						<button (click)="open_client_dashboard_page(c)" ion-button color="danger" small>
+							Dashboard
+							&nbsp;
+							<ion-icon name="arrow-dropright"></ion-icon>
+						</button>
+					</ion-col>
+				</ion-row>
+			</div>
+			
+		</ion-card-content>
+
+	</ion-card>
 	
 	
 	

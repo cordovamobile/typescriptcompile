@@ -8,7 +8,7 @@ import { ApplicationService } from '../../providers/application-service';
 //import { BusinessListPage } from '../../pages/business-list/business-list';
 import { CaDashboardPage } from '../../pages/ca-dashboard/ca-dashboard';
 
-@IonicPage()
+//@IonicPage()
 @Component({
   selector: 'page-ca-client-add',
   templateUrl: 'ca-client-add.html',
@@ -35,12 +35,7 @@ export class CaClientAddPage {
 			{
 				"gstin" : "",
 				"displayname" : "",
-			},
-
-			{
-				"gstin" : "",
-				"displayname" : "",
-			},
+			}
 		];
 		
 		

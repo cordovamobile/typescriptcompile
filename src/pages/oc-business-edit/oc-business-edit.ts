@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
 /**
- * Generated class for the CaClientSinglePage page.
+ * Generated class for the OcBusinessEditPage page.
  *
  * See https://ionicframework.com/docs/components/#navigation for more info on
  * Ionic pages and navigation.
@@ -10,16 +10,16 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
 @IonicPage()
 @Component({
-  selector: 'page-ca-client-single',
-  templateUrl: 'ca-client-single.html',
+  selector: 'page-oc-business-edit',
+  templateUrl: 'oc-business-edit.html',
 })
-export class CaClientSinglePage {
+export class OcBusinessEditPage {
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad CaClientSinglePage');
+    console.log('ionViewDidLoad OcBusinessEditPage');
   }
 
 }

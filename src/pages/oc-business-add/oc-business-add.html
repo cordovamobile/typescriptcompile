@@ -43,7 +43,7 @@
 				<ion-col>
 					<ion-item>
 						<ion-label floating>GSTIN</ion-label>
-						<ion-input type="text" [(ngModel)]="g.gstin" (change)="change_gstin(g)"></ion-input>
+						<ion-input type="text" [(ngModel)]="g.gstin" (keyup)="change_gstin(g)"></ion-input>
 					</ion-item>
 				</ion-col>
 				<ion-col>
@@ -53,13 +53,21 @@
 					</ion-item>
 				</ion-col>
 				<ion-col>
-					<button (click)="remove_gstin(i)" ion-button color="danger" small style="position: absolute; bottom: 0;">
+					<a (click)="remove_gstin(i)" color="danger" small style="
+						position: absolute;
+						bottom: 10px;
+						left: 14px;
+						font-size: 16px;
+						color: #777;
+					">
 						<ion-icon name="close"></ion-icon>
-					</button>
+					</a>
 				</ion-col>
 			</ion-row>
 			<ion-row>
 				<button (click)="add_gstin()" ion-button color="primary" small>
+					<ion-icon name="add"></ion-icon>
+					&nbsp;
 					Add GSTIN
 				</button>
 			</ion-row>

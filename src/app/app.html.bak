@@ -66,50 +66,6 @@
 			
 			
 			
-		
-			<div><!-- Login Page -->
-			
-				<a 
-					[class.hide]="logged_in"
-					class="" 
-					menuClose 
-					ion-item 
-					(click)="openComponent('LoginPage')"
-				>
-					<span class="menu_item_icon">
-						<!--img src="assets/imgs/menu/icons/login.png" /-->
-						<ion-icon name="arrow-round-forward"></ion-icon>
-					</span>
-					<span class="menu_item_title">
-						Log In
-					</span>
-				</a>
-				
-			</div>
-		
-			<div><!-- Log Out Page -->
-			
-				<a 
-					[class.hide]="!logged_in"
-					class="" 
-					menuClose 
-					ion-item 
-					(click)="logout()"
-				>
-					<span class="menu_item_icon">
-						<!--img src="assets/imgs/menu/icons/logout.png" /-->
-						<ion-icon name="arrow-round-back"></ion-icon>
-					</span>
-					<span class="menu_item_title">
-						Log Out
-					</span>
-				</a>
-				
-			</div>
-			
-			
-			
-			
 			
 			
 			
@@ -127,7 +83,7 @@
 					(click)="openDashboard()"
 				>
 					<span class="menu_item_icon">
-						<!--img src="assets/imgs/menu/icons/home.png" /-->
+						<ion-icon name="apps"></ion-icon>
 					</span>
 					<span class="menu_item_title">
 						Dashboard
@@ -145,7 +101,7 @@
 					ion-item 
 				>
 					<span class="menu_item_icon">
-						<!--img src="assets/imgs/menu/icons/home.png" /-->
+						<ion-icon name="cart"></ion-icon>
 					</span>
 					<span class="menu_item_title">
 						Sales
@@ -163,7 +119,7 @@
 					ion-item 
 				>
 					<span class="menu_item_icon">
-						<!--img src="assets/imgs/menu/icons/home.png" /-->
+						<ion-icon name="cash"></ion-icon>
 					</span>
 					<span class="menu_item_title">
 						Purchase
@@ -181,25 +137,7 @@
 					ion-item 
 				>
 					<span class="menu_item_icon">
-						<!--img src="assets/imgs/menu/icons/home.png" /-->
-					</span>
-					<span class="menu_item_title">
-						Returns
-					</span>
-				</a>
-				
-			</div>
-		
-			<div><!-- HomePage Page -->
-			
-				<a 
-					[class.hide]="!logged_in"
-					class="home_menu" 
-					menuClose 
-					ion-item 
-				>
-					<span class="menu_item_icon">
-						<!--img src="assets/imgs/menu/icons/home.png" /-->
+						<ion-icon name="list-box"></ion-icon>
 					</span>
 					<span class="menu_item_title">
 						Items
@@ -220,25 +158,49 @@
 						<!--img src="assets/imgs/menu/icons/home.png" /-->
 					</span>
 					<span class="menu_item_title">
-						Clients
+						Contacts
+					</span>
+				</a>
+				
+			</div>
+			
+			
+			
+			
+		
+			<div><!-- Login Page -->
+			
+				<a 
+					[class.hide]="logged_in"
+					class="" 
+					menuClose 
+					ion-item 
+					(click)="openComponent('LoginPage')"
+				>
+					<span class="menu_item_icon">
+						<ion-icon name="log-in"></ion-icon>
+					</span>
+					<span class="menu_item_title">
+						Log In
 					</span>
 				</a>
 				
 			</div>
 		
-			<div><!-- HomePage Page -->
+			<div><!-- Log Out Page -->
 			
 				<a 
 					[class.hide]="!logged_in"
-					class="home_menu" 
+					class="" 
 					menuClose 
 					ion-item 
+					(click)="logout()"
 				>
 					<span class="menu_item_icon">
-						<!--img src="assets/imgs/menu/icons/home.png" /-->
+						<ion-icon name="log-out"></ion-icon>
 					</span>
 					<span class="menu_item_title">
-						Ledger
+						Log Out
 					</span>
 				</a>
 				

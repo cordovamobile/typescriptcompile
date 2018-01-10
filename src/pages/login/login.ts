@@ -1,6 +1,6 @@
 
 import { Component } from '@angular/core';
-import { Nav, /*IonicPage,*/ NavController, NavParams, ToastController, AlertController  } from 'ionic-angular';
+import { Nav, LoadingController, /*IonicPage,*/ NavController, NavParams, ToastController, AlertController  } from 'ionic-angular';
 
 import { Dataprovider } from '../../providers/dataprovider';
 import { ApplicationService } from '../../providers/application-service';
@@ -31,6 +31,8 @@ export class LoginPage {
 	password_field_type: string;
 	view_password: boolean;
 	current_form: string;
+	
+	loader:any;
 
 	constructor(
 		public navCtrl: NavController,
@@ -39,9 +41,11 @@ export class LoginPage {
 		public toastCtrl: ToastController,
 		public alertCtrl: AlertController ,
 		public nav: Nav,
-		public application_service: ApplicationService
+		public application_service: ApplicationService,
+		public loading: LoadingController
 	) {
 		
+		this.loader = {};
 		
 		this.current_form = 'login';
 		
@@ -128,8 +132,12 @@ export class LoginPage {
 		}
 		
 		
-		
 		var self = this;
+		
+		self.loader = this.loading.create({
+			content: 'Checking login details...'
+		});
+		self.loader.present();
 
 		console.log('requestAPI being called...');
 		self.dataprovider.requestAPI(
@@ -139,7 +147,7 @@ export class LoginPage {
 				email:	self.login_form.email,
 				password:	self.login_form.password
 			},
-			'Checking login details...',
+			'',
 			false, /* Token To Not Be Sent To API */
 			
 			function(response) {
@@ -184,6 +192,8 @@ export class LoginPage {
 					toast.present();
 					
 					
+					self.loader.dismiss();
+					
 					
 					// Logout if logged in
 					localStorage.removeItem("userdata");
@@ -224,7 +234,7 @@ export class LoginPage {
 			{
 				user_account_no:	token
 			},
-			'Getting Authorization.',
+			'',
 			false, /* Token To Not Be Sent To API */
 			
 			function(response) {
@@ -236,6 +246,9 @@ export class LoginPage {
 				
 				
 				if( response.status == 'success' ) {
+					
+					
+					self.loader.dismiss();
 					
 					
 					/* Deciding Where To Redirect */
@@ -287,6 +300,9 @@ export class LoginPage {
 					
 					
 				} else {
+					
+					
+					self.loader.dismiss();
 					
 					self.application_service.logged_in_or_not();
 					

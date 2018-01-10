@@ -6,7 +6,7 @@ import { Dataprovider } from '../../providers/dataprovider';
 import { ApplicationService } from '../../providers/application-service';
 
 import { OcBusinessAddPage } from '../../pages/oc-business-add/oc-business-add';
-import { OcBusinessSinglePage } from '../../pages/oc-business-single/oc-business-single';
+import { OcBusinessDashboardPage } from '../../pages/oc-business-dashboard/oc-business-dashboard';
 /*
 import { BusinessAddPage } from '../../pages/business-add/business-add';
 import { BusinessListPage } from '../../pages/business-list/business-list';
@@ -84,7 +84,7 @@ export class OcDashboardPage {
 			'get',
 			'programming/hbgstapi/api/getbusinessbyid/' + self.application_service.userdata.api_token, 
 			{},
-			'Getting businesses list...',
+			'',
 			true, /* Token To Not Be Sent To API */
 			
 			function(response) {
@@ -129,7 +129,8 @@ export class OcDashboardPage {
 		console.log('ionViewDidLoad DashboardPage');
 	}
 	
-	open_business_single_page(c) {
+	open_business_dashboard_page(c) {
+		this.navCtrl.push( CaClientDashboardPage, { "client" : c } );
 	}
 	
 	open_business_add_page(c) {

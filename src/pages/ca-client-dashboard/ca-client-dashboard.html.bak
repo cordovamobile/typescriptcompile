@@ -1,0 +1,79 @@
+<ion-header>
+	<ion-navbar>
+		<button ion-button menuToggle>
+			<ion-icon name="menu"></ion-icon>
+		</button>
+		<ion-title>{{client.business_name}} Dashboard</ion-title>
+	</ion-navbar>
+</ion-header>
+
+
+<ion-content padding>
+	
+	
+	<ion-card>
+
+		<ion-card-header>
+			Business Details
+		</ion-card-header>
+
+		<ion-card-content text-center>
+			<p>Client's Business Name: {{client.business_name}}</p>
+			<p>Client's PAN: {{client.pannumber}}</p>
+			<p>Client's Name: {{client.clienname}}</p>
+			<p>Email Address: {{client.emailaddress}}</p>
+			<p>Phone Number: {{client.mobileno}}</p>
+			<div>
+				GSTINs:-
+				<div *ngFor="let g of client.data">{{g.gstin}}</div>
+			</div>
+			
+		</ion-card-content>
+
+	</ion-card>
+	
+	
+	<ion-card>
+
+		<ion-card-header>
+			Actions
+		</ion-card-header>
+
+		<ion-card-content text-center>
+			
+			<div style="padding: 10px;">
+				
+				<button (click)="openPage(CaClientEditPage,client)" ion-button color="light" small>
+					<ion-icon name="create"></ion-icon>
+					&nbsp;
+					Edit Client Details
+				</button>
+				
+			</div>
+			
+			<div style="padding: 10px;">
+				
+				<button (click)="openPage('',client)" ion-button color="light" small>
+					<ion-icon name="cart"></ion-icon>
+					&nbsp;
+					Create Sales Invoice
+				</button>
+				
+			</div>
+			
+			<div style="padding: 10px;">
+				
+				<button (click)="openPage('',client)" ion-button color="light" small>
+					<ion-icon name="cash"></ion-icon>
+					&nbsp;
+					Create Purchase Invoice
+				</button>
+				
+			</div>
+			
+		</ion-card-content>
+
+	</ion-card>
+	
+	
+</ion-content>

@@ -6,14 +6,14 @@ import { Dataprovider } from '../../providers/dataprovider';
 import { ApplicationService } from '../../providers/application-service';
 
 //import { BusinessListPage } from '../../pages/business-list/business-list';
-import { OcDashboardPage } from '../../pages/oc-dashboard/oc-dashboard';
+import { CaDashboardPage } from '../../pages/ca-dashboard/ca-dashboard';
 
-@IonicPage()
+//@IonicPage()
 @Component({
-  selector: 'page-oc-business-add',
-  templateUrl: 'oc-business-add.html',
+  selector: 'page-ca-client-edit',
+  templateUrl: 'ca-client-edit.html',
 })
-export class OcBusinessAddPage {
+export class CaClientEditPage {
 	
 	business: any;
 	statelist: any;
@@ -29,6 +29,12 @@ export class OcBusinessAddPage {
 	) {
 		
 		this.business = {};
+		this.statelist = {};
+		
+		if (this.navParams.get('client')) {
+			this.business = this.navParams.get('client');
+		}
+		console.log( JSON.stringify( this.client ) );
 		
 		this.business.gstins = [
 			{
@@ -41,6 +47,44 @@ export class OcBusinessAddPage {
 		
 		
 		var self = this;
+
+		console.log('requestAPI being called...');
+		self.dataprovider.requestAPI(
+			'get',
+			'programming/hbgstapi/api/getbusinessbybid/' + self.application_service.userdata.api_token + '/' + self.business.buid,
+			self.business,
+			'',
+			true, /* Token To Not Be Sent To API */
+			
+			function(response) {
+				
+				/* Logging 'Request Has Responded' event */
+				console.log( 'requestAPI responded...' );
+				console.log( 'requestAPI Response: "' + JSON.stringify( response ) + '"' );
+				console.log( 'requestAPI Response Type: ' + response.status );
+				
+				
+				if( response.status == 'success' ) {
+					
+					
+				} else {
+					
+					let toast = self.toastCtrl.create({
+						message:	response.message,
+						duration:	10000,
+						cssClass:	"toast-success"
+					});
+					toast.present();
+					
+				}
+				
+				
+
+			}
+		);
+		
+		
+		
 
 		console.log('requestAPI being called...');
 		self.dataprovider.requestAPI(
@@ -85,10 +129,11 @@ export class OcBusinessAddPage {
 		
 		
 		
+		
 	}
 
 	ionViewDidLoad() {
-		console.log('ionViewDidLoad OcBusinessAddPage');
+		console.log('ionViewDidLoad CaClientAddPage');
 	}
 	
 	save_business() {
@@ -101,7 +146,7 @@ export class OcBusinessAddPage {
 		console.log('requestAPI being called...');
 		self.dataprovider.requestAPI(
 			'post',
-			'programming/hbgstapi/api/addbulkgstin',
+			'programming/hbgstapi/api/addbulkclientgstin',
 			self.business,
 			'Saving businesses details...',
 			true, /* Token To Not Be Sent To API */
@@ -117,7 +162,7 @@ export class OcBusinessAddPage {
 				if( response.status == 'success' ) {
 					
 					
-					self.nav.setRoot( OcDashboardPage );
+					self.nav.setRoot( CaDashboardPage );
 					
 					
 				} else {
@@ -172,6 +217,5 @@ export class OcBusinessAddPage {
 		console.log( g.statecode );
 		
 	}
-	
 
 }

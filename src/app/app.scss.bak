@@ -314,8 +314,7 @@ ion-header .bar-buttons ,
 ion-header .bar-buttons:hover ,
 .bar-button-default-md:hover:not(.disable-hover) ,
 ion-header .back-button ,
-ion-header .back-button:hover ,
-.bar-button-default-md:hover:not(.disable-hover) {
+ion-header .back-button:hover {
 	color: #fff;
 }
 
@@ -329,12 +328,21 @@ ion-header .toolbar-title {
 
 
 
+/*************************************************************** HBGST *******************************************************/
 
 
+ion-card {
+    border-top: 4px solid #256c9b !important;
+    width: 100% !important;
+    margin: 10px 0px !important;
+}
 
-
-
-
+.vertical-center > *
+{
+     display: flex!important;
+     align-content: center!important;
+     align-items: center!important;
+}
 
 
 

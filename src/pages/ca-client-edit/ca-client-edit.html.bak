@@ -3,7 +3,7 @@
 		<button ion-button menuToggle>
 			<ion-icon name="menu"></ion-icon>
 		</button>
-		<ion-title>OC Add Business</ion-title>
+		<ion-title>{{business.business_name}} Dashboard</ion-title>
 	</ion-navbar>
 </ion-header>
 
@@ -15,7 +15,7 @@
 		
 		<ion-row>
 			<ion-col>
-				<h5>Enter business details:</h5>
+				<h5>Enter client details:</h5>
 			</ion-col>
 		</ion-row>
 	
@@ -26,13 +26,28 @@
 	<div>
 	
 		<ion-item>
-			<ion-label floating>Business Name</ion-label>
-			<ion-input type="text" id="business_name" name="business_name" [(ngModel)]="business.businessname"></ion-input>
+			<ion-label floating>Client's Business Name</ion-label>
+			<ion-input type="text" id="business_name" name="business_name" [(ngModel)]="business.business_name"></ion-input>
 		</ion-item>
 	
 		<ion-item>
-			<ion-label floating>Business PAN</ion-label>
-			<ion-input type="text" id="pan" name="pan" [(ngModel)]="business.pannumber"></ion-input>
+			<ion-label floating>Client's PAN</ion-label>
+			<ion-input type="text" id="pan" name="pan" [(ngModel)]="business.pan"></ion-input>
+		</ion-item>
+	
+		<ion-item>
+			<ion-label floating>Client's Name</ion-label>
+			<ion-input type="text" id="pan" name="pan" [(ngModel)]="business.clienname"></ion-input>
+		</ion-item>
+	
+		<ion-item>
+			<ion-label floating>Email Address</ion-label>
+			<ion-input type="text" id="pan" name="pan" [(ngModel)]="business.emailaddress"></ion-input>
+		</ion-item>
+	
+		<ion-item>
+			<ion-label floating>Phone Number</ion-label>
+			<ion-input type="text" id="pan" name="pan" [(ngModel)]="business.mobileno"></ion-input>
 		</ion-item>
 	
 		<ion-grid>
@@ -66,6 +81,8 @@
 			</ion-row>
 			<ion-row>
 				<button (click)="add_gstin()" ion-button color="primary" small>
+					<ion-icon name="add"></ion-icon>
+					&nbsp;
 					Add GSTIN
 				</button>
 			</ion-row>

@@ -6,7 +6,7 @@ import { Dataprovider } from '../../providers/dataprovider';
 import { ApplicationService } from '../../providers/application-service';
 
 import { CaClientAddPage } from '../../pages/ca-client-add/ca-client-add';
-import { CaClientSinglePage } from '../../pages/ca-client-single/ca-client-single';
+import { CaClientDashboardPage } from '../../pages/ca-client-dashboard/ca-client-dashboard';
 /*
 import { BusinessAddPage } from '../../pages/business-add/business-add';
 import { BusinessListPage } from '../../pages/business-list/business-list';
@@ -26,7 +26,6 @@ import { BusinessListPage } from '../../pages/business-list/business-list';
 })
 export class CaDashboardPage {
 	
-	userdata: any;
 	clients: any;
 
 	constructor(
@@ -84,7 +83,7 @@ export class CaDashboardPage {
 			'get',
 			'programming/hbgstapi/api/getbusinessbyid/' + self.application_service.userdata.api_token, 
 			{},
-			'Getting businesses list...',
+			'',
 			true, /* Token To Not Be Sent To API */
 			
 			function(response) {
@@ -129,8 +128,8 @@ export class CaDashboardPage {
 		console.log('ionViewDidLoad DashboardPage');
 	}
 	
-	open_client_single_page(c) {
-		this.nav.push(CaClientSinglePage);
+	open_client_dashboard_page(c) {
+		this.navCtrl.push( CaClientDashboardPage, { "client" : c } );
 	}
 	
 	open_client_add_page(c) {

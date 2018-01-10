@@ -328,12 +328,21 @@ ion-header .toolbar-title {
 
 
 
+/*************************************************************** HBGST *******************************************************/
 
 
+ion-card {
+    border-top: 4px solid #256c9b !important;
+    width: 100% !important;
+    margin: 10px 0px !important;
+}
 
-
-
-
+.vertical-center > *
+{
+	display: flex!important;
+	align-content: center!important;
+	align-items: center!important;
+}
 
 
 
