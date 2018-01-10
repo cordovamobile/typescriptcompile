@@ -22,8 +22,6 @@
 		<ion-row>
 			<ion-col>
 				<button (click)="open_client_add_page()" ion-button color="danger" small>
-					<ion-icon name="add"></ion-icon>
-					&nbsp;
 					Add Client
 				</button>
 			</ion-col>

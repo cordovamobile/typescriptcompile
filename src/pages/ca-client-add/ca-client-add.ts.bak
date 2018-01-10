@@ -175,7 +175,7 @@ export class CaClientAddPage {
 		}
 		
 		console.log( g.gstin );
-		console.log( g.statecode );
+		console.log( g.displayname );
 		console.log( g.statecode );
 		
 	}

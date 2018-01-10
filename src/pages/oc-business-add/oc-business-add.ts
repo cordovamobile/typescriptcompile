@@ -49,7 +49,7 @@ export class OcBusinessAddPage {
 
 		console.log('requestAPI being called...');
 		self.dataprovider.requestAPI(
-			'post',
+			'get',
 			'programming/hbgstapi/api/getstatelist',
 			self.business,
 			'Saving businesses details...',

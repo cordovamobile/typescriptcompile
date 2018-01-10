@@ -159,5 +159,24 @@ export class OcBusinessAddPage {
 		this.business.gstins.splice(i, 1);
 	}
 	
+	change_gstin(g) {
+		
+		var State_Code = g.gstin.substring(0, 2);
+		
+		for( var i = 0; i < this.statelist.length; i++ ) {
+			
+			if( this.statelist[i].State_Code == State_Code ) {
+				g.displayname = this.statelist[i].State_Name;
+				g.statecode = this.statelist[i].State_Code;
+			}
+			
+		}
+		
+		console.log( g.gstin );
+		console.log( g.displayname );
+		console.log( g.statecode );
+		
+	}
+	
 
 }
