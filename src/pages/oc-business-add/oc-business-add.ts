@@ -16,6 +16,7 @@ import { OcDashboardPage } from '../../pages/oc-dashboard/oc-dashboard';
 export class OcBusinessAddPage {
 	
 	business: any;
+	statelist: any;
 
 	constructor(
 		public navCtrl: NavController,
@@ -40,6 +41,54 @@ export class OcBusinessAddPage {
 				"displayname" : "",
 			},
 		];
+		
+		
+		
+		
+		var self = this;
+
+		console.log('requestAPI being called...');
+		self.dataprovider.requestAPI(
+			'post',
+			'programming/hbgstapi/api/getstatelist',
+			self.business,
+			'Saving businesses details...',
+			true, /* Token To Not Be Sent To API */
+			
+			function(response) {
+				
+				/* Logging 'Request Has Responded' event */
+				console.log( 'requestAPI responded...' );
+				console.log( 'requestAPI Response: "' + JSON.stringify( response ) + '"' );
+				console.log( 'requestAPI Response Type: ' + response.status );
+				
+				
+				if( response.status == 'success' ) {
+					
+					
+					self.statelist = response.statelist;
+					
+					
+				} else {
+					
+					let toast = self.toastCtrl.create({
+						message:	response.message,
+						duration:	10000,
+						cssClass:	"toast-success"
+					});
+					toast.present();
+					
+				}
+				
+				
+
+			}
+		);
+		
+		
+		
+		
+		
 		
 	}
 
@@ -108,6 +157,25 @@ export class OcBusinessAddPage {
 	
 	remove_gstin(i) {
 		this.business.gstins.splice(i, 1);
+	}
+	
+	change_gstin(g) {
+		
+		var State_Code = g.gstin.substring(0, 2);
+		
+		for( var i = 0; i < this.statelist.length; i++ ) {
+			
+			if( this.statelist[i].State_Code == State_Code ) {
+				g.displayname = this.statelist[i].State_Name;
+				g.statecode = this.statelist[i].State_Code;
+			}
+			
+		}
+		
+		console.log( g.gstin );
+		console.log( g.displayname );
+		console.log( g.statecode );
+		
 	}
 	
 
