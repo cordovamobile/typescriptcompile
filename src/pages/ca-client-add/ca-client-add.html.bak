@@ -37,17 +37,17 @@
 	
 		<ion-item>
 			<ion-label floating>Client's Name</ion-label>
-			<ion-input type="text" id="pan" name="pan" [(ngModel)]="business.pannumber"></ion-input>
+			<ion-input type="text" id="pan" name="pan" [(ngModel)]="business.clienname"></ion-input>
 		</ion-item>
 	
 		<ion-item>
 			<ion-label floating>Email Address</ion-label>
-			<ion-input type="text" id="pan" name="pan" [(ngModel)]="business.pannumber"></ion-input>
+			<ion-input type="text" id="pan" name="pan" [(ngModel)]="business.emailaddress"></ion-input>
 		</ion-item>
 	
 		<ion-item>
 			<ion-label floating>Phone Number</ion-label>
-			<ion-input type="text" id="pan" name="pan" [(ngModel)]="business.pannumber"></ion-input>
+			<ion-input type="text" id="pan" name="pan" [(ngModel)]="business.mobileno"></ion-input>
 		</ion-item>
 	
 		<ion-grid>
@@ -58,7 +58,7 @@
 				<ion-col>
 					<ion-item>
 						<ion-label floating>GSTIN</ion-label>
-						<ion-input type="text" [(ngModel)]="g.gstin"></ion-input>
+						<ion-input type="text" [(ngModel)]="g.gstin" (change)="change_gstin($event)"></ion-input>
 					</ion-item>
 				</ion-col>
 				<ion-col>
