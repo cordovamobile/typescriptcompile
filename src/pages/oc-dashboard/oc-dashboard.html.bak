@@ -46,16 +46,6 @@
 			</ion-row>
 		</div>
 		
-		<ion-row>
-			<ion-col text-center>
-				<button (click)="open_business_single_page()" ion-button color="primary" small>
-					View All
-					&nbsp;
-					<ion-icon name="arrow-dropright"></ion-icon>
-				</button>
-			</ion-col>
-		</ion-row>
-		
 	</ion-grid>
 	
 	
