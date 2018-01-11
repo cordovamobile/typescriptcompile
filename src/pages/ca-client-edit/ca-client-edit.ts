@@ -146,7 +146,7 @@ export class CaClientEditPage {
 		console.log('requestAPI being called...');
 		self.dataprovider.requestAPI(
 			'post',
-			'programming/hbgstapi/api/addbulkclientgstin',
+			'programming/hbgstapi/api/editbusiness',
 			self.business,
 			'Saving businesses details...',
 			true, /* Token To Not Be Sent To API */
