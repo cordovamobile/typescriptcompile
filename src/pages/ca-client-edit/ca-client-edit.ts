@@ -34,7 +34,7 @@ export class CaClientEditPage {
 		if (this.navParams.get('client')) {
 			this.business = this.navParams.get('client');
 		}
-		console.log( JSON.stringify( this.client ) );
+		console.log( JSON.stringify( this.business ) );
 		
 		this.business.gstins = [
 			{
