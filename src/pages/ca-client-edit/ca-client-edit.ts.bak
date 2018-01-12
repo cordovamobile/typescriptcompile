@@ -134,6 +134,7 @@ export class CaClientEditPage {
 			clienname : business.primary_contact_person,
 			emailaddress : business.email_address,
 			mobileno : business.primary_contact_personph,
+			gstins : business.data
 		};
 		
 		
@@ -146,7 +147,7 @@ export class CaClientEditPage {
 		self.dataprovider.requestAPI(
 			'put',
 			'programming/hbgstapi/api/editbusiness',
-			self.business,
+			business,
 			'Saving businesses details...',
 			true, /* Token To Not Be Sent To API */
 			
@@ -205,14 +206,14 @@ export class CaClientEditPage {
 		for( var i = 0; i < this.statelist.length; i++ ) {
 			
 			if( this.statelist[i].State_Code == State_Code ) {
-				g.displayname = this.statelist[i].State_Name;
+				g.gstin_name = this.statelist[i].State_Name;
 				g.statecode = this.statelist[i].State_Code;
 			}
 			
 		}
 		
 		console.log( g.gstin );
-		console.log( g.displayname );
+		console.log( g.gstin_name );
 		console.log( g.statecode );
 		
 	}
