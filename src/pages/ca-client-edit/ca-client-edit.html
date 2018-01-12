@@ -27,34 +27,34 @@
 	
 		<ion-item>
 			<ion-label floating>Client's Business Name</ion-label>
-			<ion-input type="text" id="business_name" name="business_name" [(ngModel)]="business.businessname"></ion-input>
+			<ion-input type="text" id="business_name" name="business_name" [(ngModel)]="business.business_name"></ion-input>
 		</ion-item>
 	
 		<ion-item>
 			<ion-label floating>Client's PAN</ion-label>
-			<ion-input type="text" id="pan" name="pan" [(ngModel)]="business.pannumber"></ion-input>
+			<ion-input type="text" id="pan" name="pan" [(ngModel)]="business.pan"></ion-input>
 		</ion-item>
 	
 		<ion-item>
 			<ion-label floating>Client's Name</ion-label>
-			<ion-input type="text" id="pan" name="pan" [(ngModel)]="business.clienname"></ion-input>
+			<ion-input type="text" id="pan" name="pan" [(ngModel)]="business.primary_contact_person"></ion-input>
 		</ion-item>
 	
 		<ion-item>
 			<ion-label floating>Email Address</ion-label>
-			<ion-input type="text" id="pan" name="pan" [(ngModel)]="business.emailaddress"></ion-input>
+			<ion-input type="text" id="pan" name="pan" [(ngModel)]="business.email_address"></ion-input>
 		</ion-item>
 	
 		<ion-item>
 			<ion-label floating>Phone Number</ion-label>
-			<ion-input type="text" id="pan" name="pan" [(ngModel)]="business.mobileno"></ion-input>
+			<ion-input type="text" id="pan" name="pan" [(ngModel)]="business.primary_contact_personph"></ion-input>
 		</ion-item>
 	
 		<ion-grid>
 			<ion-row>
 				<ion-label>GSTINs</ion-label>
 			</ion-row>
-			<ion-row *ngFor="let g of business.gstins; let i = index">
+			<ion-row *ngFor="let g of business.data; let i = index">
 				<ion-col>
 					<ion-item>
 						<ion-label floating>GSTIN</ion-label>
@@ -64,7 +64,7 @@
 				<ion-col>
 					<ion-item>
 						<ion-label floating>Display Name</ion-label>
-						<ion-input type="text" [(ngModel)]="g.displayname"></ion-input>
+						<ion-input type="text" [(ngModel)]="g.gstin_name"></ion-input>
 					</ion-item>
 				</ion-col>
 				<ion-col>

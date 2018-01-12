@@ -64,19 +64,9 @@ export class CaClientEditPage {
 				console.log( 'requestAPI Response Type: ' + response.status );
 				
 				
-				if( response.status == 'success' ) {
-					
-					
-				} else {
-					
-					let toast = self.toastCtrl.create({
-						message:	response.message,
-						duration:	10000,
-						cssClass:	"toast-success"
-					});
-					toast.present();
-					
-				}
+				self.business = response[0];
+				
+				console.log( 'Business Details Retreived : ' + JSON.stringify( self.business ) );
 				
 				
 
@@ -138,6 +128,15 @@ export class CaClientEditPage {
 	
 	save_business() {
 		
+		var business = {
+			businessname : business.business_name,
+			pannumber : business.pan,
+			clienname : business.primary_contact_person,
+			emailaddress : business.email_address,
+			mobileno : business.primary_contact_personph,
+		};
+		
+		
 		console.log( JSON.stringify(this.business) );
 		
 		
@@ -145,8 +144,8 @@ export class CaClientEditPage {
 
 		console.log('requestAPI being called...');
 		self.dataprovider.requestAPI(
-			'post',
-			'programming/hbgstapi/api/addbulkclientgstin',
+			'put',
+			'programming/hbgstapi/api/editbusiness',
 			self.business,
 			'Saving businesses details...',
 			true, /* Token To Not Be Sent To API */

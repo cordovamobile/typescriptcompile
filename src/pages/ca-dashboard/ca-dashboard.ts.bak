@@ -26,7 +26,6 @@ import { BusinessListPage } from '../../pages/business-list/business-list';
 })
 export class CaDashboardPage {
 	
-	userdata: any;
 	clients: any;
 
 	constructor(
@@ -77,6 +76,20 @@ export class CaDashboardPage {
 		
 		
 		
+		
+		
+		
+		
+		
+	}
+
+	ionViewDidLoad() {
+		console.log('ionViewDidLoad DashboardPage');
+	}
+	
+	onPageWillEnter() {
+		// You can execute what you want here and it will be executed right before you enter the view
+		
 		var self = this;
 
 		console.log('requestAPI being called...');
@@ -114,20 +127,7 @@ export class CaDashboardPage {
 
 			}
 		);
-		
-		
-		
-		
-		
-		
-		
-		
-		
-	}
-
-	ionViewDidLoad() {
-		console.log('ionViewDidLoad DashboardPage');
-	}
+    }
 	
 	open_client_dashboard_page(c) {
 		this.navCtrl.push( CaClientDashboardPage, { "client" : c } );

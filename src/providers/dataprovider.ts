@@ -113,7 +113,7 @@ export class Dataprovider {
 		console.log('Starting http request...');
 		var self = this;
 		
-		if( request_type == 'post' ) {
+		if( request_type == 'post' || request_type == 'put' ) {
 			this.http[request_type]( self.request_url , data , options )
 			.timeout( 30000 )
 			/* If request was SUCCESSFUL */
