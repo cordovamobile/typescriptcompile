@@ -128,6 +128,7 @@ export class CaClientEditPage {
 	
 	save_business() {
 		
+		/*
 		var business = {
 			businessname : business.business_name,
 			pannumber : business.pan,
@@ -136,6 +137,7 @@ export class CaClientEditPage {
 			mobileno : business.primary_contact_personph,
 			gstins : business.data
 		};
+		*/
 		
 		
 		console.log( JSON.stringify(this.business) );
@@ -147,7 +149,7 @@ export class CaClientEditPage {
 		self.dataprovider.requestAPI(
 			'put',
 			'programming/hbgstapi/api/editbusiness',
-			business,
+			self.business,
 			'Saving businesses details...',
 			true, /* Token To Not Be Sent To API */
 			

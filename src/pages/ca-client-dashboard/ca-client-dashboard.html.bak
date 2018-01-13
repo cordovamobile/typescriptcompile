@@ -25,7 +25,7 @@
 			<p>Phone Number: {{client.mobileno}}</p>
 			<div>
 				GSTINs:-
-				<div *ngFor="let g of client.data">{{g.gstin}} ({{g.displayname}})</div>
+				<div *ngFor="let g of client.data">{{g.gstin}} ({{g.gstin_name}})</div>
 			</div>
 			
 		</ion-card-content>
