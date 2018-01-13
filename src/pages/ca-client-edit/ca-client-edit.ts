@@ -208,15 +208,15 @@ export class CaClientEditPage {
 		for( var i = 0; i < this.statelist.length; i++ ) {
 			
 			if( this.statelist[i].State_Code == State_Code ) {
-				g.gstin_name = this.statelist[i].State_Name;
-				g.gstinstatecode = this.statelist[i].gstinstatecode;
+				g.displayname = this.statelist[i].State_Name;
+				g.statecode = this.statelist[i].gstinstatecode;
 			}
 			
 		}
 		
 		console.log( g.gstin );
-		console.log( g.gstin_name );
-		console.log( g.gstinstatecode );
+		console.log( g.displayname );
+		console.log( g.statecode );
 		
 	}
 

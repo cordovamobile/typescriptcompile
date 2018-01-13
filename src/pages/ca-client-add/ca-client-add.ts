@@ -164,7 +164,7 @@ export class CaClientAddPage {
 			
 			if( this.statelist[i].State_Code == State_Code ) {
 				g.displayname = this.statelist[i].State_Name;
-				g.statecode = this.statelist[i].State_Code;
+				g.statecode = this.statelist[i].gstinstatecode;
 			}
 			
 		}

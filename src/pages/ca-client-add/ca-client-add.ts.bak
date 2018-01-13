@@ -8,7 +8,7 @@ import { ApplicationService } from '../../providers/application-service';
 //import { BusinessListPage } from '../../pages/business-list/business-list';
 import { CaDashboardPage } from '../../pages/ca-dashboard/ca-dashboard';
 
-@IonicPage()
+//@IonicPage()
 @Component({
   selector: 'page-ca-client-add',
   templateUrl: 'ca-client-add.html',
@@ -164,14 +164,14 @@ export class CaClientAddPage {
 			
 			if( this.statelist[i].State_Code == State_Code ) {
 				g.displayname = this.statelist[i].State_Name;
-				g.statecode = this.statelist[i].State_Code;
+				g.gstinstatecode = this.statelist[i].gstinstatecode;
 			}
 			
 		}
 		
 		console.log( g.gstin );
-		console.log( g.displayname );
-		console.log( g.statecode );
+		console.log( g.gstin_name );
+		console.log( g.gstinstatecode );
 		
 	}
 	
