@@ -43,6 +43,43 @@ export class CaClientDashboardPage {
 			this.client = this.navParams.get('client');
 		}
 		console.log( JSON.stringify( this.client ) );
+		
+		this.client.gstins = [
+			{
+				"gstin" : "",
+				"displayname" : "",
+			}
+		];
+		
+		
+		var self = this;
+
+		console.log('requestAPI being called...');
+		self.dataprovider.requestAPI(
+			'get',
+			'programming/hbgstapi/api/getbusinessbybid/' + self.application_service.userdata.api_token + '/' + self.client.buid,
+			{},
+			'',
+			true, /* Token To Not Be Sent To API */
+			
+			function(response) {
+				
+				/* Logging 'Request Has Responded' event */
+				console.log( 'requestAPI responded...' );
+				console.log( 'requestAPI Response: "' + JSON.stringify( response ) + '"' );
+				console.log( 'requestAPI Response Type: ' + response.status );
+				
+				
+				self.client = response[0];
+				
+				console.log( 'Business Details Retreived : ' + JSON.stringify( self.business ) );
+				
+				
+
+			}
+		);
+		
+		
 	}
 
 	ionViewDidLoad() {
