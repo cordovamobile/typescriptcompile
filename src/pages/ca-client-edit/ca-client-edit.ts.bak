@@ -198,7 +198,7 @@ export class CaClientEditPage {
 	}
 	
 	remove_gstin(i) {
-		this.business.gstins.splice(i, 1);
+		this.business.data.splice(i, 1);
 	}
 	
 	change_gstin(g) {
