@@ -190,7 +190,7 @@ export class CaClientEditPage {
 	
 	add_gstin() {
 		
-		this.business.gstins.push({
+		this.business.data.push({
 			"gstin" : "",
 			"displayname" : "",
 		});
@@ -209,14 +209,14 @@ export class CaClientEditPage {
 			
 			if( this.statelist[i].State_Code == State_Code ) {
 				g.displayname = this.statelist[i].State_Name;
-				g.gstinstatecode = this.statelist[i].gstinstatecode;
+				g.statecode = this.statelist[i].gstinstatecode;
 			}
 			
 		}
 		
 		console.log( g.gstin );
-		console.log( g.gstin_name );
-		console.log( g.gstinstatecode );
+		console.log( g.displayname );
+		console.log( g.statecode );
 		
 	}
 

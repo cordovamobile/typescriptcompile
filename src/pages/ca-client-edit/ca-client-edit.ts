@@ -190,7 +190,7 @@ export class CaClientEditPage {
 	
 	add_gstin() {
 		
-		this.business.gstins.push({
+		this.business.data.push({
 			"gstin" : "",
 			"displayname" : "",
 		});
@@ -198,7 +198,7 @@ export class CaClientEditPage {
 	}
 	
 	remove_gstin(i) {
-		this.business.gstins.splice(i, 1);
+		this.business.data.splice(i, 1);
 	}
 	
 	change_gstin(g) {
