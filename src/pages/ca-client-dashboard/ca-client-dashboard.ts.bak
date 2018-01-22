@@ -72,7 +72,7 @@ export class CaClientDashboardPage {
 				
 				self.client = response[0];
 				
-				console.log( 'Business Details Retreived : ' + JSON.stringify( self.business ) );
+				console.log( 'Business Details Retreived : ' + JSON.stringify( self.client ) );
 				
 				
 

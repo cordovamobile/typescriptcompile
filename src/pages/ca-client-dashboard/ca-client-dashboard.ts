@@ -53,7 +53,7 @@ export class CaClientDashboardPage {
 		
 		
 		var self = this;
-
+		
 		console.log('requestAPI being called...');
 		self.dataprovider.requestAPI(
 			'get',

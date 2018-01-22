@@ -19,10 +19,10 @@
 
 		<ion-card-content text-center>
 			<p>Client's Business Name: {{client.business_name}}</p>
-			<p>Client's PAN: {{client.pannumber}}</p>
-			<p>Client's Name: {{client.clienname}}</p>
-			<p>Email Address: {{client.emailaddress}}</p>
-			<p>Phone Number: {{client.mobileno}}</p>
+			<p>Client's PAN: {{client.pan}}</p>
+			<p>Client's Name: {{client.primary_contact_person}}</p>
+			<p>Email Address: {{client.email_address}}</p>
+			<p>Phone Number: {{client.primary_contact_personph}}</p>
 			<div>
 				GSTINs:-
 				<div *ngFor="let g of client.data">{{g.gstin}} ({{g.gstin_name}})</div>

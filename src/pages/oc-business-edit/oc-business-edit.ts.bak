@@ -6,14 +6,14 @@ import { Dataprovider } from '../../providers/dataprovider';
 import { ApplicationService } from '../../providers/application-service';
 
 //import { BusinessListPage } from '../../pages/business-list/business-list';
-import { CaClientDashboardPage } from '../../pages/ca-client-dashboard/ca-client-dashboard';
+import { OcBusinessDashboardPage } from '../../pages/ca-business-dashboard/ca-business-dashboard';
 
 //@IonicPage()
 @Component({
-  selector: 'page-ca-client-edit',
-  templateUrl: 'ca-client-edit.html',
+  selector: 'page-oc-business-edit',
+  templateUrl: 'oc-business-edit.html',
 })
-export class CaClientEditPage {
+export class OcBusinessEditPage {
 	
 	business: any;
 	statelist: any;
@@ -31,8 +31,8 @@ export class CaClientEditPage {
 		this.business = {};
 		this.statelist = {};
 		
-		if (this.navParams.get('client')) {
-			this.business = this.navParams.get('client');
+		if (this.navParams.get('business')) {
+			this.business = this.navParams.get('business');
 		}
 		console.log( JSON.stringify( this.business ) );
 		
@@ -123,7 +123,7 @@ export class CaClientEditPage {
 	}
 
 	ionViewDidLoad() {
-		console.log('ionViewDidLoad CaClientAddPage');
+		console.log('ionViewDidLoad OcBusinessAddPage');
 	}
 	
 	save_business() {
@@ -164,7 +164,7 @@ export class CaClientEditPage {
 				if( response.status == 'success' ) {
 					
 					
-					self.nav.setRoot( CaClientDashboardPage );
+					self.nav.setRoot( OcBusinessDashboardPage );
 					
 					
 				} else {

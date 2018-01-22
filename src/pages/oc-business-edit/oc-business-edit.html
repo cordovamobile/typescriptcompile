@@ -1,18 +1,89 @@
-<!--
-  Generated template for the OcBusinessEditPage page.
-
-  See http://ionicframework.com/docs/components/#navigation for more info on
-  Ionic pages and navigation.
--->
 <ion-header>
-
-  <ion-navbar>
-    <ion-title>oc-business-edit</ion-title>
-  </ion-navbar>
-
+	<ion-navbar>
+		<button ion-button menuToggle>
+			<ion-icon name="menu"></ion-icon>
+		</button>
+		<ion-title>{{business.business_name}} Dashboard</ion-title>
+	</ion-navbar>
 </ion-header>
 
 
 <ion-content padding>
+	
+	
+	<ion-grid>
+		
+		<ion-row>
+			<ion-col>
+				<h5>Enter business details:</h5>
+			</ion-col>
+		</ion-row>
+	
+	</ion-grid>
+	
+	
+	
+	<div>
+	
+		<ion-item>
+			<ion-label floating>Business's Business Name</ion-label>
+			<ion-input type="text" id="business_name" name="business_name" [(ngModel)]="business.business_name"></ion-input>
+		</ion-item>
+	
+		<ion-item>
+			<ion-label floating>Business's PAN</ion-label>
+			<ion-input type="text" id="pan" name="pan" [(ngModel)]="business.pan"></ion-input>
+		</ion-item>
+		
+		<!-- GSTINs are not needed here. They will have a separate page. -->
+		<!--ion-grid>
+			<ion-row>
+				<ion-label>GSTINs</ion-label>
+			</ion-row>
+			<ion-row *ngFor="let g of business.data; let i = index">
+				<ion-col>
+					<ion-item>
+						<ion-label floating>GSTIN</ion-label>
+						<ion-input type="text" [(ngModel)]="g.gstin" (keyup)="change_gstin(g)"></ion-input>
+					</ion-item>
+				</ion-col>
+				<ion-col>
+					<ion-item>
+						<ion-label floating>Display Name</ion-label>
+						<ion-input type="text" [(ngModel)]="g.gstin_name"></ion-input>
+					</ion-item>
+				</ion-col>
+				<ion-col>
+					<a (click)="remove_gstin(i)" color="danger" small style="
+						position: absolute;
+						bottom: 10px;
+						left: 14px;
+						font-size: 16px;
+						color: #777;
+					">
+						<ion-icon name="close"></ion-icon>
+					</a>
+				</ion-col>
+			</ion-row>
+			<ion-row>
+				<button (click)="add_gstin()" ion-button color="primary" small>
+					<ion-icon name="add"></ion-icon>
+					&nbsp;
+					Add GSTIN
+				</button>
+			</ion-row>
+		</ion-grid-->
+		
+		<ion-grid>
+			<ion-row>
+				<ion-col text-right>
+					<button (click)="save_business()" ion-button color="secondary">
+						Save Business
+					</button>
+				</ion-col>
+			</ion-row>
+		</ion-grid>
+		
+	</div>
 
 </ion-content>

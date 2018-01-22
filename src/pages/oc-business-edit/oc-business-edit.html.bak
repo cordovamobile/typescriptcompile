@@ -15,7 +15,7 @@
 		
 		<ion-row>
 			<ion-col>
-				<h5>Enter client details:</h5>
+				<h5>Enter business details:</h5>
 			</ion-col>
 		</ion-row>
 	
@@ -26,17 +26,17 @@
 	<div>
 	
 		<ion-item>
-			<ion-label floating>Client's Business Name</ion-label>
+			<ion-label floating>Business's Business Name</ion-label>
 			<ion-input type="text" id="business_name" name="business_name" [(ngModel)]="business.business_name"></ion-input>
 		</ion-item>
 	
 		<ion-item>
-			<ion-label floating>Client's PAN</ion-label>
+			<ion-label floating>Business's PAN</ion-label>
 			<ion-input type="text" id="pan" name="pan" [(ngModel)]="business.pan"></ion-input>
 		</ion-item>
 	
 		<ion-item>
-			<ion-label floating>Client's Name</ion-label>
+			<ion-label floating>Business's Name</ion-label>
 			<ion-input type="text" id="pan" name="pan" [(ngModel)]="business.primary_contact_person"></ion-input>
 		</ion-item>
 	

@@ -5,6 +5,7 @@ import { Nav, /*IonicPage,*/ NavController, NavParams, ToastController, AlertCon
 import { Dataprovider } from '../../providers/dataprovider';
 import { ApplicationService } from '../../providers/application-service';
 
+import { OcBusinessEditPage } from '../../pages/oc-business-edit/oc-business-edit';
 /*
 import { BusinessAddPage } from '../../pages/business-add/business-add';
 import { BusinessListPage } from '../../pages/business-list/business-list';
@@ -42,6 +43,43 @@ export class OcBusinessDashboardPage {
 			this.business = this.navParams.get('business');
 		}
 		console.log( JSON.stringify( this.business ) );
+		
+		this.business.gstins = [
+			{
+				"gstin" : "",
+				"displayname" : "",
+			}
+		];
+		
+		
+		var self = this;
+		
+		console.log('requestAPI being called...');
+		self.dataprovider.requestAPI(
+			'get',
+			'programming/hbgstapi/api/getbusinessbybid/' + self.application_service.userdata.api_token + '/' + self.business.buid,
+			{},
+			'',
+			true, /* Token To Not Be Sent To API */
+			
+			function(response) {
+				
+				/* Logging 'Request Has Responded' event */
+				console.log( 'requestAPI responded...' );
+				console.log( 'requestAPI Response: "' + JSON.stringify( response ) + '"' );
+				console.log( 'requestAPI Response Type: ' + response.status );
+				
+				
+				self.business = response[0];
+				
+				console.log( 'Business Details Retreived : ' + JSON.stringify( self.business ) );
+				
+				
+
+			}
+		);
+		
+		
 	}
 
 	ionViewDidLoad() {
@@ -49,7 +87,11 @@ export class OcBusinessDashboardPage {
 	}
 	
 	openPage( page , business ) {
-		this.navCtrl.push( page, { "business" : business } );
+		var redirect;
+		if( page == 'OcBusinessEditPage' ) {
+			redirect = OcBusinessEditPage;
+		}
+		this.navCtrl.push( redirect, { "business" : business } );
 	}
 
 }

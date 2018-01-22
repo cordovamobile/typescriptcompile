@@ -77,21 +77,6 @@ export class OcDashboardPage {
 		
 		
 		
-		
-		
-		
-		
-		
-	}
-
-	ionViewDidLoad() {
-		console.log('ionViewDidLoad DashboardPage');
-	}
-	
-	onPageWillEnter() {
-		// You can execute what you want here and it will be executed right before you enter the view
-		
-		
 		var self = this;
 
 		console.log('requestAPI being called...');
@@ -129,6 +114,19 @@ export class OcDashboardPage {
 
 			}
 		);
+		
+		
+		
+		
+		
+		
+		
+		
+		
+	}
+
+	ionViewDidLoad() {
+		console.log('ionViewDidLoad DashboardPage');
 	}
 	
 	open_business_dashboard_page(c) {

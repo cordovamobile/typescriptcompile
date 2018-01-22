@@ -19,7 +19,7 @@
 
 		<ion-card-content text-center>
 			<p>Business Name: {{business.business_name}}</p>
-			<p>Business PAN: {{business.pannumber}}</p>sss
+			<p>Business PAN: {{business.pan}}</p>
 			<div>
 				GSTINs:-
 				<div *ngFor="let g of business.data">{{g.gstin}}</div>
@@ -40,7 +40,7 @@
 			
 			<div style="padding: 10px;">
 				
-				<button (click)="openPage('',business)" ion-button color="light" small>
+				<button (click)="openPage('OcBusinessEditPage',business)" ion-button color="light" small>
 					<ion-icon name="create"></ion-icon>
 					&nbsp;
 					Edit Business Details

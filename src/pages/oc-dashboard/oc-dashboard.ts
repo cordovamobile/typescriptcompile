@@ -130,7 +130,7 @@ export class OcDashboardPage {
 	}
 	
 	open_business_dashboard_page(c) {
-		this.navCtrl.push( OcBusinessDashboardPage, { "client" : c } );
+		this.navCtrl.push( OcBusinessDashboardPage, { "business" : c } );
 	}
 	
 	open_business_add_page(c) {
