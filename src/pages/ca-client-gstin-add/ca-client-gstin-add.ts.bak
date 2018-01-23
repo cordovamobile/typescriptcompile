@@ -116,8 +116,8 @@ export class CaClientGstinAddPage {
 		var self = this;
 		
 		/* Adding two extra attributes */
-		this.gstin.buid = this.business.buid;
-		this.gstin.createdby = this.application_service.userdata.api_token;
+		self.gstin.buid = self.business.buid;
+		self.gstin.createdby = self.application_service.userdata.api_token;
 
 		console.log('requestAPI being called...');
 		self.dataprovider.requestAPI(
