@@ -50,6 +50,16 @@
 			
 			<div style="padding: 10px;">
 				
+				<button (click)="openPage('OcBusinessEditPage',business)" ion-button color="light" small>
+					<ion-icon name="create"></ion-icon>
+					&nbsp;
+					Add New GSTIN
+				</button>
+				
+			</div>
+			
+			<!--div style="padding: 10px;">
+				
 				<button (click)="openPage('',business)" ion-button color="light" small>
 					<ion-icon name="cart"></ion-icon>
 					&nbsp;
@@ -66,7 +76,7 @@
 					Create Purchase Invoice
 				</button>
 				
-			</div>
+			</div-->
 			
 		</ion-card-content>
 

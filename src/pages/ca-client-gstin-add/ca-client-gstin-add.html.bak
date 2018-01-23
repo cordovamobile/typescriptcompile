@@ -1,0 +1,59 @@
+<ion-header>
+	<ion-navbar>
+		<button ion-button menuToggle>
+			<ion-icon name="menu"></ion-icon>
+		</button>
+		<ion-title>{{client.business_name}} Add New GSTIN</ion-title>
+	</ion-navbar>
+</ion-header>
+
+
+<ion-content padding>
+	
+	
+	<ion-grid>
+		
+		<ion-row>
+			<ion-col>
+				<h5>Enter GSTIN details:</h5>
+			</ion-col>
+		</ion-row>
+	
+	</ion-grid>
+	
+	
+	
+	<div>
+		
+		<ion-grid>
+			<ion-row>
+				<ion-col>
+					<ion-item>
+						<ion-label floating>GSTIN</ion-label>
+						<ion-input type="text" [(ngModel)]="gstin.gstin" (keyup)="change_gstin(gstin)"></ion-input>
+					</ion-item>
+				</ion-col>
+			</ion-row>
+			<ion-row>
+				<ion-col>
+					<ion-item>
+						<ion-label floating>Display Name</ion-label>
+						<ion-input type="text" [(ngModel)]="gstin.gstin_name"></ion-input>
+					</ion-item>
+				</ion-col>
+			</ion-row>
+		</ion-grid>
+		
+		<ion-grid>
+			<ion-row>
+				<ion-col text-right>
+					<button (click)="save_gstin()" ion-button color="secondary">
+						Save GSTIN
+					</button>
+				</ion-col>
+			</ion-row>
+		</ion-grid>
+		
+	</div>
+
+</ion-content>

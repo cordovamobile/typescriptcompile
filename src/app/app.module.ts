@@ -11,14 +11,18 @@ import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { LoginPage } from '../pages/login/login';
 import { UserDetailsSavePage } from '../pages/user-details-save/user-details-save';
+
 import { CaDashboardPage } from '../pages/ca-dashboard/ca-dashboard';
-import { OcDashboardPage } from '../pages/oc-dashboard/oc-dashboard';
 import { CaClientAddPage } from '../pages/ca-client-add/ca-client-add';
 import { CaClientDashboardPage } from '../pages/ca-client-dashboard/ca-client-dashboard';
 import { CaClientEditPage } from '../pages/ca-client-edit/ca-client-edit';
+import { CaClientGstinAddPage } from '../pages/ca-client-gstin-add/ca-client-gstin-add';
+
+import { OcDashboardPage } from '../pages/oc-dashboard/oc-dashboard';
 import { OcBusinessAddPage } from '../pages/oc-business-add/oc-business-add';
 import { OcBusinessDashboardPage } from '../pages/oc-business-dashboard/oc-business-dashboard';
 import { OcBusinessEditPage } from '../pages/oc-business-edit/oc-business-edit';
+import { OcBusinessGstinAddPage } from '../pages/oc-business-gstin-add/oc-business-gstin-add';
 
 
 /* Providers */
@@ -39,14 +43,18 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 		HomePage,
 		LoginPage,
 		UserDetailsSavePage,
+		
 		CaDashboardPage,
-		OcDashboardPage,
 		CaClientAddPage,
 		CaClientDashboardPage,
 		CaClientEditPage,
+		CaClientGstinAddPage,
+		
+		OcDashboardPage,
 		OcBusinessAddPage,
 		OcBusinessDashboardPage,
 		OcBusinessEditPage,
+		OcBusinessGstinAddPage,
 	],
 	imports: [
 		BrowserModule,
@@ -61,14 +69,18 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 		HomePage,
 		LoginPage,
 		UserDetailsSavePage,
+		
 		CaDashboardPage,
-		OcDashboardPage,
 		CaClientAddPage,
 		CaClientDashboardPage,
 		CaClientEditPage,
+		CaClientGstinAddPage,
+		
+		OcDashboardPage,
 		OcBusinessAddPage,
 		OcBusinessDashboardPage,
 		OcBusinessEditPage,
+		OcBusinessGstinAddPage,
 	],
 	providers: [
 		StatusBar,

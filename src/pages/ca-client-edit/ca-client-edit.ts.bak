@@ -6,12 +6,12 @@ import { Dataprovider } from '../../providers/dataprovider';
 import { ApplicationService } from '../../providers/application-service';
 
 //import { BusinessListPage } from '../../pages/business-list/business-list';
-import { CaDashboardPage } from '../../pages/ca-dashboard/ca-dashboard';
+import { CaClientDashboardPage } from '../../pages/ca-client-dashboard/ca-client-dashboard';
 
 //@IonicPage()
 @Component({
-  selector: 'page-ca-client-edit',
-  templateUrl: 'ca-client-edit.html',
+	selector: 'page-ca-client-edit',
+	templateUrl: 'ca-client-edit.html',
 })
 export class CaClientEditPage {
 	
@@ -80,8 +80,8 @@ export class CaClientEditPage {
 		self.dataprovider.requestAPI(
 			'get',
 			'programming/hbgstapi/api/getstatelist',
-			self.business,
-			'Saving businesses details...',
+			{},
+			'',
 			true, /* Token To Not Be Sent To API */
 			
 			function(response) {
@@ -164,7 +164,7 @@ export class CaClientEditPage {
 				if( response.status == 'success' ) {
 					
 					
-					self.nav.setRoot( CaDashboardPage );
+					self.nav.pop();
 					
 					
 				} else {

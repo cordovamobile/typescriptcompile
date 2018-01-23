@@ -6,16 +6,17 @@ import { Dataprovider } from '../../providers/dataprovider';
 import { ApplicationService } from '../../providers/application-service';
 
 //import { BusinessListPage } from '../../pages/business-list/business-list';
-import { OcBusinessDashboardPage } from '../../pages/oc-business-dashboard/oc-business-dashboard';
+//import { CaClientDashboardPage } from '../../pages/ca-client-dashboard/ca-client-dashboard';
 
 //@IonicPage()
 @Component({
-  selector: 'page-oc-business-edit',
-  templateUrl: 'oc-business-edit.html',
+	selector: 'page-ca-client-gstin-add',
+	templateUrl: 'ca-client-gstin-add.html',
 })
-export class OcBusinessEditPage {
+export class CaClientGstinAddPage {
 	
-	business: any;
+	client: any;
+	gstin: any;
 	statelist: any;
 
 	constructor(
@@ -28,60 +29,25 @@ export class OcBusinessEditPage {
 		public application_service: ApplicationService
 	) {
 		
-		this.business = {};
+		this.gstin = {};
 		this.statelist = {};
 		
-		if (this.navParams.get('business')) {
-			this.business = this.navParams.get('business');
+		if (this.navParams.get('client')) {
+			this.client = this.navParams.get('client');
 		}
-		console.log( JSON.stringify( this.business ) );
-		
-		this.business.gstins = [
-			{
-				"gstin" : "",
-				"gstin_name" : "",
-			}
-		];
+		console.log( JSON.stringify( this.client ) );
 		
 		
 		
 		
 		var self = this;
-
-		console.log('requestAPI being called...');
-		self.dataprovider.requestAPI(
-			'get',
-			'programming/hbgstapi/api/getbusinessbybid/' + self.application_service.userdata.api_token + '/' + self.business.buid,
-			self.business,
-			'',
-			true, /* Token To Not Be Sent To API */
-			
-			function(response) {
-				
-				/* Logging 'Request Has Responded' event */
-				console.log( 'requestAPI responded...' );
-				console.log( 'requestAPI Response: "' + JSON.stringify( response ) + '"' );
-				console.log( 'requestAPI Response Type: ' + response.status );
-				
-				
-				self.business = response[0];
-				
-				console.log( 'Business Details Retreived : ' + JSON.stringify( self.business ) );
-				
-				
-
-			}
-		);
 		
-		
-		
-
 		console.log('requestAPI being called...');
 		self.dataprovider.requestAPI(
 			'get',
 			'programming/hbgstapi/api/getstatelist',
-			self.business,
-			'Saving businesses details...',
+			{},
+			'',
 			true, /* Token To Not Be Sent To API */
 			
 			function(response) {
@@ -116,40 +82,48 @@ export class OcBusinessEditPage {
 		
 		
 		
-		
-		
-		
-		
 	}
 
 	ionViewDidLoad() {
-		console.log('ionViewDidLoad OcBusinessAddPage');
+		console.log('ionViewDidLoad CaClientGstinAddPage');
 	}
 	
-	save_business() {
+	change_gstin() {
 		
-		/*
-		var business = {
-			businessname : business.business_name,
-			pannumber : business.pan,
-			clienname : business.primary_contact_person,
-			emailaddress : business.email_address,
-			mobileno : business.primary_contact_personph,
-			gstins : business.data
-		};
-		*/
+		var State_Code = this.gstin.gstin.substring(0, 2);
+		
+		for( var i = 0; i < this.statelist.length; i++ ) {
+			
+			if( this.statelist[i].State_Code == State_Code ) {
+				this.gstin.gstin_name = this.statelist[i].State_Name;
+				this.gstin.gstinstatecode = this.statelist[i].State_Code;
+			}
+			
+		}
+		
+		console.log( this.gstin.gstin );
+		console.log( this.gstin.gstin_name );
+		console.log( this.gstin.gstinstatecode );
+		
+	}
+	
+	save_gstin() {
 		
 		
-		console.log( JSON.stringify(this.business) );
+		console.log( JSON.stringify(this.client) );
 		
 		
 		var self = this;
+		
+		/* Adding two extra attributes */
+		self.gstin.buid = self.business.buid;
+		self.gstin.createdby = self.application_service.userdata.api_token;
 
 		console.log('requestAPI being called...');
 		self.dataprovider.requestAPI(
-			'put',
-			'programming/hbgstapi/api/editbusiness',
-			self.business,
+			'post',
+			'programming/hbgstapi/api/addgstin',
+			self.gstin,
 			'Saving businesses details...',
 			true, /* Token To Not Be Sent To API */
 			
@@ -164,7 +138,7 @@ export class OcBusinessEditPage {
 				if( response.status == 'success' ) {
 					
 					
-					self.nav.setRoot( OcBusinessDashboardPage );
+					self.nav.pop();
 					
 					
 				} else {
@@ -185,38 +159,8 @@ export class OcBusinessEditPage {
 		
 		
 		
-	}
-	
-	
-	add_gstin() {
 		
-		this.business.data.push({
-			"gstin" : "",
-			"gstin_name" : "",
-		});
 		
-	}
-	
-	remove_gstin(i) {
-		this.business.data.splice(i, 1);
-	}
-	
-	change_gstin(g) {
-		
-		var State_Code = g.gstin.substring(0, 2);
-		
-		for( var i = 0; i < this.statelist.length; i++ ) {
-			
-			if( this.statelist[i].State_Code == State_Code ) {
-				g.gstin_name = this.statelist[i].State_Name;
-				g.statecode = this.statelist[i].gstinstatecode;
-			}
-			
-		}
-		
-		console.log( g.gstin );
-		console.log( g.gstin_name );
-		console.log( g.statecode );
 		
 	}
 

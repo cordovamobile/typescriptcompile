@@ -34,21 +34,6 @@
 			<ion-label floating>Business's PAN</ion-label>
 			<ion-input type="text" id="pan" name="pan" [(ngModel)]="business.pan"></ion-input>
 		</ion-item>
-	
-		<ion-item>
-			<ion-label floating>Business's Name</ion-label>
-			<ion-input type="text" id="pan" name="pan" [(ngModel)]="business.primary_contact_person"></ion-input>
-		</ion-item>
-	
-		<ion-item>
-			<ion-label floating>Email Address</ion-label>
-			<ion-input type="text" id="pan" name="pan" [(ngModel)]="business.email_address"></ion-input>
-		</ion-item>
-	
-		<ion-item>
-			<ion-label floating>Phone Number</ion-label>
-			<ion-input type="text" id="pan" name="pan" [(ngModel)]="business.primary_contact_personph"></ion-input>
-		</ion-item>
 		
 		<!-- GSTINs are not needed here. They will have a separate page. -->
 		<!--ion-grid>

@@ -49,8 +49,9 @@
 			<ion-label floating>Phone Number</ion-label>
 			<ion-input type="text" id="pan" name="pan" [(ngModel)]="business.primary_contact_personph"></ion-input>
 		</ion-item>
-	
-		<ion-grid>
+		
+		<!-- GSTINs are not needed here. They will have a separate page. -->
+		<!--ion-grid>
 			<ion-row>
 				<ion-label>GSTINs</ion-label>
 			</ion-row>
@@ -86,7 +87,7 @@
 					Add GSTIN
 				</button>
 			</ion-row>
-		</ion-grid>
+		</ion-grid-->
 		
 		<ion-grid>
 			<ion-row>

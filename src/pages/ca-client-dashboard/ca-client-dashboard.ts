@@ -6,6 +6,7 @@ import { Dataprovider } from '../../providers/dataprovider';
 import { ApplicationService } from '../../providers/application-service';
 
 import { CaClientEditPage } from '../../pages/ca-client-edit/ca-client-edit';
+import { CaClientGstinAddPage } from '../../pages/ca-client-gstin-add/ca-client-gstin-add';
 /*
 import { BusinessAddPage } from '../../pages/business-add/business-add';
 import { BusinessListPage } from '../../pages/business-list/business-list';
@@ -90,6 +91,9 @@ export class CaClientDashboardPage {
 		var redirect;
 		if( page == 'CaClientEditPage' ) {
 			redirect = CaClientEditPage;
+		}
+		if( page == 'CaClientGstinAddPage' ) {
+			redirect = CaClientGstinAddPage;
 		}
 		this.navCtrl.push( redirect, { "client" : client } );
 	}
