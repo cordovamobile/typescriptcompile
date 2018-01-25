@@ -6,7 +6,7 @@ import { Dataprovider } from '../../providers/dataprovider';
 import { ApplicationService } from '../../providers/application-service';
 
 //import { BusinessListPage } from '../../pages/business-list/business-list';
-//import { OcBusinessDashboardPage } from '../../pages/oc-business-dashboard/oc-business-dashboard';
+import { OcBusinessDashboardPage } from '../../pages/oc-business-dashboard/oc-business-dashboard';
 
 //@IonicPage()
 @Component({
@@ -164,7 +164,7 @@ export class OcBusinessEditPage {
 				if( response.status == 'success' ) {
 					
 					
-					self.nav.pop();
+					self.nav.pop( OcBusinessDashboardPage );
 					
 					
 				} else {
