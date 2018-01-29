@@ -6,18 +6,19 @@ import { Dataprovider } from '../../providers/dataprovider';
 import { ApplicationService } from '../../providers/application-service';
 
 //import { BusinessListPage } from '../../pages/business-list/business-list';
-import { OcBusinessDashboardPage } from '../../pages/oc-business-dashboard/oc-business-dashboard';
+import { CaClientDashboardPage } from '../../pages/ca-client-dashboard/ca-client-dashboard';
 
 //@IonicPage()
 @Component({
-	selector: 'page-oc-business-gstin-list',
-	templateUrl: 'oc-business-gstin-list.html',
+	selector: 'page-ca-client-item-add',
+	templateUrl: 'ca-client-item-add.html',
 })
-export class OcBusinessGstinListPage {
+export class CaClientItemAddPage {
 	
-	business: any;
-	statelist: any;
-	gstins: any;
+	client: any;
+	item: any;
+	hsncodes: any;
+	saccodes: any;
 
 	constructor(
 		public navCtrl: NavController,
@@ -29,54 +30,19 @@ export class OcBusinessGstinListPage {
 		public application_service: ApplicationService
 	) {
 		
-		this.business = {};
+		this.item = {};
 		this.statelist = {};
 		
-		if (this.navParams.get('business')) {
-			this.business = this.navParams.get('business');
+		if (this.navParams.get('client')) {
+			this.client = this.navParams.get('client');
 		}
-		console.log( JSON.stringify( this.business ) );
-		
-		this.business.gstins = [
-			{
-				"gstin" : "",
-				"gstin_name" : "",
-			}
-		];
+		console.log( JSON.stringify( this.client ) );
 		
 		
 		
 		
 		var self = this;
-
-		console.log('requestAPI being called...');
-		self.dataprovider.requestAPI(
-			'get',
-			'programming/hbgstapi/api/getgstinbybid/' + self.business.buid,
-			self.business,
-			'',
-			true, /* Token To Not Be Sent To API */
-			
-			function(response) {
-				
-				/* Logging 'Request Has Responded' event */
-				console.log( 'requestAPI responded...' );
-				console.log( 'requestAPI Response: "' + JSON.stringify( response ) + '"' );
-				console.log( 'requestAPI Response Type: ' + response.status );
-				
-				
-				self.gstins = response.data;
-				
-				console.log( 'Business Details Retreived : ' + JSON.stringify( self.business ) );
-				
-				
-
-			}
-		);
 		
-		
-		
-
 		console.log('requestAPI being called...');
 		self.dataprovider.requestAPI(
 			'get',
@@ -117,26 +83,86 @@ export class OcBusinessGstinListPage {
 		
 		
 		
-		
-		
-		
-		
 	}
-	
+
 	ionViewDidLoad() {
-		console.log('ionViewDidLoad OcBusinessGstinListPage');
+		console.log('ionViewDidLoad CaClientItemAddPage');
 	}
 	
-	
-	
-	edit_gstin(g) {
+	change_item() {
 		
-		this.nav.push( OcBusinessGstinEditPage , { 'business' : this.business , 'gstin' : g } );
+		var State_Code = this.item.item.substring(0, 2);
+		
+		for( var i = 0; i < this.statelist.length; i++ ) {
+			
+			if( this.statelist[i].State_Code == State_Code ) {
+				this.item.item_name = this.statelist[i].State_Name;
+				this.item.itemstatecode = this.statelist[i].State_Code;
+			}
+			
+		}
+		
+		console.log( this.item.item );
+		console.log( this.item.item_name );
+		console.log( this.item.itemstatecode );
 		
 	}
 	
-	
-	
-	
-	
+	save_item() {
+		
+		
+		console.log( JSON.stringify(this.client) );
+		
+		
+		var self = this;
+		
+		/* Adding two extra attributes */
+		self.item.buid = self.client.buid;
+		self.item.lastmodifiyby = self.application_service.userdata.api_token;
+
+		console.log('requestAPI being called...');
+		self.dataprovider.requestAPI(
+			'post',
+			'programming/hbgstapi/api/additem',
+			self.item,
+			'Saving businesses details...',
+			true, /* Token To Not Be Sent To API */
+			
+			function(response) {
+				
+				/* Logging 'Request Has Responded' event */
+				console.log( 'requestAPI responded...' );
+				console.log( 'requestAPI Response: "' + JSON.stringify( response ) + '"' );
+				console.log( 'requestAPI Response Type: ' + response.status );
+				
+				
+				if( response.status == 'success' ) {
+					
+					
+					self.nav.push( CaClientDashboardPage , { "client" : self.client } );
+					
+					
+				} else {
+					
+					let toast = self.toastCtrl.create({
+						message:	response.message,
+						duration:	10000,
+						cssClass:	"toast-success"
+					});
+					toast.present();
+					
+				}
+				
+				
+
+			}
+		);
+		
+		
+		
+		
+		
+		
+	}
+
 }

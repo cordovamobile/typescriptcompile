@@ -19,6 +19,9 @@ import { CaClientEditPage } from '../pages/ca-client-edit/ca-client-edit';
 import { CaClientGstinAddPage } from '../pages/ca-client-gstin-add/ca-client-gstin-add';
 import { CaClientGstinListPage } from '../pages/ca-client-gstin-list/ca-client-gstin-list';
 import { CaClientGstinEditPage } from '../pages/ca-client-gstin-edit/ca-client-gstin-edit';
+import { CaClientItemAddPage } from '../pages/ca-client-item-add/ca-client-item-add';
+import { CaClientItemListPage } from '../pages/ca-client-item-list/ca-client-item-list';
+import { CaClientItemEditPage } from '../pages/ca-client-item-edit/ca-client-item-edit';
 
 import { OcDashboardPage } from '../pages/oc-dashboard/oc-dashboard';
 import { OcBusinessAddPage } from '../pages/oc-business-add/oc-business-add';
@@ -27,6 +30,9 @@ import { OcBusinessEditPage } from '../pages/oc-business-edit/oc-business-edit';
 import { OcBusinessGstinAddPage } from '../pages/oc-business-gstin-add/oc-business-gstin-add';
 import { OcBusinessGstinListPage } from '../pages/oc-business-gstin-list/oc-business-gstin-list';
 import { OcBusinessGstinEditPage } from '../pages/oc-business-gstin-edit/oc-business-gstin-edit';
+import { OcBusinessItemAddPage } from '../pages/oc-business-item-add/oc-business-item-add';
+import { OcBusinessItemListPage } from '../pages/oc-business-item-list/oc-business-item-list';
+import { OcBusinessItemEditPage } from '../pages/oc-business-item-edit/oc-business-item-edit';
 
 
 /* Providers */
@@ -55,6 +61,9 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 		CaClientGstinAddPage,
 		CaClientGstinListPage,
 		CaClientGstinEditPage,
+		CaClientItemAddPage,
+		CaClientItemListPage,
+		CaClientItemEditPage,
 		
 		OcDashboardPage,
 		OcBusinessAddPage,
@@ -63,6 +72,9 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 		OcBusinessGstinAddPage,
 		OcBusinessGstinListPage,
 		OcBusinessGstinEditPage,
+		OcBusinessItemAddPage,
+		OcBusinessItemListPage,
+		OcBusinessItemEditPage,
 	],
 	imports: [
 		BrowserModule,
@@ -85,6 +97,9 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 		CaClientGstinAddPage,
 		CaClientGstinListPage,
 		CaClientGstinEditPage,
+		CaClientItemAddPage,
+		CaClientItemListPage,
+		CaClientItemEditPage,
 		
 		OcDashboardPage,
 		OcBusinessAddPage,
@@ -93,6 +108,9 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 		OcBusinessGstinAddPage,
 		OcBusinessGstinListPage,
 		OcBusinessGstinEditPage,
+		OcBusinessItemAddPage,
+		OcBusinessItemListPage,
+		OcBusinessItemEditPage,
 	],
 	providers: [
 		StatusBar,

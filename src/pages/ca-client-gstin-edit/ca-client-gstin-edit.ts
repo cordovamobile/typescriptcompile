@@ -6,7 +6,7 @@ import { Dataprovider } from '../../providers/dataprovider';
 import { ApplicationService } from '../../providers/application-service';
 
 //import { BusinessListPage } from '../../pages/business-list/business-list';
-import { CaClientGstinListPage } from '../../pages/ca-client-gstin-list/ca-client-gstin-list';
+import { CaClientDashboardPage } from '../../pages/ca-client-dashboard/ca-client-dashboard';
 
 @IonicPage()
 @Component({
@@ -145,7 +145,7 @@ export class CaClientGstinEditPage {
 				if( response.status == 'success' ) {
 					
 					
-					self.nav.push( CaClientGstinListPage , { "client" : self.client } );
+					self.nav.setRoot( CaClientDashboardPage , { "client" : self.client } );
 					
 					
 				} else {

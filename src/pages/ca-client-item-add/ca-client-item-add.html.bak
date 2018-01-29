@@ -1,0 +1,62 @@
+<ion-header>
+	<ion-navbar>
+		<button ion-button menuToggle>
+			<ion-icon name="menu"></ion-icon>
+		</button>
+		<ion-title>{{client.business_name}} Add New Item</ion-title>
+	</ion-navbar>
+</ion-header>
+
+
+<ion-content padding>
+	
+	
+	<ion-grid>
+		
+		<ion-row>
+			<ion-col>
+				<h5>Enter Item details:</h5>
+			</ion-col>
+		</ion-row>
+	
+	</ion-grid>
+	
+	
+	
+	<div>
+		
+		<ion-grid>
+			<ion-row>
+				<ion-col>
+					<ion-item>
+						<ion-label floating>Item Description</ion-label>
+						<ion-input type="text" [(ngModel)]="item.item_description" (keyup)="change_item()"></ion-input>
+					</ion-item>
+				</ion-col>
+			</ion-row>
+			<ion-row>
+				<ion-col>
+					<ion-item>
+						<ion-label floating>Item Type</ion-label>
+						<ion-select type="text" [(ngModel)]="item.item_type">
+							<ion-option>Goods</ion-option>
+							<ion-option>Services</ion-option>
+						</ion-select>
+					</ion-item>
+				</ion-col>
+			</ion-row>
+		</ion-grid>
+		
+		<ion-grid>
+			<ion-row>
+				<ion-col text-right>
+					<button (click)="save_item()" ion-button color="secondary">
+						Save Item
+					</button>
+				</ion-col>
+			</ion-row>
+		</ion-grid>
+		
+	</div>
+
+</ion-content>

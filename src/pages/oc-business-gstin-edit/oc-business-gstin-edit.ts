@@ -6,7 +6,7 @@ import { Dataprovider } from '../../providers/dataprovider';
 import { ApplicationService } from '../../providers/application-service';
 
 //import { BusinessListPage } from '../../pages/business-list/business-list';
-import { OcBusinessGstinListPage } from '../../pages/oc-business-gstin-list/oc-business-gstin-list';
+import { OcBusinessDashboardPage } from '../../pages/oc-business-dashboard/oc-business-dashboard';
 
 @IonicPage()
 @Component({
@@ -145,7 +145,7 @@ export class OcBusinessGstinEditPage {
 				if( response.status == 'success' ) {
 					
 					
-					self.nav.push( OcBusinessGstinListPage , { "business" : self.business } );
+					self.nav.setRoot( OcBusinessDashboardPage , { "business" : self.business } );
 					
 					
 				} else {

@@ -1,0 +1,41 @@
+<ion-header>
+	<ion-navbar>
+		<button ion-button menuToggle>
+			<ion-icon name="menu"></ion-icon>
+		</button>
+		<ion-title>{{client.business_name}} Items</ion-title>
+	</ion-navbar>
+</ion-header>
+
+
+<ion-content padding>
+	
+	
+	
+	<ion-card>
+
+		<ion-card-content>
+			
+			<button (click)="open_item_add_page()" ion-button color="danger" small>
+				<ion-icon name="add"></ion-icon>
+				&nbsp;
+				Add Item
+			</button>
+			
+		</ion-card-content>
+
+	</ion-card>
+	
+	<ion-list>
+		
+		<ion-item *ngFor="let i of items">
+			{{i.item_description}} (SKU:{{i.item_sku_code}})
+			<a (click)="edit_item(g)" style="float: right;">
+				<ion-icon name="create"></ion-icon>
+				Edit
+			</a>
+		</ion-item>
+	
+	</ion-list>
+	
+</ion-content>

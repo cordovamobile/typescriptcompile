@@ -63,7 +63,17 @@
 			
 			<div style="padding: 10px;">
 				
-				<button (click)="openPage('CaClientGstinAddPage',client)" ion-button color="light" small>
+				<button (click)="openPage('CaClientGstinListPage',client)" ion-button color="light" small>
+					<ion-icon name="create"></ion-icon>
+					&nbsp;
+					GSTINs List
+				</button>
+				
+			</div>
+			
+			<div style="padding: 10px;">
+				
+				<button (click)="openPage('CaClientGstinListPage',client)" ion-button color="light" small>
 					<ion-icon name="create"></ion-icon>
 					&nbsp;
 					GSTINs List
