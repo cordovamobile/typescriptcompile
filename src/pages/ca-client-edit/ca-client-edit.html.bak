@@ -3,7 +3,7 @@
 		<button ion-button menuToggle>
 			<ion-icon name="menu"></ion-icon>
 		</button>
-		<ion-title>{{business.business_name}} Dashboard</ion-title>
+		<ion-title>{{client.business_name}} Edit</ion-title>
 	</ion-navbar>
 </ion-header>
 
@@ -27,27 +27,27 @@
 	
 		<ion-item>
 			<ion-label floating>Client's Business Name</ion-label>
-			<ion-input type="text" id="business_name" name="business_name" [(ngModel)]="business.business_name"></ion-input>
+			<ion-input type="text" id="business_name" name="business_name" [(ngModel)]="client.business_name"></ion-input>
 		</ion-item>
 	
 		<ion-item>
 			<ion-label floating>Client's PAN</ion-label>
-			<ion-input type="text" id="pan" name="pan" [(ngModel)]="business.pan"></ion-input>
+			<ion-input type="text" id="pan" name="pan" [(ngModel)]="client.pan"></ion-input>
 		</ion-item>
 	
 		<ion-item>
 			<ion-label floating>Client's Name</ion-label>
-			<ion-input type="text" id="pan" name="pan" [(ngModel)]="business.primary_contact_person"></ion-input>
+			<ion-input type="text" id="pan" name="pan" [(ngModel)]="client.primary_contact_person"></ion-input>
 		</ion-item>
 	
 		<ion-item>
 			<ion-label floating>Email Address</ion-label>
-			<ion-input type="text" id="pan" name="pan" [(ngModel)]="business.email_address"></ion-input>
+			<ion-input type="text" id="pan" name="pan" [(ngModel)]="client.email_address"></ion-input>
 		</ion-item>
 	
 		<ion-item>
 			<ion-label floating>Phone Number</ion-label>
-			<ion-input type="text" id="pan" name="pan" [(ngModel)]="business.primary_contact_personph"></ion-input>
+			<ion-input type="text" id="pan" name="pan" [(ngModel)]="client.primary_contact_personph"></ion-input>
 		</ion-item>
 		
 		<!-- GSTINs are not needed here. They will have a separate page. -->
@@ -55,7 +55,7 @@
 			<ion-row>
 				<ion-label>GSTINs</ion-label>
 			</ion-row>
-			<ion-row *ngFor="let g of business.data; let i = index">
+			<ion-row *ngFor="let g of client.data; let i = index">
 				<ion-col>
 					<ion-item>
 						<ion-label floating>GSTIN</ion-label>

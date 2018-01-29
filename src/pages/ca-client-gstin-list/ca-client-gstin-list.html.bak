@@ -3,7 +3,7 @@
 		<button ion-button menuToggle>
 			<ion-icon name="menu"></ion-icon>
 		</button>
-		<ion-title>{{business.business_name}} GSTINs</ion-title>
+		<ion-title>{{client.business_name}} GSTINs</ion-title>
 	</ion-navbar>
 </ion-header>
 
@@ -14,7 +14,7 @@
 		
 		<ion-item *ngFor="let g of gstins">
 			{{g.gstin}}
-			<a (click)="edit_gstin(g)" style="float: right;">
+			<a (click)="edit_gstin()" style="float: right;">
 				<ion-icon name="create"></ion-icon>
 				Edit
 			</a>

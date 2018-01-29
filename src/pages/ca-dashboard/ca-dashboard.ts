@@ -129,7 +129,7 @@ export class CaDashboardPage {
 	}
 	
 	open_client_dashboard_page(c) {
-		this.navCtrl.push( CaClientDashboardPage, { "client" : c } );
+		this.navCtrl.push( CaClientDashboardPage , { "client" : c } );
 	}
 	
 	open_client_add_page(c) {

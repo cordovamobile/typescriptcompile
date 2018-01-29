@@ -17,12 +17,16 @@ import { CaClientAddPage } from '../pages/ca-client-add/ca-client-add';
 import { CaClientDashboardPage } from '../pages/ca-client-dashboard/ca-client-dashboard';
 import { CaClientEditPage } from '../pages/ca-client-edit/ca-client-edit';
 import { CaClientGstinAddPage } from '../pages/ca-client-gstin-add/ca-client-gstin-add';
+import { CaClientGstinListPage } from '../pages/ca-client-gstin-list/ca-client-gstin-list';
+import { CaClientGstinEditPage } from '../pages/ca-client-gstin-edit/ca-client-gstin-edit';
 
 import { OcDashboardPage } from '../pages/oc-dashboard/oc-dashboard';
 import { OcBusinessAddPage } from '../pages/oc-business-add/oc-business-add';
 import { OcBusinessDashboardPage } from '../pages/oc-business-dashboard/oc-business-dashboard';
 import { OcBusinessEditPage } from '../pages/oc-business-edit/oc-business-edit';
 import { OcBusinessGstinAddPage } from '../pages/oc-business-gstin-add/oc-business-gstin-add';
+import { OcBusinessGstinListPage } from '../pages/oc-business-gstin-list/oc-business-gstin-list';
+import { OcBusinessGstinEditPage } from '../pages/oc-business-gstin-edit/oc-business-gstin-edit';
 
 
 /* Providers */
@@ -49,12 +53,16 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 		CaClientDashboardPage,
 		CaClientEditPage,
 		CaClientGstinAddPage,
+		CaClientGstinListPage,
+		CaClientGstinEditPage,
 		
 		OcDashboardPage,
 		OcBusinessAddPage,
 		OcBusinessDashboardPage,
 		OcBusinessEditPage,
 		OcBusinessGstinAddPage,
+		OcBusinessGstinListPage,
+		OcBusinessGstinEditPage,
 	],
 	imports: [
 		BrowserModule,
@@ -75,12 +83,16 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 		CaClientDashboardPage,
 		CaClientEditPage,
 		CaClientGstinAddPage,
+		CaClientGstinListPage,
+		CaClientGstinEditPage,
 		
 		OcDashboardPage,
 		OcBusinessAddPage,
 		OcBusinessDashboardPage,
 		OcBusinessEditPage,
 		OcBusinessGstinAddPage,
+		OcBusinessGstinListPage,
+		OcBusinessGstinEditPage,
 	],
 	providers: [
 		StatusBar,

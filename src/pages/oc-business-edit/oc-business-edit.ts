@@ -164,7 +164,7 @@ export class OcBusinessEditPage {
 				if( response.status == 'success' ) {
 					
 					
-					self.nav.pop( OcBusinessDashboardPage );
+					self.nav.push( OcBusinessDashboardPage , { "business" : self.business } );
 					
 					
 				} else {

@@ -6,16 +6,16 @@ import { Dataprovider } from '../../providers/dataprovider';
 import { ApplicationService } from '../../providers/application-service';
 
 //import { BusinessListPage } from '../../pages/business-list/business-list';
-import { OcBusinessDashboardPage } from '../../pages/oc-business-dashboard/oc-business-dashboard';
+import { CaClientGstinListPage } from '../../pages/ca-client-gstin-list/ca-client-gstin-list';
 
-//@IonicPage()
+@IonicPage()
 @Component({
-	selector: 'page-oc-business-gstin-add',
-	templateUrl: 'oc-business-gstin-add.html',
+	selector: 'page-ca-client-gstin-edit',
+	templateUrl: 'ca-client-gstin-edit.html',
 })
-export class OcBusinessGstinAddPage {
+export class CaClientGstinEditPage {
 	
-	business: any;
+	client: any;
 	gstin: any;
 	statelist: any;
 
@@ -29,13 +29,19 @@ export class OcBusinessGstinAddPage {
 		public application_service: ApplicationService
 	) {
 		
+		this.client = {};
 		this.gstin = {};
 		this.statelist = {};
 		
-		if (this.navParams.get('business')) {
-			this.business = this.navParams.get('business');
+		if (this.navParams.get('client')) {
+			this.client = this.navParams.get('client');
 		}
-		console.log( JSON.stringify( this.business ) );
+		console.log( JSON.stringify( this.client ) );
+		
+		if (this.navParams.get('gstin')) {
+			this.gstin = this.navParams.get('gstin');
+		}
+		console.log( JSON.stringify( this.gstin ) );
 		
 		
 		
@@ -81,11 +87,10 @@ export class OcBusinessGstinAddPage {
 		);
 		
 		
-		
 	}
 
 	ionViewDidLoad() {
-		console.log('ionViewDidLoad OcBusinessGstinAddPage');
+		console.log('ionViewDidLoad CaClientGstinEditPage');
 	}
 	
 	change_gstin() {
@@ -107,24 +112,26 @@ export class OcBusinessGstinAddPage {
 		
 	}
 	
-	save_gstin() {
+	update_gstin() {
 		
 		
-		console.log( JSON.stringify(this.business) );
+		console.log( JSON.stringify(this.gstin) );
 		
 		
 		var self = this;
 		
+		self.gstin.createdby = self.application_service.userdata.api_token;
+		
 		/* Adding two extra attributes */
-		self.gstin.buid = self.business.buid;
+		self.gstin.buid = self.client.buid;
 		self.gstin.createdby = self.application_service.userdata.api_token;
 
 		console.log('requestAPI being called...');
 		self.dataprovider.requestAPI(
-			'post',
-			'programming/hbgstapi/api/addgstin',
+			'put',
+			'programming/hbgstapi/api/editgstin',
 			self.gstin,
-			'Saving businesses details...',
+			'Updating GSTIN...',
 			true, /* Token To Not Be Sent To API */
 			
 			function(response) {
@@ -138,7 +145,7 @@ export class OcBusinessGstinAddPage {
 				if( response.status == 'success' ) {
 					
 					
-					self.nav.push( OcBusinessDashboardPage , { "business" : self.business } );
+					self.nav.push( CaClientDashboardPage , { "client" : self.client } );
 					
 					
 				} else {
@@ -163,5 +170,7 @@ export class OcBusinessGstinAddPage {
 		
 		
 	}
+	
+	
 
 }

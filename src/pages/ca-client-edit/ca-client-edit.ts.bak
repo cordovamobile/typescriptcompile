@@ -5,8 +5,8 @@ import { Nav, /*IonicPage,*/ NavController, NavParams, ToastController, AlertCon
 import { Dataprovider } from '../../providers/dataprovider';
 import { ApplicationService } from '../../providers/application-service';
 
-//import { BusinessListPage } from '../../pages/business-list/business-list';
-//import { CaClientDashboardPage } from '../../pages/ca-client-dashboard/ca-client-dashboard';
+//import { BusinessListPage } from '../../pages/client-list/client-list';
+import { CaClientDashboardPage } from '../../pages/ca-client-dashboard/ca-client-dashboard';
 
 //@IonicPage()
 @Component({
@@ -15,7 +15,7 @@ import { ApplicationService } from '../../providers/application-service';
 })
 export class CaClientEditPage {
 	
-	business: any;
+	client: any;
 	statelist: any;
 
 	constructor(
@@ -28,15 +28,15 @@ export class CaClientEditPage {
 		public application_service: ApplicationService
 	) {
 		
-		this.business = {};
+		this.client = {};
 		this.statelist = {};
 		
 		if (this.navParams.get('client')) {
-			this.business = this.navParams.get('client');
+			this.client = this.navParams.get('client');
 		}
-		console.log( JSON.stringify( this.business ) );
+		console.log( JSON.stringify( this.client ) );
 		
-		this.business.gstins = [
+		this.client.gstins = [
 			{
 				"gstin" : "",
 				"gstin_name" : "",
@@ -51,8 +51,8 @@ export class CaClientEditPage {
 		console.log('requestAPI being called...');
 		self.dataprovider.requestAPI(
 			'get',
-			'programming/hbgstapi/api/getbusinessbybid/' + self.application_service.userdata.api_token + '/' + self.business.buid,
-			self.business,
+			'programming/hbgstapi/api/getclientbybid/' + self.application_service.userdata.api_token + '/' + self.client.buid,
+			self.client,
 			'',
 			true, /* Token To Not Be Sent To API */
 			
@@ -64,9 +64,9 @@ export class CaClientEditPage {
 				console.log( 'requestAPI Response Type: ' + response.status );
 				
 				
-				self.business = response[0];
+				self.client = response[0];
 				
-				console.log( 'Business Details Retreived : ' + JSON.stringify( self.business ) );
+				console.log( 'Business Details Retreived : ' + JSON.stringify( self.client ) );
 				
 				
 
@@ -126,21 +126,21 @@ export class CaClientEditPage {
 		console.log('ionViewDidLoad CaClientAddPage');
 	}
 	
-	save_business() {
+	save_client() {
 		
 		/*
-		var business = {
-			businessname : business.business_name,
-			pannumber : business.pan,
-			clienname : business.primary_contact_person,
-			emailaddress : business.email_address,
-			mobileno : business.primary_contact_personph,
-			gstins : business.data
+		var client = {
+			clientname : client.client_name,
+			pannumber : client.pan,
+			clienname : client.primary_contact_person,
+			emailaddress : client.email_address,
+			mobileno : client.primary_contact_personph,
+			gstins : client.data
 		};
 		*/
 		
 		
-		console.log( JSON.stringify(this.business) );
+		console.log( JSON.stringify(this.client) );
 		
 		
 		var self = this;
@@ -148,9 +148,9 @@ export class CaClientEditPage {
 		console.log('requestAPI being called...');
 		self.dataprovider.requestAPI(
 			'put',
-			'programming/hbgstapi/api/editbusiness',
-			self.business,
-			'Saving businesses details...',
+			'programming/hbgstapi/api/editclient',
+			self.client,
+			'Saving clientes details...',
 			true, /* Token To Not Be Sent To API */
 			
 			function(response) {
@@ -164,7 +164,7 @@ export class CaClientEditPage {
 				if( response.status == 'success' ) {
 					
 					
-					self.nav.pop();
+					self.nav.push( CaClientDashboardPage , { "client" : self.client } );
 					
 					
 				} else {
@@ -190,7 +190,7 @@ export class CaClientEditPage {
 	
 	add_gstin() {
 		
-		this.business.data.push({
+		this.client.data.push({
 			"gstin" : "",
 			"gstin_name" : "",
 		});
@@ -198,7 +198,7 @@ export class CaClientEditPage {
 	}
 	
 	remove_gstin(i) {
-		this.business.data.splice(i, 1);
+		this.client.data.splice(i, 1);
 	}
 	
 	change_gstin(g) {

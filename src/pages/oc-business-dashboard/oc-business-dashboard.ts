@@ -7,6 +7,7 @@ import { ApplicationService } from '../../providers/application-service';
 
 import { OcBusinessEditPage } from '../../pages/oc-business-edit/oc-business-edit';
 import { OcBusinessGstinAddPage } from '../../pages/oc-business-gstin-add/oc-business-gstin-add';
+import { OcBusinessGstinListPage } from '../../pages/oc-business-gstin-list/oc-business-gstin-list';
 /*
 import { BusinessAddPage } from '../../pages/business-add/business-add';
 import { BusinessListPage } from '../../pages/business-list/business-list';
@@ -94,6 +95,9 @@ export class OcBusinessDashboardPage {
 		}
 		if( page == 'OcBusinessGstinAddPage' ) {
 			redirect = OcBusinessGstinAddPage;
+		}
+		if( page == 'OcBusinessGstinListPage' ) {
+			redirect = OcBusinessGstinListPage;
 		}
 		this.navCtrl.push( redirect, { "business" : business } );
 	}

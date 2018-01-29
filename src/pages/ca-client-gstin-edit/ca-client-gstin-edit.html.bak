@@ -3,7 +3,7 @@
 		<button ion-button menuToggle>
 			<ion-icon name="menu"></ion-icon>
 		</button>
-		<ion-title>Edit GSTIN</ion-title>
+		<ion-title>{{client.business_name}} Edit GSTIN</ion-title>
 	</ion-navbar>
 </ion-header>
 

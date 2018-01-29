@@ -5,17 +5,17 @@ import { Nav, /*IonicPage,*/ NavController, NavParams, ToastController, AlertCon
 import { Dataprovider } from '../../providers/dataprovider';
 import { ApplicationService } from '../../providers/application-service';
 
-//import { BusinessListPage } from '../../pages/business-list/business-list';
-import { OcBusinessGstinEditPage } from '../../pages/oc-business-gstin-edit/oc-business-gstin-edit';
+//import { BusinessListPage } from '../../pages/client-list/client-list';
+import { CaClientGstinEditPage } from '../../pages/ca-client-gstin-edit/ca-client-gstin-edit';
 
 //@IonicPage()
 @Component({
-	selector: 'page-oc-business-gstin-list',
-	templateUrl: 'oc-business-gstin-list.html',
+	selector: 'page-ca-client-gstin-list',
+	templateUrl: 'ca-client-gstin-list.html',
 })
-export class OcBusinessGstinListPage {
+export class CaClientGstinListPage {
 	
-	business: any;
+	client: any;
 	statelist: any;
 	gstins: any;
 
@@ -29,15 +29,15 @@ export class OcBusinessGstinListPage {
 		public application_service: ApplicationService
 	) {
 		
-		this.business = {};
+		this.client = {};
 		this.statelist = {};
 		
-		if (this.navParams.get('business')) {
-			this.business = this.navParams.get('business');
+		if (this.navParams.get('client')) {
+			this.client = this.navParams.get('client');
 		}
-		console.log( JSON.stringify( this.business ) );
+		console.log( JSON.stringify( this.client ) );
 		
-		this.business.gstins = [
+		this.client.gstins = [
 			{
 				"gstin" : "",
 				"gstin_name" : "",
@@ -52,8 +52,8 @@ export class OcBusinessGstinListPage {
 		console.log('requestAPI being called...');
 		self.dataprovider.requestAPI(
 			'get',
-			'programming/hbgstapi/api/getgstinbybid/' + self.business.buid,
-			self.business,
+			'programming/hbgstapi/api/getgstinbybid/' + self.client.buid,
+			self.client,
 			'',
 			true, /* Token To Not Be Sent To API */
 			
@@ -67,7 +67,7 @@ export class OcBusinessGstinListPage {
 				
 				self.gstins = response.data;
 				
-				console.log( 'Business Details Retreived : ' + JSON.stringify( self.business ) );
+				console.log( 'Business Details Retreived : ' + JSON.stringify( self.client ) );
 				
 				
 
@@ -124,14 +124,14 @@ export class OcBusinessGstinListPage {
 	}
 	
 	ionViewDidLoad() {
-		console.log('ionViewDidLoad OcBusinessGstinListPage');
+		console.log('ionViewDidLoad CaClientGstinListPage');
 	}
 	
 	
 	
 	edit_gstin(g) {
 		
-		this.nav.push( OcBusinessGstinEditPage , { 'business' : this.business , 'gstin' : g } );
+		this.nav.push( CaClientGstinEditPage , { 'gstin' : g } );
 		
 	}
 	

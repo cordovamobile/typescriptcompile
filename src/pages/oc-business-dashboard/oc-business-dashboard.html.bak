@@ -50,10 +50,20 @@
 			
 			<div style="padding: 10px;">
 				
-				<button (click)="openPage('OcBusinessEditPage',business)" ion-button color="light" small>
+				<button (click)="openPage('OcBusinessGstinAddPage',business)" ion-button color="light" small>
 					<ion-icon name="create"></ion-icon>
 					&nbsp;
 					Add New GSTIN
+				</button>
+				
+			</div>
+			
+			<div style="padding: 10px;">
+				
+				<button (click)="openPage('CaClientGstinListPage',client)" ion-button color="light" small>
+					<ion-icon name="create"></ion-icon>
+					&nbsp;
+					GSTINs List
 				</button>
 				
 			</div>

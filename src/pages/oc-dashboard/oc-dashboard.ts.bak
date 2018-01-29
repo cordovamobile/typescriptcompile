@@ -130,7 +130,6 @@ export class OcDashboardPage {
 	}
 	
 	open_business_dashboard_page(c) {
-		alert(JSON.stringify(c));
 		this.navCtrl.push( OcBusinessDashboardPage, { "business" : c } );
 	}
 	
