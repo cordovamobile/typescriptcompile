@@ -90,22 +90,41 @@ export class CaClientItemAddPage {
 		console.log('ionViewDidLoad CaClientItemAddPage');
 	}
 	
-	change_item() {
+	change_hsn_sac() {
 		
-		var State_Code = this.item.item.substring(0, 2);
 		
-		for( var i = 0; i < this.statelist.length; i++ ) {
+		console.log( JSON.stringify(this.item) );
+		
+		
+		var self = this;
+		
+		/* Adding two extra attributes */
+		self.item.buid = self.client.buid;
+		self.item.lastmodifiyby = self.application_service.userdata.api_token;
+
+		console.log('requestAPI being called...');
+		self.dataprovider.requestAPI(
+			'get',
+			'programming/hbgstapi/api/gethsnlist/' + self.item.hsn_sac_code,
+			{},
+			'Saving businesses details...',
+			true, /* Token To Not Be Sent To API */
 			
-			if( this.statelist[i].State_Code == State_Code ) {
-				this.item.item_name = this.statelist[i].State_Name;
-				this.item.itemstatecode = this.statelist[i].State_Code;
+			function(response) {
+				
+				/* Logging 'Request Has Responded' event */
+				console.log( 'requestAPI responded...' );
+				console.log( 'requestAPI Response: "' + JSON.stringify( response ) + '"' );
+				console.log( 'requestAPI Response Type: ' + response.status );
+				
+				self.item.tax_rate = response[0].rate;
+				self.item.cess_amount = response[0].cess;
+				
 			}
-			
-		}
+		);
 		
-		console.log( this.item.item );
-		console.log( this.item.item_name );
-		console.log( this.item.itemstatecode );
+		console.log( this.item.tax_rate );
+		console.log( this.item.cess_amount );
 		
 	}
 	

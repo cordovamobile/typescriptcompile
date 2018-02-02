@@ -30,7 +30,7 @@
 				<ion-col>
 					<ion-item>
 						<ion-label floating>Item Description</ion-label>
-						<ion-input type="text" [(ngModel)]="item.item_description" (keyup)="change_item()"></ion-input>
+						<ion-input type="text" [(ngModel)]="item.item_description"></ion-input>
 					</ion-item>
 				</ion-col>
 			</ion-row>
@@ -42,6 +42,78 @@
 							<ion-option>Goods</ion-option>
 							<ion-option>Services</ion-option>
 						</ion-select>
+					</ion-item>
+				</ion-col>
+			</ion-row>
+			<ion-row>
+				<ion-col>
+					<ion-item>
+						<ion-label floating>HSN/SAC Code</ion-label>
+						<ion-input type="text" [(ngModel)]="item.hsn_sac_code" (change)=""></ion-input>
+					</ion-item>
+				</ion-col>
+			</ion-row>
+			<ion-row>
+				<ion-col>
+					<ion-item>
+						<ion-label floating>SKU</ion-label>
+						<ion-input type="text" [(ngModel)]="item.item_sku_code"></ion-input>
+					</ion-item>
+				</ion-col>
+			</ion-row>
+			<ion-row>
+				<ion-col>
+					<ion-item>
+						<ion-label floating>Tax Rate</ion-label>
+						<ion-input type="text" [(ngModel)]="item.tax_rate"></ion-input>
+					</ion-item>
+				</ion-col>
+			</ion-row>
+			<ion-row>
+				<ion-col>
+					<ion-item>
+						<ion-label floating>Cess Amount</ion-label>
+						<ion-input type="text" [(ngModel)]="item.cess_amount"></ion-input>
+					</ion-item>
+				</ion-col>
+			</ion-row>
+			<ion-row>
+				<ion-col>
+					<ion-item>
+						<ion-label floating>Purchase Price</ion-label>
+						<ion-input type="text" [(ngModel)]="item.purchase_price"></ion-input>
+					</ion-item>
+				</ion-col>
+			</ion-row>
+			<ion-row>
+				<ion-col>
+					<ion-item>
+						<ion-label floating>Selling Price</ion-label>
+						<ion-input type="text" [(ngModel)]="item.selling_price"></ion-input>
+					</ion-item>
+				</ion-col>
+			</ion-row>
+			<ion-row>
+				<ion-col>
+					<ion-item>
+						<ion-label floating>Unit</ion-label>
+						<ion-input type="text" [(ngModel)]="item.unit"></ion-input>
+					</ion-item>
+				</ion-col>
+			</ion-row>
+			<ion-row>
+				<ion-col>
+					<ion-item>
+						<ion-label floating>Discount</ion-label>
+						<ion-input type="text" [(ngModel)]="item.discount"></ion-input>
+					</ion-item>
+				</ion-col>
+			</ion-row>
+			<ion-row>
+				<ion-col>
+					<ion-item>
+						<ion-label floating>Notes</ion-label>
+						<ion-input type="text" [(ngModel)]="item.discount"></ion-input>
 					</ion-item>
 				</ion-col>
 			</ion-row>
