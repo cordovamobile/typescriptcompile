@@ -164,7 +164,7 @@ export class CaClientEditPage {
 				if( response.status == 'success' ) {
 					
 					
-					self.nav.push( CaClientDashboardPage , { "client" : self.client } );
+					self.nav.setRoot( CaClientDashboardPage , { "client" : self.client } );
 					
 					
 				} else {

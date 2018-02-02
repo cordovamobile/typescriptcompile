@@ -138,7 +138,7 @@ export class CaClientGstinAddPage {
 				if( response.status == 'success' ) {
 					
 					
-					self.nav.push( CaClientDashboardPage , { "client" : self.business } );
+					self.nav.push( CaClientDashboardPage , { "client" : self.client } );
 					
 					
 				} else {

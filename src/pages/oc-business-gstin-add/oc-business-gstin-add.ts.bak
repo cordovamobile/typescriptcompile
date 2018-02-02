@@ -138,7 +138,7 @@ export class OcBusinessGstinAddPage {
 				if( response.status == 'success' ) {
 					
 					
-					self.nav.push( OcBusinessDashboardPage );
+					self.nav.push( OcBusinessDashboardPage , { "business" : self.business } );
 					
 					
 				} else {
