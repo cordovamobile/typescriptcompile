@@ -42,7 +42,6 @@ export class MyApp {
 		this.initializeApp();
 		
 		
-		applicationservice.userdata = {};
 		/* Calling the login check function */
 		applicationservice.logged_in_or_not();
 		this.logged_in_or_not();

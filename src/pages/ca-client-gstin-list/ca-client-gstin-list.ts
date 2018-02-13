@@ -52,7 +52,7 @@ export class CaClientGstinListPage {
 		console.log('requestAPI being called...');
 		self.dataprovider.requestAPI(
 			'get',
-			'programming/hbgstapi/api/getgstinbybid/' + self.client.buid,
+			'programming/hbgstapi/trunk/api/getgstinbybid/' + self.client.buid,
 			self.client,
 			'',
 			true, /* Token To Not Be Sent To API */
@@ -80,7 +80,7 @@ export class CaClientGstinListPage {
 		console.log('requestAPI being called...');
 		self.dataprovider.requestAPI(
 			'get',
-			'programming/hbgstapi/api/getstatelist',
+			'programming/hbgstapi/trunk/api/getstatelist',
 			{},
 			'',
 			true, /* Token To Not Be Sent To API */

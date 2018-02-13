@@ -134,7 +134,7 @@ export class UserDetailsSavePage {
 		console.log('requestAPI being called...');
 		self.dataprovider.requestAPI(
 			'post',
-			'programming/hbgstapi/api/addbusiness',
+			'programming/hbgstapi/trunk/api/addbusiness',
 			data,
 			'Saving businesses details...',
 			true, /* Token To Not Be Sent To API */

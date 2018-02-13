@@ -1,4 +1,4 @@
-<ion-header>
+<!--ion-header>
 	<ion-navbar>
 		<button ion-button menuToggle>
 			<ion-icon name="menu"></ion-icon>
@@ -7,21 +7,75 @@
 		<ion-title *ngIf="current_form == 'signup'">SignUp Page</ion-title>
 		<ion-title *ngIf="current_form == 'reset_password'">Reset Password</ion-title>
 	</ion-navbar>
-</ion-header>
+</ion-header-->
 
 
 <ion-content padding>
 	
 	
+	<!-- Default Sub-Page -->
+	<form class="default" *ngIf="current_form == 'default'">
+		
+		<ion-grid>
+		
+			<ion-row>
+				<ion-col text-center>
+					<img src="assets/imgs/logos/logo_side_menu.png" style="width: 100%; max-width: 150px;" />
+				</ion-col>
+			</ion-row>
+			
+			<ion-row>
+				<ion-col>
+					<ion-slides>
+						<ion-slide>
+							<h6>Bridging the gap between business and client by making GST easy</h6>
+							<img src="assets/imgs/login/slide_1.png" style="width: 100%; max-width: 200px;" />
+						</ion-slide>
+						<ion-slide>
+							<h6>Access your account anytime anywhere</h6>
+							<img src="assets/imgs/login/slide_2.png" style="width: 100%; max-width: 200px;" />
+						</ion-slide>
+						<ion-slide>
+							<h6>Its easier done with the off-line mode</h6>
+							<img src="assets/imgs/login/slide_3.png" style="width: 100%; max-width: 200px;" />
+						</ion-slide>
+					</ion-slides>
+				</ion-col>
+			</ion-row>
+			
+		</ion-grid>
+		
+		<ion-grid>
+			<ion-row>
+				<ion-col text-right>
+					<button (click)="show_sign_up_form()" ion-button round>
+						Sign Up
+					</button>
+				</ion-col>
+				<ion-col text-left>
+					<button (click)="show_log_in_form()" ion-button color="danger" round>
+						Log In
+					</button>
+				</ion-col>
+			</ion-row>
+		</ion-grid>
+		
+	</form>
 	
+	
+	
+	<!-- Login Sub-page -->
 	<form class="login" *ngIf="current_form == 'login'">
 		
 		<ion-grid>
 			<ion-row>
-				<ion-col>
-					<h5>Enter Your Login Details</h5>
+				<ion-col text-center>
+					<img src="assets/imgs/logos/logo_side_menu.png" style="width: 100%; max-width: 150px;" />
 				</ion-col>
 			</ion-row>
+		</ion-grid>
+		
+		<ion-grid>
 			<ion-row>
 				<ion-col [innerHtml]="login_form.message"></ion-col>
 			</ion-row>
@@ -41,42 +95,42 @@
 			<ion-label>View Password</ion-label>
 			<ion-checkbox (ionChange)="toggle_show_password()" [(ngModel)]="view_password" name="view_password"></ion-checkbox>
 		</ion-item>
-		
+			
 		<ion-grid>
 			<ion-row>
-				<ion-col>
-					<button (click)="login()" ion-button small>
-						Log In
-					</button>
+				<ion-col text-right>
+					<button (click)="show_sign_up_form()" ion-button color="dark" round>Register</button>
 				</ion-col>
-				<ion-col>
-					<button (click)="show_sign_up_form()" ion-button color="secondary" small>
-						Create An Account
-					</button>
+				<ion-col text-left>
+					<button (click)="login()" color="danger" ion-button round>Log In</button>
 				</ion-col>
 			</ion-row>
+		</ion-grid>
+			
+		<ion-grid>
 			<ion-row>
-				<ion-col>
-					<button (click)="show_reset_password_form()" ion-button color="danger" small>
-						Reset Password
-					</button>
-				</ion-col>
-				<ion-col>
+				<ion-col text-center>
+					<a (click)="show_reset_password_form()"
+						style="color: #808080;"
+					>Forgot Password</a>
 				</ion-col>
 			</ion-row>
 		</ion-grid>
 		
 	</form>
-
 	
+	
+	<!-- Register Sub-page -->
 	<form class="signup" *ngIf="current_form == 'signup'">
 		
 		<ion-grid>
+		
 			<ion-row>
-				<ion-col>
-					<h5>Create New Login Details</h5>
+				<ion-col text-center>
+					<img src="assets/imgs/logos/logo_side_menu.png" style="width: 100%; max-width: 150px;" />
 				</ion-col>
 			</ion-row>
+			
 		</ion-grid>
 	
 		<ion-item>
@@ -106,11 +160,11 @@
 			
 		<ion-grid>
 			<ion-row>
-				<ion-col>
-					<button (click)="signup()" ion-button color="secondary" small>Sign Up</button>
+				<ion-col text-right>
+					<button (click)="show_log_in_form()" ion-button color="dark" round>Already Registered!</button>
 				</ion-col>
-				<ion-col>
-					<button (click)="show_log_in_form()" ion-button small>I Have An Account</button>
+				<ion-col text-left>
+					<button (click)="signup()" color="danger" ion-button round>Sign Up</button>
 				</ion-col>
 			</ion-row>
 		</ion-grid>
@@ -118,14 +172,20 @@
 	</form>
 
 	
+	<!-- Register Sub-page -->
 	<form class="reset_password" *ngIf="current_form == 'reset_password'">
 		
 		<ion-grid>
+		
 			<ion-row>
-				<ion-col>
-					<h5>Reset Password</h5>
+				<ion-col text-center>
+					<img src="assets/imgs/logos/logo_side_menu.png" style="width: 100%; max-width: 150px;" />
 				</ion-col>
 			</ion-row>
+			
+		</ion-grid>
+		
+		<ion-grid>
 			<ion-row>
 				<ion-col>
 					<p>{{reset_password_form.message}}</p>
@@ -134,21 +194,28 @@
 		</ion-grid>
 	
 		<ion-item>
-			<ion-label floating>Email/Username</ion-label>
-			<ion-input type="text" id="username_email" name="username_email" [(ngModel)]="reset_password_form.username_email"></ion-input>
+			<ion-label floating>Email</ion-label>
+			<ion-input type="text" id="email" name="email" [(ngModel)]="reset_password_form.email"></ion-input>
 		</ion-item>
 			
 		<ion-grid>
 			<ion-row>
-				<ion-col>
-					<button (click)="reset_password()" ion-button color="danger" small>Reset Password</button>
+				<ion-col text-center>
+					<button (click)="reset_password()" ion-button color="danger" round>Reset Password</button>
 				</ion-col>
-				<ion-col>
-					<button (click)="show_log_in_form()" ion-button small>
+			</ion-row>
+		</ion-grid>
+			
+		<ion-grid>
+			<ion-row>
+				<ion-col text-center>
+					<a (click)="show_log_in_form()"
+						style="color: #808080;"
+					>
 						<ion-icon name="arrow-back"></ion-icon>
 						&nbsp;
 						Back To Log In
-					</button>
+					</a>
 				</ion-col>
 			</ion-row>
 		</ion-grid>

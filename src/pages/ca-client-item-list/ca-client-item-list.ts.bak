@@ -53,7 +53,7 @@ export class CaClientItemListPage {
 		console.log('requestAPI being called...');
 		self.dataprovider.requestAPI(
 			'get',
-			'programming/hbgstapi/api/getitembybuid/' + self.client.buid,
+			'programming/hbgstapi/trunk/api/getitembybuid/' + self.client.buid,
 			self.client,
 			'',
 			true, /* Token To Not Be Sent To API */

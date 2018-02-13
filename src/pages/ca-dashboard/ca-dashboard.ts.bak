@@ -81,7 +81,7 @@ export class CaDashboardPage {
 		console.log('requestAPI being called...');
 		self.dataprovider.requestAPI(
 			'get',
-			'programming/hbgstapi/api/getbusinessbyid/' + self.application_service.userdata.api_token, 
+			'programming/hbgstapi/trunk/api/getbusinessbyid/' + self.application_service.userdata.api_token, 
 			{},
 			'',
 			true, /* Token To Not Be Sent To API */

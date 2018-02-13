@@ -47,7 +47,7 @@ export class LoginPage {
 		
 		this.loader = {};
 		
-		this.current_form = 'login';
+		this.current_form = 'default';
 		
 		this.login_form = {
 			email: '',
@@ -72,10 +72,36 @@ export class LoginPage {
 		
 		this.view_password = false;
 		
+		if( application_service.logged_in_or_not() ) {
+			
+		}
+		this.openDashboard();
+		
 	}
 
 	ionViewDidLoad() {
 		console.log('ionViewDidLoad LoginPage');
+	}
+	
+	
+	openDashboard() {
+		
+		var redirect_page;
+		
+		var userdata = JSON.parse( localStorage.getItem("userdata") );
+		
+		
+		if( typeof userdata.bu_type == 'undefined' ) { // If login_count does not exist
+			redirect_page = UserDetailsSavePage;
+		} else {
+			if( userdata.bu_type == 'CA' ) {
+				redirect_page = CaDashboardPage;
+			} else if( userdata.bu_type == 'OC' ) {
+				redirect_page = OcDashboardPage;
+			}
+		}
+			
+		this.nav.setRoot( redirect_page );
 	}
 
 
@@ -230,11 +256,11 @@ export class LoginPage {
 		console.log('requestAPI being called...');
 		self.dataprovider.requestAPI(
 			'post',
-			'programming/hbgstapi/api/loginvalidate', 
+			'programming/hbgstapi/trunk/api/loginvalidate', 
 			{
 				user_account_no:	token
 			},
-			'Getting Authorization.',
+			'',
 			false, /* Token To Not Be Sent To API */
 			
 			function(response) {

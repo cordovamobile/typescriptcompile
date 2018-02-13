@@ -59,7 +59,7 @@ export class OcBusinessDashboardPage {
 		console.log('requestAPI being called...');
 		self.dataprovider.requestAPI(
 			'get',
-			'programming/hbgstapi/api/getbusinessbybid/' + self.application_service.userdata.api_token + '/' + self.business.buid,
+			'programming/hbgstapi/trunk/api/getbusinessbybid/' + self.application_service.userdata.api_token + '/' + self.business.buid,
 			{},
 			'',
 			true, /* Token To Not Be Sent To API */

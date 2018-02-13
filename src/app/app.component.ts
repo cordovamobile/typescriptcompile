@@ -24,7 +24,7 @@ import { OcDashboardPage } from '../pages/oc-dashboard/oc-dashboard';
 export class MyApp {
   @ViewChild(Nav) nav: Nav;
 
-  rootPage: any = HomePage;
+  rootPage: any = LoginPage;
 	
 	public logged_in: boolean;
 	

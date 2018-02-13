@@ -51,7 +51,7 @@ export class OcBusinessGstinEditPage {
 		console.log('requestAPI being called...');
 		self.dataprovider.requestAPI(
 			'get',
-			'programming/hbgstapi/api/getstatelist',
+			'programming/hbgstapi/trunk/api/getstatelist',
 			{},
 			'',
 			true, /* Token To Not Be Sent To API */
@@ -129,7 +129,7 @@ export class OcBusinessGstinEditPage {
 		console.log('requestAPI being called...');
 		self.dataprovider.requestAPI(
 			'put',
-			'programming/hbgstapi/api/editgstin',
+			'programming/hbgstapi/trunk/api/editgstin',
 			self.gstin,
 			'Updating GSTIN...',
 			true, /* Token To Not Be Sent To API */

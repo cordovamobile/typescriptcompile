@@ -3,7 +3,7 @@
 		<button ion-button menuToggle>
 			<ion-icon name="menu"></ion-icon>
 		</button>
-		<ion-title>CA Dashboard</ion-title>
+		<ion-title>Client List</ion-title>
 	</ion-navbar>
 </ion-header>
 
@@ -11,8 +11,14 @@
 <ion-content padding>
 	
 	
+	<ion-fab right bottom>
+		<button ion-fab color="danger">
+			<ion-icon name="add"></ion-icon>
+		</button>
+	</ion-fab>
 	
-	<ion-card>
+	
+	<!--ion-card>
 
 		<ion-card-header>
 			Welcome to {{application_service.userdata.full_name}}'s Dashboard.
@@ -28,31 +34,59 @@
 			
 		</ion-card-content>
 
-	</ion-card>
+	</ion-card-->
 	
 	
 		
-	<ion-card>
+	<ion-card *ngFor="let c of clients" style="border-bottom: 1px rgba(0,0,0,.15) solid;">
 
 		<ion-card-header>
-			My Clients
+			<ion-grid>
+				<ion-row>
+					<ion-col>
+						{{c.business_name}}
+					</ion-col>
+					<ion-col text-right>
+						<button (click)="open_client_dashboard_page(c)" ion-button color="primary" small
+							style="background-color: #0277BD;"
+						>
+							Dashboard
+						</button>
+					</ion-col>
+				</ion-row>
+			</ion-grid>
 		</ion-card-header>
 
 		<ion-card-content>
 			
-			<div *ngFor="let c of clients" style="border-bottom: 1px rgba(0,0,0,.15) solid;">
-				<ion-row class="vertical-center">
-					<ion-col text-left>
-						{{c.business_name}}
-					</ion-col>
-					<ion-col text-right>
-						<button (click)="open_client_single_page(c)" ion-button color="danger" small>
-							Dashboard
-							&nbsp;
-							<ion-icon name="arrow-dropright"></ion-icon>
-						</button>
-					</ion-col>
-				</ion-row>
+			<div *ngFor="let g of c.data" style="border-bottom: 1px #eee solid;">
+				<ion-grid>
+					<ion-row>
+						<ion-col ion-text color="primary">
+							{{ g.gstin_name }}
+						</ion-col>
+					</ion-row>
+					<ion-row>
+						<ion-col>
+							{{ g.gstin }}
+						</ion-col>
+					</ion-row>
+				</ion-grid>
+			</div>
+			
+			<div>
+				<ion-grid>
+					<ion-row class="vertical-center">
+						<ion-col col-2>
+							<button ion-fab mini color="dark" small style="background-color: #B2B2B2;">
+								<ion-icon name="add"></ion-icon>
+							</button>					
+						</ion-col>
+						<ion-col col-10>
+							<span>Add another Branch/GSTIN/State</span>
+						</ion-col>
+					</ion-row>
+				</ion-grid>
 			</div>
 			
 		</ion-card-content>

@@ -45,7 +45,7 @@ export class CaClientGstinAddPage {
 		console.log('requestAPI being called...');
 		self.dataprovider.requestAPI(
 			'get',
-			'programming/hbgstapi/api/getstatelist',
+			'programming/hbgstapi/trunk/api/getstatelist',
 			{},
 			'',
 			true, /* Token To Not Be Sent To API */
@@ -122,7 +122,7 @@ export class CaClientGstinAddPage {
 		console.log('requestAPI being called...');
 		self.dataprovider.requestAPI(
 			'post',
-			'programming/hbgstapi/api/addgstin',
+			'programming/hbgstapi/trunk/api/addgstin',
 			self.gstin,
 			'Saving businesses details...',
 			true, /* Token To Not Be Sent To API */

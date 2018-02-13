@@ -47,7 +47,7 @@ export class CaClientItemAddPage {
 		console.log('requestAPI being called...');
 		self.dataprovider.requestAPI(
 			'get',
-			'programming/hbgstapi/api/getstatelist',
+			'programming/hbgstapi/trunk/api/getstatelist',
 			{},
 			'',
 			true, /* Token To Not Be Sent To API */
@@ -105,7 +105,7 @@ export class CaClientItemAddPage {
 		console.log('requestAPI being called...');
 		self.dataprovider.requestAPI(
 			'get',
-			'programming/hbgstapi/api/gethsnlist/' + self.item.hsn_sac_code,
+			'programming/hbgstapi/trunk/api/gethsnlist/' + self.item.hsn_sac_code,
 			{},
 			'Saving businesses details...',
 			true, /* Token To Not Be Sent To API */
@@ -143,7 +143,7 @@ export class CaClientItemAddPage {
 		console.log('requestAPI being called...');
 		self.dataprovider.requestAPI(
 			'post',
-			'programming/hbgstapi/api/additem',
+			'programming/hbgstapi/trunk/api/additem',
 			self.item,
 			'Saving businesses details...',
 			true, /* Token To Not Be Sent To API */

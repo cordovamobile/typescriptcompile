@@ -52,7 +52,7 @@ export class CaClientItemEditPage {
 		console.log('requestAPI being called...');
 		self.dataprovider.requestAPI(
 			'get',
-			'programming/hbgstapi/api/getstatelist',
+			'programming/hbgstapi/trunk/api/getstatelist',
 			{},
 			'',
 			true, /* Token To Not Be Sent To API */
@@ -129,7 +129,7 @@ export class CaClientItemEditPage {
 		console.log('requestAPI being called...');
 		self.dataprovider.requestAPI(
 			'post',
-			'programming/hbgstapi/api/updateitem',
+			'programming/hbgstapi/trunk/api/updateitem',
 			self.item,
 			'Saving businesses details...',
 			true, /* Token To Not Be Sent To API */

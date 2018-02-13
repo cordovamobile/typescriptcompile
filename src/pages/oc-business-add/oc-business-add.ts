@@ -45,7 +45,7 @@ export class OcBusinessAddPage {
 		console.log('requestAPI being called...');
 		self.dataprovider.requestAPI(
 			'get',
-			'programming/hbgstapi/api/getstatelist',
+			'programming/hbgstapi/trunk/api/getstatelist',
 			self.business,
 			'Saving businesses details...',
 			true, /* Token To Not Be Sent To API */
@@ -101,7 +101,7 @@ export class OcBusinessAddPage {
 		console.log('requestAPI being called...');
 		self.dataprovider.requestAPI(
 			'post',
-			'programming/hbgstapi/api/addbulkgstin',
+			'programming/hbgstapi/trunk/api/addbulkgstin',
 			self.business,
 			'Saving businesses details...',
 			true, /* Token To Not Be Sent To API */
