@@ -35,7 +35,7 @@ export class CaDashboardPage {
 		public toastCtrl: ToastController,
 		public alertCtrl: AlertController ,
 		public nav: Nav,
-		public application_service: ApplicationService
+		public applicationservice: ApplicationService
 	) {
 		
 		
@@ -74,6 +74,8 @@ export class CaDashboardPage {
 		*/
 		
 		
+		this.applicationservice.get_clients_or_businesses();
+		
 		
 		
 		var self = this;
@@ -81,7 +83,7 @@ export class CaDashboardPage {
 		console.log('requestAPI being called...');
 		self.dataprovider.requestAPI(
 			'get',
-			'programming/hbgstapi/trunk/api/getbusinessbyid/' + self.application_service.userdata.api_token, 
+			'programming/hbgstapi/trunk/api/getbusinessbyid/' + self.applicationservice.userdata.api_token, 
 			{},
 			'',
 			true, /* Token To Not Be Sent To API */
@@ -129,10 +131,11 @@ export class CaDashboardPage {
 	}
 	
 	open_client_dashboard_page(c) {
-		this.navCtrl.push( CaClientDashboardPage, { "client" : c } );
+		this.applicationservice.current_client_or_business = c;
+		this.nav.setRoot( CaClientDashboardPage , { "client" : c } );
 	}
 	
-	open_client_add_page(c) {
+	open_client_add_page() {
 		this.nav.push(CaClientAddPage);
 	}
 	

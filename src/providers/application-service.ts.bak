@@ -48,6 +48,8 @@ export class ApplicationService {
 	loading: Loading;
 	
 	userdata: any;
+	clients_or_businesses: any;
+	current_client_or_business: any;
 	
 	constructor(
 		public http: Http,
@@ -75,6 +77,17 @@ export class ApplicationService {
 		
 		this.userdata = {};
 		
+		this.current_client_or_business = {
+			"buid": "",
+			"business_name": "",
+			"data": [
+				{
+					"gstin": "",
+					"gstin_name": ""
+				}
+			]
+		};
+		
 	}
 	
 	
@@ -94,8 +107,6 @@ export class ApplicationService {
 
 
 	logged_in_or_not() {
-		
-		self = this;
 
 		//alert('This Is Logged In Or Not Inside AplicationService Provider...');
 		var logged_in;
@@ -137,6 +148,64 @@ export class ApplicationService {
 			}
 		}
 
+	}
+
+
+
+	get_clients_or_businesses() {
+		
+		var self = this;
+		
+		if( ! self.logged_in_or_not() ) {
+			return;
+		}
+
+		console.log('requestAPI being called...');
+		self.dataprovider.requestAPI(
+			'get',
+			'programming/hbgstapi/trunk/api/getbusinessbyid/' + self.userdata.api_token, 
+			{},
+			'',
+			true, /* Token To Not Be Sent To API */
+			
+			function(response) {
+				
+				/* Logging 'Request Has Responded' event */
+				console.log( 'requestAPI responded...' );
+				console.log( 'requestAPI Response: "' + JSON.stringify( response ) + '"' );
+				console.log( 'requestAPI Response Type: ' + response.status );
+				
+				
+				if( response.status != 'failed' ) { // If success
+					
+					self.clients_or_businesses = response;
+					
+				} else {
+					
+					let toast = self.toastCtrl.create({
+						message:	response.message,
+						duration:	10000,
+						cssClass:	"toast-success"
+					});
+					toast.present();
+					
+				}
+				
+				
+
+			}
+		);
+
+	}
+	
+	current_client_or_business_set(c) {
+		
+		for( var i=0; i<=this.clients_or_businesses.length; i++ ) {
+			if( c.buid == this.clients_or_businesses[i].buid ) {
+				this.current_client_or_business = this.clients_or_businesses[i];
+			}
+		}
+		
 	}
 	
 	

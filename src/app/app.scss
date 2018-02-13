@@ -361,7 +361,16 @@ ion-button {
 	background-color: #808080;
 }
 
-
+.current_client_or_business {
+	background-color: #004C8C;
+	width: 100%;
+	max-width: 100%;
+	border-radius: 50px;
+}
+.current_client_or_business .select-placeholder {
+	color: #fff;
+	opacity: 1;
+}
 
 
 

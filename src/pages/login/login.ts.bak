@@ -73,9 +73,8 @@ export class LoginPage {
 		this.view_password = false;
 		
 		if( application_service.logged_in_or_not() ) {
-			
+			this.openDashboard();
 		}
-		this.openDashboard();
 		
 	}
 

@@ -1,5 +1,5 @@
 import { Component, ViewChild } from '@angular/core';
-import { Events, Nav, Platform } from 'ionic-angular';
+import { Events, Nav, Platform, MenuController } from 'ionic-angular';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 
@@ -16,6 +16,8 @@ import { UserDetailsSavePage } from '../pages/user-details-save/user-details-sav
 import { CaDashboardPage } from '../pages/ca-dashboard/ca-dashboard';
 import { OcDashboardPage } from '../pages/oc-dashboard/oc-dashboard';
 
+import { CaClientDashboardPage } from '../pages/ca-client-dashboard/ca-client-dashboard';
+import { OcBusinessDashboardPage } from '../pages/oc-business-dashboard/oc-business-dashboard';
 
 @Component({
 	templateUrl: 'app.html',
@@ -35,6 +37,7 @@ export class MyApp {
 		public statusBar: StatusBar, 
 		public splashScreen: SplashScreen,
 		
+		public menuCtrl: MenuController,
 		public events: Events,
 		public applicationservice: ApplicationService,
 		public dataprovider: Dataprovider
@@ -43,7 +46,11 @@ export class MyApp {
 		
 		
 		/* Calling the login check function */
-		applicationservice.logged_in_or_not();
+		this.applicationservice.logged_in_or_not();
+		
+		/* This is useless here as user might not been logged in yet */
+		//this.applicationservice.get_clients_or_businesses();
+		
 		this.logged_in_or_not();
 		
 		
@@ -74,6 +81,36 @@ export class MyApp {
 			this.splashScreen.hide();
 		});
 	}
+	
+	
+	logged_in_or_not() {
+		if (localStorage.getItem("userdata") !== null) {
+			var userdata = JSON.parse( localStorage.getItem("userdata") )
+			if( 
+					typeof(userdata.logged_in) != "undefined" 
+				&&	typeof(userdata.token) != "undefined" 
+				&&	userdata.logged_in == true 
+			) {
+				this.logged_in = true;
+				/* setTimeout(function(){ $j('.logged_out_menu_item').hide(); }, 500); */
+			}
+		} else {
+				this.logged_in = false;
+				/* setTimeout(function(){ $j('.logged_in_menu_item').hide(); }, 500); */
+		}
+	}
+	
+	
+	
+	logout() {
+		localStorage.removeItem("userdata");
+		//alert('You have been logged out successfully!');
+		//this.navCtrl.push( LoginPage );
+		this.nav.setRoot(LoginPage);
+		
+		this.logged_in = false;
+	}
+	
 
 	openComponent(component) {
 		//alert( component );
@@ -109,32 +146,26 @@ export class MyApp {
 	}
 	
 	
-	logged_in_or_not() {
-		if (localStorage.getItem("userdata") !== null) {
-			var userdata = JSON.parse( localStorage.getItem("userdata") )
-			if( 
-					typeof(userdata.logged_in) != "undefined" 
-				&&	typeof(userdata.token) != "undefined" 
-				&&	userdata.logged_in == true 
-			) {
-				this.logged_in = true;
-				/* setTimeout(function(){ $j('.logged_out_menu_item').hide(); }, 500); */
-			}
-		} else {
-				this.logged_in = false;
-				/* setTimeout(function(){ $j('.logged_in_menu_item').hide(); }, 500); */
-		}
-	}
-	
-	
-	
-	logout() {
-		localStorage.removeItem("userdata");
-		//alert('You have been logged out successfully!');
-		//this.navCtrl.push( LoginPage );
-		this.nav.setRoot(LoginPage);
+	current_client_or_business_changed(c) {
+		console.log( JSON.stringify(c) );
 		
-		this.logged_in = false;
+		var redirect_page;
+		
+		var userdata = JSON.parse( localStorage.getItem("userdata") );
+		
+		
+		if( typeof userdata.bu_type == 'undefined' ) { // If login_count does not exist
+			redirect_page = UserDetailsSavePage;
+		} else {
+			if( userdata.bu_type == 'CA' ) {
+				redirect_page = CaClientDashboardPage;
+			} else if( userdata.bu_type == 'OC' ) {
+				redirect_page = OcBusinessDashboardPage;
+			}
+		}
+		
+		this.nav.setRoot( redirect_page , { "client" : c } );
+		this.menuCtrl.close();
 	}
 	
 	

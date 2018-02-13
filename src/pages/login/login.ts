@@ -74,6 +74,7 @@ export class LoginPage {
 		
 		if( application_service.logged_in_or_not() ) {
 			this.openDashboard();
+			this.application_service.get_clients_or_businesses();
 		}
 		
 	}

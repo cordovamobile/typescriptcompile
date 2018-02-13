@@ -1,10 +1,38 @@
 <ion-menu [content]="content">
 	
 	<ion-header>
-		<ion-toolbar>
-			<ion-title text-left>
-				<img src="assets/imgs/logos/logo_side_menu.png" style="width: 100%;" />
-			</ion-title>
+		
+		<ion-toolbar style="color: #fff;">
+			
+			<ion-grid *ngIf="logged_in">
+				<ion-row>
+					<ion-col col-3>
+						<ion-avatar item-start>
+							<img src="assets/imgs/menu/avatar.png" style="width: 50px; height: auto;">
+						</ion-avatar>
+					</ion-col>
+					<ion-col col-9 text-left>
+						<h6 style="font-weight: normal;">{{applicationservice.userdata.full_name}}</h6>
+						<ion-select 
+							[(ngModel)]="applicationservice.current_client_or_business" 
+							interface="popover"
+							class="current_client_or_business"
+							style="
+							"	(ionChange)="current_client_or_business_changed(applicationservice.current_client_or_business)"
+							placeholder="Select Business"
+							menuClose
+						>
+							<ion-option *ngFor="let c of applicationservice.clients_or_businesses"
+								[value]="c"
+							>
+								{{ c.business_name }}
+							</ion-option>
+						</ion-select>
+					</ion-col>
+				</ion-row>
+			</ion-grid>
+			
+			
 		</ion-toolbar>
 		
 		<h5
@@ -155,7 +183,7 @@
 					ion-item 
 				>
 					<span class="menu_item_icon">
-						<!--img src="assets/imgs/menu/icons/home.png" /-->
+						<ion-icon name="contacts"></ion-icon>
 					</span>
 					<span class="menu_item_title">
 						Contacts
