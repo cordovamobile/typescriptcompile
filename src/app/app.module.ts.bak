@@ -97,6 +97,9 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 		CaClientGstinAddPage,
 		CaClientGstinListPage,
 		CaClientGstinEditPage,
+		CaClientItemAddPage,
+		CaClientItemListPage,
+		CaClientItemEditPage,
 		
 		OcDashboardPage,
 		OcBusinessAddPage,
@@ -105,6 +108,9 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 		OcBusinessGstinAddPage,
 		OcBusinessGstinListPage,
 		OcBusinessGstinEditPage,
+		OcBusinessItemAddPage,
+		OcBusinessItemListPage,
+		OcBusinessItemEditPage,
 	],
 	providers: [
 		StatusBar,

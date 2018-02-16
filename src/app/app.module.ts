@@ -22,6 +22,9 @@ import { CaClientGstinEditPage } from '../pages/ca-client-gstin-edit/ca-client-g
 import { CaClientItemAddPage } from '../pages/ca-client-item-add/ca-client-item-add';
 import { CaClientItemListPage } from '../pages/ca-client-item-list/ca-client-item-list';
 import { CaClientItemEditPage } from '../pages/ca-client-item-edit/ca-client-item-edit';
+import { CaClientContactAddPage } from '../pages/ca-client-contact-add/ca-client-contact-add';
+import { CaClientContactListPage } from '../pages/ca-client-contact-list/ca-client-contact-list';
+import { CaClientContactEditPage } from '../pages/ca-client-contact-edit/ca-client-contact-edit';
 
 import { OcDashboardPage } from '../pages/oc-dashboard/oc-dashboard';
 import { OcBusinessAddPage } from '../pages/oc-business-add/oc-business-add';
