@@ -6,8 +6,8 @@ import { Dataprovider } from '../../providers/dataprovider';
 import { ApplicationService } from '../../providers/application-service';
 
 //import { BusinessListPage } from '../../pages/client-list/client-list';
-import { CaClientItemAddPage } from '../../pages/ca-client-item-add/ca-client-item-add';
-import { CaClientItemEditPage } from '../../pages/ca-client-item-edit/ca-client-item-edit';
+import { CaClientContactAddPage } from '../../pages/ca-client-contact-add/ca-client-contact-add';
+import { CaClientContactEditPage } from '../../pages/ca-client-contact-edit/ca-client-contact-edit';
 
 //@IonicPage()
 @Component({
@@ -88,14 +88,14 @@ export class CaClientItemListPage {
 	}
 	
 	open_item_add_page() {
-		this.nav.push( CaClientItemAddPage , { 'client' : this.client } );
+		this.nav.push( CaClientContactAddPage , { 'client' : this.client } );
 	}
 	
 	
 	
-	edit_item(g) {
+	edit_item(i) {
 		
-		this.nav.push( CaClientItemEditPage , { 'client' : this.client , 'item' : g } );
+		this.nav.push( CaClientContactEditPage , { 'client' : this.client , 'item' : i } );
 		
 	}
 	

@@ -3,7 +3,7 @@
 		<button ion-button menuToggle>
 			<ion-icon name="menu"></ion-icon>
 		</button>
-		<ion-title>{{client.business_name}} Items</ion-title>
+		<ion-title>{{client.business_name}} Contacts</ion-title>
 	</ion-navbar>
 </ion-header>
 
@@ -16,10 +16,10 @@
 
 		<ion-card-content>
 			
-			<button (click)="open_item_add_page()" ion-button color="danger" small>
+			<button (click)="open_contact_add_page()" ion-button color="danger" small>
 				<ion-icon name="add"></ion-icon>
 				&nbsp;
-				Add Item
+				Add Contact
 			</button>
 			
 		</ion-card-content>
@@ -28,9 +28,9 @@
 	
 	<ion-list>
 		
-		<ion-item *ngFor="let i of items">
-			{{i.item_description}} (SKU:{{i.item_sku_code}})
-			<a (click)="edit_item(i)" style="float: right;">
+		<ion-item *ngFor="let i of contacts">
+			{{i.contact_description}}
+			<a (click)="edit_contact(i)" style="float: right;">
 				<ion-icon name="create"></ion-icon>
 				Edit
 			</a>

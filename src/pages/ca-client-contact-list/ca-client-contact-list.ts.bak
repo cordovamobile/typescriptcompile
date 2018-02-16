@@ -88,14 +88,14 @@ export class CaClientContactListPage {
 	}
 	
 	open_contact_add_page() {
-		this.nav.push( CaClientContactAddPage , { 'client' : this.client } );
+		this.nav.push( CaClientItemAddPage , { 'client' : this.client } );
 	}
 	
 	
 	
 	edit_contact(i) {
 		
-		this.nav.push( CaClientContactEditPage , { 'client' : this.client , 'contact' : i } );
+		this.nav.push( CaClientItemEditPage , { 'client' : this.client , 'contact' : i } );
 		
 	}
 	

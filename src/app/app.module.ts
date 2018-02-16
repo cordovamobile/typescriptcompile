@@ -67,6 +67,9 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 		CaClientItemAddPage,
 		CaClientItemListPage,
 		CaClientItemEditPage,
+		CaClientContactAddPage,
+		CaClientContactListPage,
+		CaClientContactEditPage,
 		
 		OcDashboardPage,
 		OcBusinessAddPage,
@@ -103,6 +106,9 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 		CaClientItemAddPage,
 		CaClientItemListPage,
 		CaClientItemEditPage,
+		CaClientContactAddPage,
+		CaClientContactListPage,
+		CaClientContactEditPage,
 		
 		OcDashboardPage,
 		OcBusinessAddPage,

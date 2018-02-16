@@ -29,7 +29,7 @@
 	<ion-list>
 		
 		<ion-item *ngFor="let i of items">
-			{{i.item_description}} (SKU:{{i.item_sku_code}})
+			{{i.item_description}}
 			<a (click)="edit_item(i)" style="float: right;">
 				<ion-icon name="create"></ion-icon>
 				Edit
