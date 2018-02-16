@@ -46,7 +46,7 @@ export class CaClientContactEditPage {
 		console.log('ionViewDidLoad CaClientContactEditPage');
 	}
 	
-	update_contact() {
+	update_item() {
 		
 		
 		console.log( JSON.stringify(this.client) );
@@ -55,14 +55,14 @@ export class CaClientContactEditPage {
 		var self = this;
 		
 		/* Editing two extra attributes */
-		self.contact.buid = self.client.buid;
-		self.contact.lastmodifiyby = self.application_service.userdata.api_token;
+		self.item.buid = self.client.buid;
+		self.item.lastmodifiyby = self.application_service.userdata.api_token;
 
 		console.log('requestAPI being called...');
 		self.dataprovider.requestAPI(
 			'post',
-			'programming/hbgstapi/trunk/api/updatecontact',
-			self.contact,
+			'programming/hbgstapi/trunk/api/updateitem',
+			self.item,
 			'Saving businesses details...',
 			true, /* Token To Not Be Sent To API */
 			
