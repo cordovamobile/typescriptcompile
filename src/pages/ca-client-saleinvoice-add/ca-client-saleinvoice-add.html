@@ -1,0 +1,377 @@
+<ion-header>
+	<ion-navbar>
+		<button ion-button menuToggle>
+			<ion-icon name="menu"></ion-icon>
+		</button>
+		<ion-title>{{client.business_name}} Add New Saleinvoice</ion-title>
+	</ion-navbar>
+</ion-header>
+
+
+<ion-content padding>
+	
+	
+	<ion-grid>
+		
+		<ion-row>
+			<ion-col>
+				<h5>Enter Saleinvoice details:</h5>
+			</ion-col>
+		</ion-row>
+	
+	</ion-grid>
+	
+	
+	
+	<div>
+		
+		<ion-grid>
+			
+			<ion-row>
+				<ion-col>
+					<ion-item>
+						<ion-label floating>Invoice Number</ion-label>
+						<ion-input type="text" [(ngModel)]="saleinvoice.invoice_number"></ion-input>
+					</ion-item>
+				</ion-col>
+			</ion-row>
+			
+			<ion-row>
+				<ion-col>
+					<ion-item>
+						<ion-label floating>Invoice Date</ion-label>
+						<ion-input type="text" [(ngModel)]="saleinvoice.invoice_date"></ion-input>
+					</ion-item>
+				</ion-col>
+			</ion-row>
+			
+			<ion-row>
+				<ion-col>
+					<ion-item>
+						<ion-label floating>due_date</ion-label>
+						<ion-input type="text" [(ngModel)]="saleinvoice.due_date"></ion-input>
+					</ion-item>
+				</ion-col>
+			</ion-row>
+			
+			<ion-row>
+				<ion-col>
+					<ion-item>
+						<ion-label floating>return_month</ion-label>
+						<ion-input type="text" [(ngModel)]="saleinvoice.return_month"></ion-input>
+					</ion-item>
+				</ion-col>
+			</ion-row>
+			
+			<ion-row>
+				<ion-col>
+					<ion-item>
+						<ion-label floating>return_quarter</ion-label>
+						<ion-input type="text" [(ngModel)]="saleinvoice.return_quarter"></ion-input>
+					</ion-item>
+				</ion-col>
+			</ion-row>
+			
+			<ion-row>
+				<ion-col>
+					<ion-item>
+						<ion-label floating>supplier_gstin</ion-label>
+						<ion-input type="text" [(ngModel)]="saleinvoice.supplier_gstin"></ion-input>
+					</ion-item>
+				</ion-col>
+			</ion-row>
+			
+			<ion-row>
+				<ion-col>
+					<ion-item>
+						<ion-label floating>customer_billing_name</ion-label>
+						<ion-input type="text" [(ngModel)]="saleinvoice.customer_billing_name"></ion-input>
+					</ion-item>
+				</ion-col>
+			</ion-row>
+			
+			<ion-row>
+				<ion-col>
+					<ion-item>
+						<ion-label floating>customer_billing_gstin</ion-label>
+						<ion-input type="text" [(ngModel)]="saleinvoice.customer_billing_gstin"></ion-input>
+					</ion-item>
+				</ion-col>
+			</ion-row>
+			
+			<ion-row>
+				<ion-col>
+					<ion-item>
+						<ion-label floating>place_of_supply</ion-label>
+						<ion-input type="text" [(ngModel)]="saleinvoice.place_of_supply"></ion-input>
+					</ion-item>
+				</ion-col>
+			</ion-row>
+			
+			<ion-row>
+				<ion-col>
+					<ion-item>
+						<ion-label floating>customer_billing_address</ion-label>
+						<ion-input type="text" [(ngModel)]="saleinvoice.customer_billing_address"></ion-input>
+					</ion-item>
+				</ion-col>
+			</ion-row>
+			
+			<ion-row>
+				<ion-col>
+					<ion-item>
+						<ion-label floating>customer_billing_pincode</ion-label>
+						<ion-input type="text" [(ngModel)]="saleinvoice.customer_billing_pincode"></ion-input>
+					</ion-item>
+				</ion-col>
+			</ion-row>
+			
+			<ion-row>
+				<ion-col>
+					<ion-item>
+						<ion-label floating>customer_billing_city</ion-label>
+						<ion-input type="text" [(ngModel)]="saleinvoice.customer_billing_city"></ion-input>
+					</ion-item>
+				</ion-col>
+			</ion-row>
+			
+			<ion-row>
+				<ion-col>
+					<ion-item>
+						<ion-label floating>customer_billing_state</ion-label>
+						<ion-input type="text" [(ngModel)]="saleinvoice.customer_billing_state"></ion-input>
+					</ion-item>
+				</ion-col>
+			</ion-row>
+			
+			<ion-row>
+				<ion-col>
+					<ion-item>
+						<ion-label floating>customer_billing_country</ion-label>
+						<ion-input type="text" [(ngModel)]="saleinvoice.customer_billing_country"></ion-input>
+					</ion-item>
+				</ion-col>
+			</ion-row>
+			
+			<ion-row>
+				<ion-col>
+					<ion-item>
+						<ion-label floating>customer_shipping_address</ion-label>
+						<ion-input type="text" [(ngModel)]="saleinvoice.customer_shipping_address"></ion-input>
+					</ion-item>
+				</ion-col>
+			</ion-row>
+			
+			<ion-row>
+				<ion-col>
+					<ion-item>
+						<ion-label floating>customer_shipping_pincode</ion-label>
+						<ion-input type="text" [(ngModel)]="saleinvoice.customer_shipping_pincode"></ion-input>
+					</ion-item>
+				</ion-col>
+			</ion-row>
+			
+			<ion-row>
+				<ion-col>
+					<ion-item>
+						<ion-label floating>customer_shipping_city</ion-label>
+						<ion-input type="text" [(ngModel)]="saleinvoice.customer_shipping_city"></ion-input>
+					</ion-item>
+				</ion-col>
+			</ion-row>
+			
+			<ion-row>
+				<ion-col>
+					<ion-item>
+						<ion-label floating>customer_shipping_state</ion-label>
+						<ion-input type="text" [(ngModel)]="saleinvoice.customer_shipping_state"></ion-input>
+					</ion-item>
+				</ion-col>
+			</ion-row>
+			
+			<ion-row>
+				<ion-col>
+					<ion-item>
+						<ion-label floating>customer_shipping_country</ion-label>
+						<ion-input type="text" [(ngModel)]="saleinvoice.customer_shipping_country"></ion-input>
+					</ion-item>
+				</ion-col>
+			</ion-row>
+			
+			<ion-row>
+				<ion-col>
+					<ion-item>
+						<ion-label floating>customer_bank_name</ion-label>
+						<ion-input type="text" [(ngModel)]="saleinvoice.customer_bank_name"></ion-input>
+					</ion-item>
+				</ion-col>
+			</ion-row>
+			
+			<ion-row>
+				<ion-col>
+					<ion-item>
+						<ion-label floating>customer_bank_branch_name</ion-label>
+						<ion-input type="text" [(ngModel)]="saleinvoice.customer_bank_branch_name"></ion-input>
+					</ion-item>
+				</ion-col>
+			</ion-row>
+			
+			<ion-row>
+				<ion-col>
+					<ion-item>
+						<ion-label floating>customer_bank_account_number</ion-label>
+						<ion-input type="text" [(ngModel)]="saleinvoice.customer_bank_account_number"></ion-input>
+					</ion-item>
+				</ion-col>
+			</ion-row>
+			
+			<ion-row>
+				<ion-col>
+					<ion-item>
+						<ion-label floating>customer_bank_ifsc_code</ion-label>
+						<ion-input type="text" [(ngModel)]="saleinvoice.customer_bank_ifsc_code"></ion-input>
+					</ion-item>
+				</ion-col>
+			</ion-row>
+			
+			<ion-row>
+				<ion-col>
+					<ion-item>
+						<ion-label floating>customer_notes</ion-label>
+						<ion-input type="text" [(ngModel)]="saleinvoice.customer_notes"></ion-input>
+					</ion-item>
+				</ion-col>
+			</ion-row>
+			
+			<ion-row>
+				<ion-col>
+					<ion-item>
+						<ion-label floating>flag_reverse_charge</ion-label>
+						<ion-input type="text" [(ngModel)]="saleinvoice.flag_reverse_charge"></ion-input>
+					</ion-item>
+				</ion-col>
+			</ion-row>
+			
+			<ion-row>
+				<ion-col>
+					<ion-item>
+						<ion-label floating>flag_status</ion-label>
+						<ion-input type="text" [(ngModel)]="saleinvoice.flag_status"></ion-input>
+					</ion-item>
+				</ion-col>
+			</ion-row>
+			
+			<ion-row>
+				<ion-col>
+					<ion-item>
+						<ion-label floating>flag_sub_type</ion-label>
+						<ion-input type="text" [(ngModel)]="saleinvoice.flag_sub_type"></ion-input>
+					</ion-item>
+				</ion-col>
+			</ion-row>
+			
+			<ion-row>
+				<ion-col>
+					<ion-item>
+						<ion-label floating>total_discount_value</ion-label>
+						<ion-input type="text" [(ngModel)]="saleinvoice.total_discount_value"></ion-input>
+					</ion-item>
+				</ion-col>
+			</ion-row>
+			
+			<ion-row>
+				<ion-col>
+					<ion-item>
+						<ion-label floating>flag_sub_type</ion-label>
+						<ion-input type="text" [(ngModel)]="saleinvoice.flag_sub_type"></ion-input>
+					</ion-item>
+				</ion-col>
+			</ion-row>
+			
+			<ion-row>
+				<ion-col>
+					<ion-item>
+						<ion-label floating>total_taxable_value</ion-label>
+						<ion-input type="text" [(ngModel)]="saleinvoice.total_taxable_value"></ion-input>
+					</ion-item>
+				</ion-col>
+			</ion-row>
+			
+			<ion-row>
+				<ion-col>
+					<ion-item>
+						<ion-label floating>total_cgst_amount</ion-label>
+						<ion-input type="text" [(ngModel)]="saleinvoice.total_cgst_amount"></ion-input>
+					</ion-item>
+				</ion-col>
+			</ion-row>
+			
+			<ion-row>
+				<ion-col>
+					<ion-item>
+						<ion-label floating>total_sgst_amount</ion-label>
+						<ion-input type="text" [(ngModel)]="saleinvoice.total_sgst_amount"></ion-input>
+					</ion-item>
+				</ion-col>
+			</ion-row>
+			
+			<ion-row>
+				<ion-col>
+					<ion-item>
+						<ion-label floating>total_igst_amount</ion-label>
+						<ion-input type="text" [(ngModel)]="saleinvoice.total_igst_amount"></ion-input>
+					</ion-item>
+				</ion-col>
+			</ion-row>
+			
+			<ion-row>
+				<ion-col>
+					<ion-item>
+						<ion-label floating>total</ion-label>
+						<ion-input type="text" [(ngModel)]="saleinvoice.total"></ion-input>
+					</ion-item>
+				</ion-col>
+			</ion-row>
+			
+			<ion-row>
+				<ion-col>
+					<ion-item>
+						<ion-label floating>net_total</ion-label>
+						<ion-input type="text" [(ngModel)]="saleinvoice.net_total"></ion-input>
+					</ion-item>
+				</ion-col>
+			</ion-row>
+			
+			<ion-row>
+				<ion-col>
+					<ion-item>
+						<ion-label floating>flag_invoice_type</ion-label>
+						<ion-input type="text" [(ngModel)]="saleinvoice.flag_invoice_type"></ion-input>
+					</ion-item>
+				</ion-col>
+			</ion-row>
+			
+			<ion-row>
+				<ion-col>
+					<ion-item>
+						<ion-label floating>itemdata</ion-label>
+						<ion-input type="text" [(ngModel)]="saleinvoice.itemdata"></ion-input>
+					</ion-item>
+				</ion-col>
+			</ion-row>
+			
+		</ion-grid>
+		
+		<ion-grid>
+			<ion-row>
+				<ion-col text-right>
+					<button (click)="save_saleinvoice()" ion-button color="secondary">
+						Save Saleinvoice
+					</button>
+				</ion-col>
+			</ion-row>
+		</ion-grid>
+		
+	</div>
+
+</ion-content>

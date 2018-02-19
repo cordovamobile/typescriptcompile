@@ -25,6 +25,9 @@ import { CaClientItemEditPage } from '../pages/ca-client-item-edit/ca-client-ite
 import { CaClientContactAddPage } from '../pages/ca-client-contact-add/ca-client-contact-add';
 import { CaClientContactListPage } from '../pages/ca-client-contact-list/ca-client-contact-list';
 import { CaClientContactEditPage } from '../pages/ca-client-contact-edit/ca-client-contact-edit';
+import { CaClientSaleinvoiceAddPage } from '../pages/ca-client-saleinvoice-add/ca-client-saleinvoice-add';
+import { CaClientSaleinvoiceListPage } from '../pages/ca-client-saleinvoice-list/ca-client-saleinvoice-list';
+import { CaClientSaleinvoiceEditPage } from '../pages/ca-client-saleinvoice-edit/ca-client-saleinvoice-edit';
 
 import { OcDashboardPage } from '../pages/oc-dashboard/oc-dashboard';
 import { OcBusinessAddPage } from '../pages/oc-business-add/oc-business-add';
@@ -70,6 +73,9 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 		CaClientContactAddPage,
 		CaClientContactListPage,
 		CaClientContactEditPage,
+		CaClientSaleinvoiceAddPage,
+		CaClientSaleinvoiceListPage,
+		CaClientSaleinvoiceEditPage,
 		
 		OcDashboardPage,
 		OcBusinessAddPage,
@@ -109,6 +115,9 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 		CaClientContactAddPage,
 		CaClientContactListPage,
 		CaClientContactEditPage,
+		CaClientSaleinvoiceAddPage,
+		CaClientSaleinvoiceListPage,
+		CaClientSaleinvoiceEditPage,
 		
 		OcDashboardPage,
 		OcBusinessAddPage,

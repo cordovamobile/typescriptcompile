@@ -10,6 +10,7 @@ import { CaClientGstinAddPage } from '../../pages/ca-client-gstin-add/ca-client-
 import { CaClientGstinListPage } from '../../pages/ca-client-gstin-list/ca-client-gstin-list';
 import { CaClientItemListPage } from '../../pages/ca-client-item-list/ca-client-item-list';
 import { CaClientContactListPage } from '../../pages/ca-client-contact-list/ca-client-contact-list';
+import { CaClientSaleinvoiceListPage } from '../../pages/ca-client-saleinvoice-list/ca-client-saleinvoice-list';
 /*
 import { BusinessAddPage } from '../../pages/business-add/business-add';
 import { BusinessListPage } from '../../pages/business-list/business-list';
@@ -106,6 +107,9 @@ export class CaClientDashboardPage {
 		}
 		if( page == 'CaClientContactListPage' ) {
 			redirect = CaClientContactListPage;
+		}
+		if( page == 'CaClientSaleinvoiceListPage' ) {
+			redirect = CaClientSaleinvoiceListPage;
 		}
 		this.navCtrl.push( redirect, { "client" : client } );
 	}

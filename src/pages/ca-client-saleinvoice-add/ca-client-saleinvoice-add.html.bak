@@ -1,0 +1,134 @@
+<ion-header>
+	<ion-navbar>
+		<button ion-button menuToggle>
+			<ion-icon name="menu"></ion-icon>
+		</button>
+		<ion-title>{{client.business_name}} Add New Saleinvoice</ion-title>
+	</ion-navbar>
+</ion-header>
+
+
+<ion-content padding>
+	
+	
+	<ion-grid>
+		
+		<ion-row>
+			<ion-col>
+				<h5>Enter Saleinvoice details:</h5>
+			</ion-col>
+		</ion-row>
+	
+	</ion-grid>
+	
+	
+	
+	<div>
+		
+		<ion-grid>
+			
+			<ion-row>
+				<ion-col>
+					<ion-item>
+						<ion-label floating>Invoice Number</ion-label>
+						<ion-input type="text" [(ngModel)]="saleinvoice.invoice_number"></ion-input>
+					</ion-item>
+				</ion-col>
+			</ion-row>
+			
+			<ion-row>
+				<ion-col>
+					<ion-item>
+						<ion-label floating>Invoice Date</ion-label>
+						<ion-input type="text" [(ngModel)]="saleinvoice.invoice_date"></ion-input>
+					</ion-item>
+				</ion-col>
+			</ion-row>
+			
+			<ion-row>
+				<ion-col>
+					<ion-item>
+						<ion-label floating>Invoice Number</ion-label>
+						<ion-input type="text" [(ngModel)]="saleinvoice.invoice_number"></ion-input>
+					</ion-item>
+				</ion-col>
+			</ion-row>
+			
+			<ion-row>
+				<ion-col>
+					<ion-item>
+						<ion-label floating>Invoice Number</ion-label>
+						<ion-input type="text" [(ngModel)]="saleinvoice.invoice_number"></ion-input>
+					</ion-item>
+				</ion-col>
+			</ion-row>
+			
+			<ion-row>
+				<ion-col>
+					<ion-item>
+						<ion-label floating>Invoice Number</ion-label>
+						<ion-input type="text" [(ngModel)]="saleinvoice.invoice_number"></ion-input>
+					</ion-item>
+				</ion-col>
+			</ion-row>
+			
+			<ion-row>
+				<ion-col>
+					<ion-item>
+						<ion-label floating>Invoice Number</ion-label>
+						<ion-input type="text" [(ngModel)]="saleinvoice.invoice_number"></ion-input>
+					</ion-item>
+				</ion-col>
+			</ion-row>
+			
+			<ion-row>
+				<ion-col>
+					<ion-item>
+						<ion-label floating>Invoice Number</ion-label>
+						<ion-input type="text" [(ngModel)]="saleinvoice.invoice_number"></ion-input>
+					</ion-item>
+				</ion-col>
+			</ion-row>
+			
+			<ion-row>
+				<ion-col>
+					<ion-item>
+						<ion-label floating>Invoice Number</ion-label>
+						<ion-input type="text" [(ngModel)]="saleinvoice.invoice_number"></ion-input>
+					</ion-item>
+				</ion-col>
+			</ion-row>
+			
+			<ion-row>
+				<ion-col>
+					<ion-item>
+						<ion-label floating>Invoice Number</ion-label>
+						<ion-input type="text" [(ngModel)]="saleinvoice.invoice_number"></ion-input>
+					</ion-item>
+				</ion-col>
+			</ion-row>
+			
+			<ion-row>
+				<ion-col>
+					<ion-item>
+						<ion-label floating>Invoice Number</ion-label>
+						<ion-input type="text" [(ngModel)]="saleinvoice.invoice_number"></ion-input>
+					</ion-item>
+				</ion-col>
+			</ion-row>
+			
+		</ion-grid>
+		
+		<ion-grid>
+			<ion-row>
+				<ion-col text-right>
+					<button (click)="save_saleinvoice()" ion-button color="secondary">
+						Save Saleinvoice
+					</button>
+				</ion-col>
+			</ion-row>
+		</ion-grid>
+		
+	</div>
+
+</ion-content>

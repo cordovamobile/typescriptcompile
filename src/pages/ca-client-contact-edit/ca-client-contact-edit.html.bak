@@ -111,8 +111,8 @@
 		<ion-grid>
 			<ion-row>
 				<ion-col text-right>
-					<button (click)="save_contact()" ion-button color="secondary">
-						Save Item
+					<button (click)="update_contact()" ion-button color="secondary">
+						Update Contact
 					</button>
 				</ion-col>
 			</ion-row>
