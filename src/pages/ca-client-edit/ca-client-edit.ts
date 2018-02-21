@@ -51,7 +51,7 @@ export class CaClientEditPage {
 		console.log('requestAPI being called...');
 		self.dataprovider.requestAPI(
 			'get',
-			'programming/hbgstapi/trunk/api/getclientbybid/' + self.application_service.userdata.api_token + '/' + self.client.buid,
+			'programming/hbgstapi/trunk/api/getbusinessbybid/' + self.application_service.userdata.api_token + '/' + self.client.buid,
 			self.client,
 			'',
 			true, /* Token To Not Be Sent To API */

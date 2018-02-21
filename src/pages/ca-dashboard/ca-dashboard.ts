@@ -7,6 +7,7 @@ import { ApplicationService } from '../../providers/application-service';
 
 import { CaClientAddPage } from '../../pages/ca-client-add/ca-client-add';
 import { CaClientDashboardPage } from '../../pages/ca-client-dashboard/ca-client-dashboard';
+import { CaClientGstinAddPage } from '../../pages/ca-client-gstin-add/ca-client-gstin-add';
 /*
 import { BusinessAddPage } from '../../pages/business-add/business-add';
 import { BusinessListPage } from '../../pages/business-list/business-list';
@@ -148,5 +149,13 @@ export class CaDashboardPage {
 		this.nav.push( BusinessListPage );
 	}
 	*/
+	
+	openPage( page , client ) {
+		var redirect;
+		if( page == 'CaClientGstinAddPage' ) {
+			redirect = CaClientGstinAddPage;
+		}
+		this.navCtrl.push( redirect, { "client" : client } );
+	}
 	
 }
