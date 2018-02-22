@@ -49,8 +49,13 @@
 		
 		<ion-grid>
 			<ion-row>
+				<ion-col text-left>
+					<button (click)="update_item()" ion-button color="secondary">
+						Save Item
+					</button>
+				</ion-col>
 				<ion-col text-right>
-					<button (click)="save_item()" ion-button color="secondary">
+					<button (click)="update_item()" ion-button color="secondary">
 						Save Item
 					</button>
 				</ion-col>

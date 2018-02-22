@@ -101,6 +101,40 @@ export class CaClientItemListPage {
 	
 	
 	
+	delete_item(i,n) {
+		
+		var self = this;
+
+		console.log('requestAPI being called...');
+		self.dataprovider.requestAPI(
+			'delete',
+			'programming/hbgstapi/trunk/api/deleteitem/' + i.itemid,
+			{},
+			'Deleting Item...',
+			true, /* Token To Not Be Sent To API */
+			
+			function(response) {
+				
+				/* Logging 'Request Has Responded' event */
+				console.log( 'requestAPI responded...' );
+				console.log( 'requestAPI Response: "' + JSON.stringify( response ) + '"' );
+				console.log( 'requestAPI Response Type: ' + response.status );
+				
+				if( response.status == 'success' ) {
+					self.items.splice(n, 1);
+				}
+				
+				console.log( 'Business Details Retreived : ' + JSON.stringify( self.client ) );
+				
+				
+
+			}
+		);
+		
+	}
+	
+	
+	
 	
 	
 }

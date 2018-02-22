@@ -133,7 +133,7 @@ export class Dataprovider {
 			});			
 		}
 		
-		if( request_type == 'get' ) {
+		if( request_type == 'get' || request_type == 'delete' ) {
 			this.http[request_type]( self.request_url , options )
 			.timeout( 30000 )
 			/* If request was SUCCESSFUL */

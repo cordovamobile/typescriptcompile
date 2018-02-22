@@ -131,7 +131,43 @@ export class CaClientGstinListPage {
 	
 	edit_gstin(g) {
 		
-		this.nav.push( CaClientGstinEditPage , { 'gstin' : g } );
+		this.nav.push( CaClientGstinEditPage , { 'client' : this.client , 'gstin' : g } );
+		
+	}
+	
+	
+	
+	delete_gstin(g) {
+		
+		
+		
+		
+		var self = this;
+
+		console.log('requestAPI being called...');
+		self.dataprovider.requestAPI(
+			'get',
+			'programming/hbgstapi/trunk/api/getgstinbybid/' + self.client.buid,
+			self.client,
+			'',
+			true, /* Token To Not Be Sent To API */
+			
+			function(response) {
+				
+				/* Logging 'Request Has Responded' event */
+				console.log( 'requestAPI responded...' );
+				console.log( 'requestAPI Response: "' + JSON.stringify( response ) + '"' );
+				console.log( 'requestAPI Response Type: ' + response.status );
+				
+				
+				self.gstins = response.data;
+				
+				console.log( 'Business Details Retreived : ' + JSON.stringify( self.client ) );
+				
+				
+
+			}
+		);
 		
 	}
 	

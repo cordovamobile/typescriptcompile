@@ -170,5 +170,39 @@ export class CaClientItemEditPage {
 		
 		
 	}
+	
+	
+	
+	delete_item() {
+		
+		var self = this;
+
+		console.log('requestAPI being called...');
+		self.dataprovider.requestAPI(
+			'delete',
+			'programming/hbgstapi/trunk/api/deleteitem/' + self.item.itemid,
+			{},
+			'Deleting Item...',
+			true, /* Token To Not Be Sent To API */
+			
+			function(response) {
+				
+				/* Logging 'Request Has Responded' event */
+				console.log( 'requestAPI responded...' );
+				console.log( 'requestAPI Response: "' + JSON.stringify( response ) + '"' );
+				console.log( 'requestAPI Response Type: ' + response.status );
+				
+				if( response.status == 'success' ) {
+					self.nav.push( CaClientDashboardPage , { "client" : self.client } );
+				}
+				
+				console.log( 'Business Details Retreived : ' + JSON.stringify( self.client ) );
+				
+				
+
+			}
+		);
+		
+	}
 
 }
