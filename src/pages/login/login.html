@@ -91,10 +91,15 @@
 			<ion-input type="{{password_field_type}}" id="password" name="password" [(ngModel)]="login_form.password"></ion-input>
 		</ion-item>
 		
-		<ion-item>
-			<ion-label>View Password</ion-label>
-			<ion-checkbox (ionChange)="toggle_show_password()" [(ngModel)]="view_password" name="view_password"></ion-checkbox>
-		</ion-item>
+		<ion-grid text-right>
+			<ion-row>
+				<ion-col (click)="toggle_show_password()">
+					<ion-icon name="eye" *ngIf="password_field_type == 'text'"></ion-icon>
+					<ion-icon name="eye-off" *ngIf="password_field_type == 'password'"></ion-icon>
+					View Password
+				</ion-col>
+			</ion-row>
+		</ion-grid>
 			
 		<ion-grid>
 			<ion-row>
@@ -153,10 +158,15 @@
 			<ion-input type="{{password_field_type}}" id="password" name="password" [(ngModel)]="signup_form.password"></ion-input>
 		</ion-item>
 		
-		<ion-item>
-			<ion-label>View Password</ion-label>
-			<ion-checkbox (ionChange)="toggle_show_password()" [(ngModel)]="view_password" name="view_password"></ion-checkbox>
-		</ion-item>
+		<ion-grid text-right>
+			<ion-row>
+				<ion-col (click)="toggle_show_password()">
+					<ion-icon name="eye" *ngIf="password_field_type == 'text'"></ion-icon>
+					<ion-icon name="eye-off" *ngIf="password_field_type == 'password'"></ion-icon>
+					View Password
+				</ion-col>
+			</ion-row>
+		</ion-grid>
 			
 		<ion-grid>
 			<ion-row>

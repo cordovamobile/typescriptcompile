@@ -106,9 +106,9 @@ export class LoginPage {
 
 
 	toggle_show_password() {
-		if( this.view_password == false ) {
+		if( this.password_field_type == 'text' ) {
 			this.password_field_type = 'password';
-		} else {
+		} else if( this.password_field_type == 'password' ) {
 			this.password_field_type = 'text';
 		}
 	}

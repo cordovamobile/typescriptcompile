@@ -20,7 +20,6 @@
 							style="
 							"	(ionChange)="current_client_or_business_changed(applicationservice.current_client_or_business)"
 							placeholder="Select Business"
-							menuClose
 						>
 							<ion-option *ngFor="let c of applicationservice.clients_or_businesses"
 								[value]="c"
@@ -35,12 +34,12 @@
 			
 		</ion-toolbar>
 		
-		<h5
+		<!--h5
 			[class.hide]="!logged_in"
 			text-center
 		>
 			Logged in as <b>{{applicationservice.userdata.full_name}}</b>.
-		</h5>
+		</h5-->
 		
 	</ion-header>
 	

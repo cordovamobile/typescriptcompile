@@ -46,6 +46,16 @@ font-weight: 300
 	background-position: fixed;
 	background-size: 100% 100%;
 	background-color: #F5F5F6;
+	color: #808080;
+}
+
+
+.menu-inner > .content {
+	background-color: #FAFAFA;
+}
+.list-md .item-block .item-inner {
+	border-bottom: none;
+	padding-left: 10px;
 }
 
 
@@ -125,7 +135,7 @@ ion-list.list.primary_menu{
 
 	.menu_item_icon {
 		/* background-color: #A9482D; */
-		background-color: #fff;
+		/* background-color: #fff; */
 		display: inline-block;
 		width: 40px;
 		height: 40px;
@@ -154,6 +164,7 @@ ion-list.list.primary_menu{
 		background-color: transparent;
 		
 		color: #000;
+		color: #727272;
 		
 	}
 	
