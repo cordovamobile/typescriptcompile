@@ -49,7 +49,7 @@
 				<ion-col>
 					<ion-item>
 						<ion-label floating>HSN/SAC Code</ion-label>
-						<ion-input type="text" [(ngModel)]="item.hsn_sac_code" (change)=""></ion-input>
+						<ion-input type="text" [(ngModel)]="item.hsn_sac_code" (change)="change_hsn_sac()"></ion-input>
 					</ion-item>
 				</ion-col>
 			</ion-row>

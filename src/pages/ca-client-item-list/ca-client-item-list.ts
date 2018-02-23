@@ -8,7 +8,6 @@ import { ApplicationService } from '../../providers/application-service';
 //import { BusinessListPage } from '../../pages/client-list/client-list';
 import { CaClientItemAddPage } from '../../pages/ca-client-item-add/ca-client-item-add';
 import { CaClientItemEditPage } from '../../pages/ca-client-item-edit/ca-client-item-edit';
-import { CaClientItemListPage } from '../../pages/ca-client-item-list/ca-client-item-list';
 import { CaClientContactListPage } from '../../pages/ca-client-contact-list/ca-client-contact-list';
 import { CaClientSaleinvoiceListPage } from '../../pages/ca-client-saleinvoice-list/ca-client-saleinvoice-list';
 
@@ -138,18 +137,6 @@ export class CaClientItemListPage {
 	
 	openPage( page ) {
 		var redirect;
-		if( page == 'CaClientEditPage' ) {
-			redirect = CaClientEditPage;
-		}
-		if( page == 'CaClientGstinAddPage' ) {
-			redirect = CaClientGstinAddPage;
-		}
-		if( page == 'CaClientGstinListPage' ) {
-			redirect = CaClientGstinListPage;
-		}
-		if( page == 'CaClientItemListPage' ) {
-			redirect = CaClientItemListPage;
-		}
 		if( page == 'CaClientContactListPage' ) {
 			redirect = CaClientContactListPage;
 		}

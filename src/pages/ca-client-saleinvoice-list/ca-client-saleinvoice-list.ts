@@ -10,7 +10,6 @@ import { CaClientSaleinvoiceAddPage } from '../../pages/ca-client-saleinvoice-ad
 import { CaClientSaleinvoiceEditPage } from '../../pages/ca-client-saleinvoice-edit/ca-client-saleinvoice-edit';
 import { CaClientItemListPage } from '../../pages/ca-client-item-list/ca-client-item-list';
 import { CaClientContactListPage } from '../../pages/ca-client-contact-list/ca-client-contact-list';
-import { CaClientSaleinvoiceListPage } from '../../pages/ca-client-saleinvoice-list/ca-client-saleinvoice-list';
 
 //@IonicPage()
 @Component({
@@ -104,23 +103,11 @@ export class CaClientSaleinvoiceListPage {
 	
 	openPage( page ) {
 		var redirect;
-		if( page == 'CaClientEditPage' ) {
-			redirect = CaClientEditPage;
-		}
-		if( page == 'CaClientGstinAddPage' ) {
-			redirect = CaClientGstinAddPage;
-		}
-		if( page == 'CaClientGstinListPage' ) {
-			redirect = CaClientGstinListPage;
-		}
 		if( page == 'CaClientItemListPage' ) {
 			redirect = CaClientItemListPage;
 		}
 		if( page == 'CaClientContactListPage' ) {
 			redirect = CaClientContactListPage;
-		}
-		if( page == 'CaClientSaleinvoiceListPage' ) {
-			redirect = CaClientSaleinvoiceListPage;
 		}
 		this.navCtrl.setRoot( redirect, { "client" : this.client } );
 	}

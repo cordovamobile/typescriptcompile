@@ -5,6 +5,21 @@
 		</button>
 		<ion-title>{{client.business_name}} Contacts</ion-title>
 	</ion-navbar>
+	<div class="tabs_navbar">
+		<ion-grid>
+			<ion-row>
+				<ion-col text-center (click)="openPage('CaClientSaleinvoiceListPage')">
+					Sales
+				</ion-col>
+				<ion-col text-center (click)="openPage('CaClientItemListPage')">
+					Items
+				</ion-col>
+				<ion-col text-center (click)="">
+					Clients
+				</ion-col>
+			</ion-row>
+		</ion-grid>
+	</div>
 </ion-header>
 
 

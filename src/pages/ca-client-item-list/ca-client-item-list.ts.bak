@@ -136,6 +136,29 @@ export class CaClientItemListPage {
 		
 	}
 	
+	openPage( page ) {
+		var redirect;
+		if( page == 'CaClientEditPage' ) {
+			redirect = CaClientEditPage;
+		}
+		if( page == 'CaClientGstinAddPage' ) {
+			redirect = CaClientGstinAddPage;
+		}
+		if( page == 'CaClientGstinListPage' ) {
+			redirect = CaClientGstinListPage;
+		}
+		if( page == 'CaClientItemListPage' ) {
+			redirect = CaClientItemListPage;
+		}
+		if( page == 'CaClientContactListPage' ) {
+			redirect = CaClientContactListPage;
+		}
+		if( page == 'CaClientSaleinvoiceListPage' ) {
+			redirect = CaClientSaleinvoiceListPage;
+		}
+		this.navCtrl.setRoot( redirect, { "client" : this.client } );
+	}
+	
 	
 	
 	
