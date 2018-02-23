@@ -30,13 +30,13 @@
 		
 		<ion-item *ngFor="let i of items; let n = index">
 			{{i.item_description}}
-			<a (click)="edit_item(i)" style="float: right;">
-				<ion-icon name="create"></ion-icon>
-				Edit
-			</a>
 			<a (click)="delete_item(i,n)" style="float: right;">
 				<ion-icon name="trash"></ion-icon>
 				Delete
+			</a>
+			<a (click)="edit_item(i)" style="float: right; padding-right: 20px;">
+				<ion-icon name="create"></ion-icon>
+				Edit
 			</a>
 		</ion-item>
 	

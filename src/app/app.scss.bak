@@ -58,9 +58,6 @@ font-weight: 300
 	padding-left: 10px;
 }
 
-.item-md.item-block .item-inner {
-	border-bottom: none;
-}
 
 
 
@@ -387,4 +384,16 @@ ion-button {
 }
 
 
+
+
+.tabs_navbar {
+	background-color: #0277BD;
+	color: #fff;
+}
+.tabs_navbar > ion-grid {
+	padding-bottom: 0px;
+}
+.tabs_navbar .active {
+	border-bottom: 2px #000 solid;
+}
 

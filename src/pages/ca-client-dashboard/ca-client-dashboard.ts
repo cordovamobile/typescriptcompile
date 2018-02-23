@@ -91,7 +91,7 @@ export class CaClientDashboardPage {
 		console.log('ionViewDidLoad CaClientDashboardPage');
 	}
 	
-	openPage( page , client ) {
+	openPage( page ) {
 		var redirect;
 		if( page == 'CaClientEditPage' ) {
 			redirect = CaClientEditPage;
@@ -111,7 +111,7 @@ export class CaClientDashboardPage {
 		if( page == 'CaClientSaleinvoiceListPage' ) {
 			redirect = CaClientSaleinvoiceListPage;
 		}
-		this.navCtrl.push( redirect, { "client" : client } );
+		this.navCtrl.setRoot( redirect, { "client" : this.client } );
 	}
 
 }

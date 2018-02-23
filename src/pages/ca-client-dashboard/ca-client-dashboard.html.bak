@@ -5,6 +5,21 @@
 		</button>
 		<ion-title>{{client.business_name}} Dashboard</ion-title>
 	</ion-navbar>
+	<div class="tabs_navbar">
+		<ion-grid>
+			<ion-row>
+				<ion-col text-center>
+					Sales
+				</ion-col>
+				<ion-col text-center (click)="openPage('CaClientItemListPage')">
+					Items
+				</ion-col>
+				<ion-col text-center (click)="openPage('CaClientItemListPage')">
+					Clients
+				</ion-col>
+			</ion-row>
+		</ion-grid>
+	</div>
 </ion-header>
 
 
@@ -43,7 +58,7 @@
 			
 			<div style="padding: 10px;">
 				
-				<button (click)="openPage('CaClientEditPage',client)" ion-button color="light" small>
+				<button (click)="openPage('CaClientEditPage')" ion-button color="light" small>
 					<ion-icon name="create"></ion-icon>
 					&nbsp;
 					Edit Client Details
@@ -53,7 +68,7 @@
 			
 			<div style="padding: 10px;">
 				
-				<button (click)="openPage('CaClientGstinAddPage',client)" ion-button color="light" small>
+				<button (click)="openPage('CaClientGstinAddPage')" ion-button color="light" small>
 					<ion-icon name="create"></ion-icon>
 					&nbsp;
 					Add New GSTIN
@@ -63,7 +78,7 @@
 			
 			<div style="padding: 10px;">
 				
-				<button (click)="openPage('CaClientGstinListPage',client)" ion-button color="light" small>
+				<button (click)="openPage('CaClientGstinListPage')" ion-button color="light" small>
 					<ion-icon name="create"></ion-icon>
 					&nbsp;
 					GSTINs List
@@ -73,7 +88,7 @@
 			
 			<div style="padding: 10px;">
 				
-				<button (click)="openPage('CaClientItemListPage',client)" ion-button color="light" small>
+				<button (click)="openPage('CaClientItemListPage')" ion-button color="light" small>
 					<ion-icon name="create"></ion-icon>
 					&nbsp;
 					Items List
@@ -83,7 +98,7 @@
 			
 			<div style="padding: 10px;">
 				
-				<button (click)="openPage('CaClientContactListPage',client)" ion-button color="light" small>
+				<button (click)="openPage('CaClientContactListPage')" ion-button color="light" small>
 					<ion-icon name="create"></ion-icon>
 					&nbsp;
 					Contacts
@@ -93,7 +108,7 @@
 			
 			<div style="padding: 10px;">
 				
-				<button (click)="openPage('CaClientSalesinvoiceListPage',client)" ion-button color="light" small>
+				<button (click)="openPage('CaClientSaleinvoiceListPage')" ion-button color="light" small>
 					<ion-icon name="create"></ion-icon>
 					&nbsp;
 					Sales Invoices
@@ -103,7 +118,7 @@
 			
 			<!--div style="padding: 10px;">
 				
-				<button (click)="openPage('',client)" ion-button color="light" small>
+				<button (click)="openPage('')" ion-button color="light" small>
 					<ion-icon name="cart"></ion-icon>
 					&nbsp;
 					Create Sales Invoice
@@ -113,7 +128,7 @@
 			
 			<div style="padding: 10px;">
 				
-				<button (click)="openPage('',client)" ion-button color="light" small>
+				<button (click)="openPage('')" ion-button color="light" small>
 					<ion-icon name="cash"></ion-icon>
 					&nbsp;
 					Create Purchase Invoice
