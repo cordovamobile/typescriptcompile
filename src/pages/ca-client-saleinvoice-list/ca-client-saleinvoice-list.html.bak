@@ -16,7 +16,7 @@
 
 		<ion-card-content>
 			
-			<button (click)="open_salesinvoice_add_page()" ion-button color="danger" small>
+			<button (click)="open_saleinvoice_add_page()" ion-button color="danger" small>
 				<ion-icon name="add"></ion-icon>
 				&nbsp;
 				Add Contact
@@ -30,7 +30,7 @@
 		
 		<ion-item *ngFor="let i of saleinvoices">
 			{{i.customer_billing_name}}vxcv
-			<a (click)="edit_salesinvoice(i)" style="float: right;">
+			<a (click)="edit_saleinvoice(i)" style="float: right;">
 				<ion-icon name="create"></ion-icon>
 				Edit
 			</a>

@@ -8,6 +8,9 @@ import { ApplicationService } from '../../providers/application-service';
 //import { BusinessListPage } from '../../pages/client-list/client-list';
 import { CaClientContactAddPage } from '../../pages/ca-client-contact-add/ca-client-contact-add';
 import { CaClientContactEditPage } from '../../pages/ca-client-contact-edit/ca-client-contact-edit';
+import { CaClientItemListPage } from '../../pages/ca-client-item-list/ca-client-item-list';
+import { CaClientContactListPage } from '../../pages/ca-client-contact-list/ca-client-contact-list';
+import { CaClientSaleinvoiceListPage } from '../../pages/ca-client-saleinvoice-list/ca-client-saleinvoice-list';
 
 //@IonicPage()
 @Component({
@@ -97,6 +100,29 @@ export class CaClientContactListPage {
 		
 		this.nav.push( CaClientContactEditPage , { 'client' : this.client , 'contact' : i } );
 		
+	}
+	
+	openPage( page ) {
+		var redirect;
+		if( page == 'CaClientEditPage' ) {
+			redirect = CaClientEditPage;
+		}
+		if( page == 'CaClientGstinAddPage' ) {
+			redirect = CaClientGstinAddPage;
+		}
+		if( page == 'CaClientGstinListPage' ) {
+			redirect = CaClientGstinListPage;
+		}
+		if( page == 'CaClientItemListPage' ) {
+			redirect = CaClientItemListPage;
+		}
+		if( page == 'CaClientContactListPage' ) {
+			redirect = CaClientContactListPage;
+		}
+		if( page == 'CaClientSaleinvoiceListPage' ) {
+			redirect = CaClientSaleinvoiceListPage;
+		}
+		this.navCtrl.setRoot( redirect, { "client" : this.client } );
 	}
 	
 	
