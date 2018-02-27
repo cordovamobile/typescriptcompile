@@ -93,7 +93,7 @@ export class CaClientItemAddPage {
 	change_hsn_sac() {
 		
 		
-		console.log( JSON.stringify(this.client) );
+		console.log( JSON.stringify(this.item) );
 		
 		
 		var self = this;

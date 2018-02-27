@@ -39,51 +39,6 @@ export class CaClientItemAddPage {
 		}
 		console.log( JSON.stringify( this.client ) );
 		
-		
-		
-		
-		var self = this;
-		
-		console.log('requestAPI being called...');
-		self.dataprovider.requestAPI(
-			'get',
-			'programming/hbgstapi/trunk/api/getstatelist',
-			{},
-			'',
-			true, /* Token To Not Be Sent To API */
-			
-			function(response) {
-				
-				/* Logging 'Request Has Responded' event */
-				console.log( 'requestAPI responded...' );
-				console.log( 'requestAPI Response: "' + JSON.stringify( response ) + '"' );
-				console.log( 'requestAPI Response Type: ' + response.status );
-				
-				
-				if( response.status == 'success' ) {
-					
-					
-					self.statelist = response.statelist;
-					
-					
-				} else {
-					
-					let toast = self.toastCtrl.create({
-						message:	response.message,
-						duration:	10000,
-						cssClass:	"toast-success"
-					});
-					toast.present();
-					
-				}
-				
-				
-
-			}
-		);
-		
-		
-		
 	}
 
 	ionViewDidLoad() {

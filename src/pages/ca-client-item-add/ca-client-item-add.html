@@ -29,7 +29,7 @@
 			<ion-row>
 				<ion-col>
 					<ion-item>
-						<ion-label floating>Item Description</ion-label>
+						<ion-label floating>Item Description <small>(Required)</small></ion-label>
 						<ion-input type="text" [(ngModel)]="item.item_description"></ion-input>
 					</ion-item>
 				</ion-col>
@@ -37,7 +37,7 @@
 			<ion-row>
 				<ion-col>
 					<ion-item>
-						<ion-label floating>Item Type</ion-label>
+						<ion-label floating>Item Type <small>(Required)</small></ion-label>
 						<ion-select type="text" [(ngModel)]="item.item_type">
 							<ion-option>Goods</ion-option>
 							<ion-option>Services</ion-option>
@@ -48,7 +48,11 @@
 			<ion-row>
 				<ion-col>
 					<ion-item>
-						<ion-label floating>HSN/SAC Code</ion-label>
+						<ion-label floating>HSN/SAC Code
+							<small>
+								<a href="#">Find HSN/SAC</a>
+							</small>
+						</ion-label>
 						<ion-input type="text" [(ngModel)]="item.hsn_sac_code" (change)="change_hsn_sac()"></ion-input>
 					</ion-item>
 				</ion-col>
@@ -64,15 +68,31 @@
 			<ion-row>
 				<ion-col>
 					<ion-item>
-						<ion-label floating>Tax Rate</ion-label>
-						<ion-input type="text" [(ngModel)]="item.tax_rate"></ion-input>
+						<ion-label floating>Tax Rate <small>(optional)</small></ion-label>
+						<ion-select type="text" [(ngModel)]="item.tax_rate">
+							<ion-option value="0.00">NIL</ion-option>
+							<ion-option value="0.25">0.25%</ion-option>
+							<ion-option value="3.00">3%</ion-option>
+							<ion-option value="5.00">5%</ion-option>
+							<ion-option value="12.00">12%</ion-option>
+							<ion-option value="18.00">18%</ion-option>
+							<ion-option value="28.00">28%</ion-option>
+						</ion-select>
 					</ion-item>
 				</ion-col>
 			</ion-row>
 			<ion-row>
 				<ion-col>
 					<ion-item>
-						<ion-label floating>Cess Amount</ion-label>
+						<ion-label>Rate Is Inclusive Of Tax</ion-label>
+						<ion-checkbox [(ngModel)]="item.inclusive_tax"></ion-checkbox>
+					</ion-item>
+				</ion-col>
+			</ion-row>
+			<ion-row>
+				<ion-col>
+					<ion-item>
+						<ion-label floating>Cess Amount <small>(optional)</small></ion-label>
 						<ion-input type="text" [(ngModel)]="item.cess_amount"></ion-input>
 					</ion-item>
 				</ion-col>
@@ -80,7 +100,7 @@
 			<ion-row>
 				<ion-col>
 					<ion-item>
-						<ion-label floating>Purchase Price</ion-label>
+						<ion-label floating>Purchase Price <small>(optional)</small></ion-label>
 						<ion-input type="text" [(ngModel)]="item.purchase_price"></ion-input>
 					</ion-item>
 				</ion-col>
@@ -88,7 +108,7 @@
 			<ion-row>
 				<ion-col>
 					<ion-item>
-						<ion-label floating>Selling Price</ion-label>
+						<ion-label floating>Selling Price <small>(optional)</small></ion-label>
 						<ion-input type="text" [(ngModel)]="item.selling_price"></ion-input>
 					</ion-item>
 				</ion-col>
@@ -96,15 +116,60 @@
 			<ion-row>
 				<ion-col>
 					<ion-item>
-						<ion-label floating>Unit</ion-label>
-						<ion-input type="text" [(ngModel)]="item.unit"></ion-input>
+						<ion-label floating>Unit <small>(optional)</small></ion-label>
+						<ion-select type="text" [(ngModel)]="item.unit">
+							<ion-option value="BOU">BOU</ion-option>
+							<ion-option value="BGS">Bags</ion-option>
+							<ion-option value="BAL">Bale</ion-option>
+							<ion-option value="BTL">Bottles</ion-option>
+							<ion-option value="BOX">Boxes</ion-option>
+							<ion-option value="BKL">Buckles</ion-option>
+							<ion-option value="BUN">Bunches</ion-option>
+							<ion-option value="BDL">Bundles</ion-option>
+							<ion-option value="CAN">Cans</ion-option>
+							<ion-option value="CTN">Cartons</ion-option>
+							<ion-option value="CMS">Centimeter</ion-option>
+							<ion-option value="CCM">Cubic Centimeter</ion-option>
+							<ion-option value="CBM">Cubic Meter</ion-option>
+							<ion-option value="DOZ">Dozen</ion-option>
+							<ion-option value="DRM">Drums</ion-option>
+							<ion-option value="GMS">Grams</ion-option>
+							<ion-option value="GGK">Great Gross</ion-option>
+							<ion-option value="GRS">Gross</ion-option>
+							<ion-option value="GYD">Gross Yards</ion-option>
+							<ion-option value="KGS">Kilograms</ion-option>
+							<ion-option value="KLR">Kiloliter</ion-option>
+							<ion-option value="KME">Kilometers</ion-option>
+							<ion-option value="MTR">Meter</ion-option>
+							<ion-option value="MTS">Metric Ton</ion-option>
+							<ion-option value="MLT">Milliliters</ion-option>
+							<ion-option value="NOS">Numbers</ion-option>
+							<ion-option value="OTH">Others</ion-option>
+							<ion-option value="PAC">Packs</ion-option>
+							<ion-option value="PRS">Pairs</ion-option>
+							<ion-option value="PCS">Pieces</ion-option>
+							<ion-option value="QTL">Quintal</ion-option>
+							<ion-option value="ROL">Rolls</ion-option>
+							<ion-option value="SET">Sets</ion-option>
+							<ion-option value="SQF">Square Feet</ion-option>
+							<ion-option value="SQM">Square Meter</ion-option>
+							<ion-option value="SQY">Square Yards</ion-option>
+							<ion-option value="TBS">Tablets</ion-option>
+							<ion-option value="TGM">Ten Grams</ion-option>
+							<ion-option value="THD">Thousands</ion-option>
+							<ion-option value="TON">Tonnes</ion-option>
+							<ion-option value="TUB">Tubes</ion-option>
+							<ion-option value="UGS">US Gallons</ion-option>
+							<ion-option value="UNT">Units</ion-option>
+							<ion-option value="YDS">Yards</ion-option>
+						</ion-select>
 					</ion-item>
 				</ion-col>
 			</ion-row>
 			<ion-row>
 				<ion-col>
 					<ion-item>
-						<ion-label floating>Discount</ion-label>
+						<ion-label floating>Discount <small>(optional)</small></ion-label>
 						<ion-input type="text" [(ngModel)]="item.discount"></ion-input>
 					</ion-item>
 				</ion-col>
@@ -112,7 +177,7 @@
 			<ion-row>
 				<ion-col>
 					<ion-item>
-						<ion-label floating>Notes</ion-label>
+						<ion-label floating>Item Notes <small>(optional)</small></ion-label>
 						<ion-input type="text" [(ngModel)]="item.item_notes"></ion-input>
 					</ion-item>
 				</ion-col>
