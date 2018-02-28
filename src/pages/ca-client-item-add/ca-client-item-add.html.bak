@@ -23,14 +23,14 @@
 	
 	
 	
-	<div>
+	<form [formGroup]="form">
 		
 		<ion-grid>
 			<ion-row>
 				<ion-col>
 					<ion-item>
 						<ion-label floating>Item Description <small>(Required)</small></ion-label>
-						<ion-input type="text" [(ngModel)]="item.item_description"></ion-input>
+						<ion-input type="text" [(ngModel)]="item.item_description" [required]="true"></ion-input>
 					</ion-item>
 				</ion-col>
 			</ion-row>
@@ -50,7 +50,7 @@
 					<ion-item>
 						<ion-label floating>HSN/SAC Code
 							<small>
-								<a>Find HSN/SAC Code</a>
+								<a href="#">Find HSN/SAC</a>
 							</small>
 						</ion-label>
 						<ion-input type="text" [(ngModel)]="item.hsn_sac_code" (change)="change_hsn_sac()"></ion-input>
@@ -194,6 +194,6 @@
 			</ion-row>
 		</ion-grid>
 		
-	</div>
+	</form>
 
 </ion-content>
