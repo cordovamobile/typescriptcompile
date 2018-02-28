@@ -7,6 +7,9 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 
 /* Pages to be linked in the menu */
 import { HomePage } from '../pages/home/home';
+import { PostListPage } from '../pages/post-list/post-list';
+import { PostListByCategoryPage } from '../pages/post-list-by-category/post-list-by-category';
+import { PostSinglePage } from '../pages/post-single/post-single';
 import { LoginPage } from '../pages/login/login';
 
 /* Providers that store global variables */
@@ -65,6 +68,8 @@ export class MyApp {
 		/* List of pages for menu */
 		this.components = {
 			HomePage : HomePage,
+			PostListPage : PostListPage,
+			PostListByCategoryPage : PostListByCategoryPage,
 			LoginPage : LoginPage,
 			UserDetailsSavePage : UserDetailsSavePage,
 			CaDashboardPage : CaDashboardPage,
@@ -122,6 +127,12 @@ export class MyApp {
 		} else {
 			this.nav.push(this.components[component]);
 		}
+	}
+	
+
+	openPostListByCategory(id,name='') {
+		localStorage.setItem('list_by_category_page_category',JSON.stringify({id:id,name:name}));
+		this.nav.setRoot(PostListByCategoryPage);
 	}
 	
 	

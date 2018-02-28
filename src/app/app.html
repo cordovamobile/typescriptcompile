@@ -119,6 +119,25 @@
 				
 			</div>
 		
+			<div><!-- News List Page -->
+			
+				<a 
+					[class.hide]="!logged_in"
+					class="home_menu" 
+					menuClose 
+					ion-item 
+					(click)="openPostListByCategory(70,'News')"
+				>
+					<span class="menu_item_icon">
+						<ion-icon name="apps"></ion-icon>
+					</span>
+					<span class="menu_item_title">
+						News
+					</span>
+				</a>
+				
+			</div>
+		
 			<div><!-- HomePage Page -->
 			
 				<a 

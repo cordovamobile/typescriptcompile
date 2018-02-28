@@ -24,7 +24,10 @@ export class Dataprovider {
 	readonly WEBSITE_SECURE_URL_CANONICAL	= 'http://localhost/host_books_gst/';
 	readonly WEBSITE_UNSECURE_URL_CANONICAL	= 'http://localhost/host_books_gst/';
 
+	readonly BLOG_SECURE_URL_CANONICAL	= 'http://hostbooks.in/';
+
 	api_url: string;
+	blog_api_url: string;
 	request_url: string;
 	response: any;
 
@@ -39,6 +42,8 @@ export class Dataprovider {
 		this.response = '';
 		
 		this.api_url = this.WEBSITE_SECURE_URL_CANONICAL;
+		this.blog_api_url = this.BLOG_SECURE_URL_CANONICAL;
+		
 		console.log('request_url: ' + this.request_url);
 	}
 
@@ -133,7 +138,123 @@ export class Dataprovider {
 			});			
 		}
 		
-		if( request_type == 'get' ) {
+		if( request_type == 'get' || request_type == 'delete' ) {
+			this.http[request_type]( self.request_url , options )
+			.timeout( 30000 )
+			/* If request was SUCCESSFUL */
+			.subscribe(data => {
+				/* Disable The Loader */	
+				if( loader_caption != '' ) {
+					loader.dismiss();
+				}
+				self.handle_data( data , callback );
+			/* If some ERROR OCCOURED */
+			}, error => {
+				/* Disable The Loader */	
+				if( loader_caption != '' ) {
+					loader.dismiss();
+				}
+				self.handle_error( error , callback );
+			});			
+		}
+		
+
+
+
+	}
+
+	
+	
+	
+	
+	
+	
+	requestBlogAPI( request_type , request_api, request_data , loader_caption , send_token = false , callback ) {
+
+		console.log('request_api: ' + request_api); // Error getting the data
+		
+		/* Adding Request Type To The Request JSON */
+		//request_data.request_api = request_api;
+		this.request_url = this.blog_api_url + request_api;
+		
+		
+		
+		/* Checking If Token Is To Be Added To The Request */
+		if( send_token == true ) {
+			//request_data.token = '';
+			/**********************************************************************************************
+			***********************************************************************************************
+							COMPLETE THIS PART
+			***********************************************************************************************
+			**********************************************************************************************/
+			
+			var userdata = JSON.parse( localStorage.getItem("userdata") );
+			
+			request_data.userid = userdata.api_token;
+			
+			
+			
+			
+		}
+		
+		var data = JSON.stringify(request_data);
+		//var data = request_data;
+		console.log(data);
+		
+		if( loader_caption != '' ) {
+			var loader = this.loading.create({
+				content: loader_caption
+			});
+			loader.present();
+		}		
+		
+		
+		var headers = new Headers();
+		headers.append("Content-Type", "application/json");
+		headers.append("Http-X-Auth", "developer-tool");
+		/*
+		headers.append("Access-Control-Allow-Origin", "*");
+		headers.append("Access-Control-Allow-Credentials", "true");
+		headers.append("Access-Control-Allow-Methods", "GET,HEAD,OPTIONS,POST,PUT");
+		headers.append("Access-Control-Allow-Headers", "Access-Control-Allow-Headers, Origin,Accept, X-Requested-With, Content-Type, Access-Control-Request-Method, Access-Control-Request-Headers");
+		*/
+		let options = new RequestOptions({ headers: headers });
+
+		//alert(data);
+		//alert(request_data);
+		
+		/*
+		alert(this.request_url);
+		alert(data);
+		return;
+		*/
+		
+		
+		/* STARTING THE REQUEST */
+		console.log('Starting http request...');
+		var self = this;
+		
+		if( request_type == 'post' || request_type == 'put' ) {
+			this.http[request_type]( self.request_url , data , options )
+			.timeout( 30000 )
+			/* If request was SUCCESSFUL */
+			.subscribe(data => {
+				/* Disable The Loader */	
+				if( loader_caption != '' ) {
+					loader.dismiss();
+				}
+				self.handle_data( data , callback );
+			/* If some ERROR OCCOURED */
+			}, error => {
+				/* Disable The Loader */	
+				if( loader_caption != '' ) {
+					loader.dismiss();
+				}
+				self.handle_error( error , callback );
+			});			
+		}
+		
+		if( request_type == 'get' || request_type == 'delete' ) {
 			this.http[request_type]( self.request_url , options )
 			.timeout( 30000 )
 			/* If request was SUCCESSFUL */

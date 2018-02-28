@@ -9,6 +9,10 @@ import { MyApp } from './app.component';
 
 /* Pages */
 import { HomePage } from '../pages/home/home';
+import { PostListPage } from '../pages/post-list/post-list';
+import { PostListByCategoryPage } from '../pages/post-list-by-category/post-list-by-category';
+import { PostSinglePage } from '../pages/post-single/post-single';
+
 import { LoginPage } from '../pages/login/login';
 import { UserDetailsSavePage } from '../pages/user-details-save/user-details-save';
 
@@ -57,6 +61,10 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 	declarations: [
 		MyApp,
 		HomePage,
+		PostListPage,
+		PostListByCategoryPage,
+		PostSinglePage,
+		
 		LoginPage,
 		UserDetailsSavePage,
 		
@@ -99,6 +107,10 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 	entryComponents: [
 		MyApp,
 		HomePage,
+		PostListPage,
+		PostListByCategoryPage,
+		PostSinglePage,
+		
 		LoginPage,
 		UserDetailsSavePage,
 		

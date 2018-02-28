@@ -1,0 +1,63 @@
+<ion-header>
+	<ion-navbar>
+		<button ion-button menuToggle>
+			<ion-icon name="menu"></ion-icon>
+		</button>
+		<ion-title>Latest Posts</ion-title>
+	</ion-navbar>
+</ion-header>
+
+
+<ion-content padding>
+
+	<ion-list>
+		
+		<div *ngIf="initial_loading">
+			
+			<h6 text-center>
+				Refreshing 
+				<ion-icon name="refresh" class="ion-spin-animation"></ion-icon>
+			</h6>
+			
+		</div>
+		
+		<div *ngFor="let p of posts">
+		
+			<a 
+				class="" 
+				menuClose 
+				ion-item 
+				(click)="openPost( p )"
+				style="
+					cursor: pointer;
+				"
+			>
+				<span class="menu_item_icon">
+					<img src="{{ p.better_featured_image.media_details.sizes.thumbnail.source_url }}" *ngIf="p.better_featured_image" />
+				</span>
+				<span class="menu_item_title" [innerHtml]="p.title.rendered"></span>
+			</a>
+			
+		</div>
+		
+		<div text-center>
+			<button *ngIf="display_view_more_posts_button && !loading_more_posts && !initial_loading" (click)="show_more_posts()" ion-button small>
+				+
+				&nbsp;
+				Show More Posts
+			</button>
+		
+			<div *ngIf="loading_more_posts">
+				
+				<h6 text-center>
+					Loading More Posts
+					<ion-icon name="refresh" class="ion-spin-animation"></ion-icon>
+				</h6>
+				
+			</div>
+		</div>
+	
+	</ion-list>
+
+
+</ion-content>

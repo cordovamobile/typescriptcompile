@@ -9,6 +9,10 @@ import { MyApp } from './app.component';
 
 /* Pages */
 import { HomePage } from '../pages/home/home';
+import { PostListPage } from '../pages/post-list/post-list';
+import { PostListByCategoryPage } from '../pages/post-list-by-category/post-list-by-category';
+import { PostSinglePage } from '../pages/post-single/post-single';
+
 import { LoginPage } from '../pages/login/login';
 import { UserDetailsSavePage } from '../pages/user-details-save/user-details-save';
 
@@ -25,9 +29,9 @@ import { CaClientItemEditPage } from '../pages/ca-client-item-edit/ca-client-ite
 import { CaClientContactAddPage } from '../pages/ca-client-contact-add/ca-client-contact-add';
 import { CaClientContactListPage } from '../pages/ca-client-contact-list/ca-client-contact-list';
 import { CaClientContactEditPage } from '../pages/ca-client-contact-edit/ca-client-contact-edit';
-import { CaClientSalesinvoiceAddPage } from '../pages/ca-client-salesinvoice-add/ca-client-salesinvoice-add';
-import { CaClientSalesinvoiceListPage } from '../pages/ca-client-salesinvoice-list/ca-client-salesinvoice-list';
-import { CaClientSalesinvoiceEditPage } from '../pages/ca-client-salesinvoice-edit/ca-client-salesinvoice-edit';
+import { CaClientSaleinvoiceAddPage } from '../pages/ca-client-saleinvoice-add/ca-client-saleinvoice-add';
+import { CaClientSaleinvoiceListPage } from '../pages/ca-client-saleinvoice-list/ca-client-saleinvoice-list';
+import { CaClientSaleinvoiceEditPage } from '../pages/ca-client-saleinvoice-edit/ca-client-saleinvoice-edit';
 
 import { OcDashboardPage } from '../pages/oc-dashboard/oc-dashboard';
 import { OcBusinessAddPage } from '../pages/oc-business-add/oc-business-add';
@@ -57,6 +61,10 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 	declarations: [
 		MyApp,
 		HomePage,
+		PostListPage,
+		PostListByCategoryPage,
+		PostSinglePage,
+		
 		LoginPage,
 		UserDetailsSavePage,
 		
@@ -73,9 +81,9 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 		CaClientContactAddPage,
 		CaClientContactListPage,
 		CaClientContactEditPage,
-		CaClientSalesinvoiceAddPage,
-		CaClientSalesinvoiceListPage,
-		CaClientSalesinvoiceEditPage,
+		CaClientSaleinvoiceAddPage,
+		CaClientSaleinvoiceListPage,
+		CaClientSaleinvoiceEditPage,
 		
 		OcDashboardPage,
 		OcBusinessAddPage,
@@ -115,9 +123,9 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 		CaClientContactAddPage,
 		CaClientContactListPage,
 		CaClientContactEditPage,
-		CaClientSalesinvoiceAddPage,
-		CaClientSalesinvoiceListPage,
-		CaClientSalesinvoiceEditPage,
+		CaClientSaleinvoiceAddPage,
+		CaClientSaleinvoiceListPage,
+		CaClientSaleinvoiceEditPage,
 		
 		OcDashboardPage,
 		OcBusinessAddPage,

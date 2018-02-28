@@ -1,0 +1,112 @@
+<ion-header>
+	<ion-navbar>
+		<button ion-button menuToggle>
+			<ion-icon name="menu"></ion-icon>
+		</button>
+		<ion-title>Post : {{post.title.rendered}}</ion-title>
+	</ion-navbar>
+</ion-header>
+
+
+<ion-content padding>
+		
+	<div *ngIf="loading_post">
+		
+		<!--h6 text-center>
+			Loading 
+			<ion-icon name="refresh" class="ion-spin-animation"></ion-icon>
+		</h6-->
+		
+	</div>
+	
+	<ion-grid>
+		<ion-row>
+			<ion-col>
+				<h3 [innerHtml]="post.title.rendered" text-center></h3>
+				<h3 class="img-responsive-container" text-center>
+					<img src="{{ post.better_featured_image.media_details.sizes.thumbnail.source_url }}" *ngIf="post.better_featured_image" />
+				</h3>
+			</ion-col>
+		</ion-row>
+		<ion-row>
+			<ion-col>
+				<p [innerHtml]="post.content.rendered" class="img-responsive-container" text-justify></p>
+			</ion-col>
+		</ion-row>
+	</ion-grid>
+	
+	<hr />
+	
+	<!--ion-grid>
+		<ion-row>
+			<ion-col>
+				<h3 text-center>Author : {{post.author_name}}</h3>
+			</ion-col>
+		</ion-row>
+		<ion-row *ngIf="post.author_image">
+`			<ion-col>
+				<h3 text-center [innerHtml]="post.author_image"></h3>
+			</ion-col>
+		</ion-row>
+		<ion-row>
+			<ion-col [innerHtml]="post.author_description" text-justify></ion-col>
+		</ion-row>
+	</ion-grid>
+	
+	<hr /-->
+	
+	<!--ion-grid>
+		<ion-row>
+			<ion-col>
+				<h3 text-center> Comments</h3>
+			</ion-col>
+		</ion-row>
+		<div *ngIf="!post.comments.length" text-center style="color: #39b54a;">
+			Be The First One To Comment On This Article
+		</div>
+		<div *ngIf="logged_in && !loading_comment_posting" text-center>
+			<ion-textarea [(ngModel)]="comment" style="border: #ccc 1px dashed;" placeholder="Write your comment here."></ion-textarea>
+			<button (click)="submit_comment()" ion-button small>
+				Submit
+			</button>
+		</div>
+		<div *ngIf="logged_in && loading_comment_posting" text-center>
+			Saving Comment
+			<ion-icon name="refresh" class="ion-spin-animation"></ion-icon>
+		</div>
+		<div *ngIf="!logged_in" text-center>
+			<button (click)="go_to_login_page()" ion-button small>
+				Login To Comment
+			</button>
+		</div>
+		<div *ngFor="let c of post.comments">
+			<ion-row>
+				<ion-col>
+					<b>{{c.author}}</b>
+				</ion-col>
+				<ion-col text-right>
+					{{c.date}}
+				</ion-col>
+			</ion-row>
+			<ion-row>
+				<ion-col [innerHtml]="c.content" text-justify></ion-col>
+			</ion-row>
+			<hr />
+		</div>
+		<div text-center>
+			<button *ngIf="display_view_more_comments_button && !loading_post && !loading_more_comments" (click)="show_more_comments()" ion-button small>
+				+
+				&nbsp;
+				Show More Comments
+			</button>
+			<div *ngIf="loading_more_comments" text-center>
+				Loading More Comments
+				<ion-icon name="refresh" class="ion-spin-animation"></ion-icon>
+			</div>
+			<div *ngIf="!display_view_more_comments_button && post.comments.length" text-center style="color: #999;">
+				You Have Reached The End Of Comments
+			</div>
+		</div>
+	</ion-grid-->
+	
+</ion-content>
