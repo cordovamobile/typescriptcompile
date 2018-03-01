@@ -7,9 +7,8 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 
 /* Pages to be linked in the menu */
 import { HomePage } from '../pages/home/home';
-import { PostListPage } from '../pages/post-list/post-list';
+//import { PostListPage } from '../pages/post-list/post-list';
 import { PostListByCategoryPage } from '../pages/post-list-by-category/post-list-by-category';
-import { PostSinglePage } from '../pages/post-single/post-single';
 import { LoginPage } from '../pages/login/login';
 
 /* Providers that store global variables */
@@ -125,7 +124,8 @@ export class MyApp {
 		if( component == 'HomePage' ) {
 			this.nav.setRoot(this.components[component]);
 		} else {
-			this.nav.push(this.components[component]);
+			//this.nav.push(this.components[component]);
+			this.nav.setRoot(this.components[component]);
 		}
 	}
 	
