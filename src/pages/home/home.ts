@@ -30,8 +30,8 @@ export class HomePage {
 	
 	openPage(p) {
 		
-		var redirect = false;
-		var parameters = false;
+		var redirect = {};
+		var parameters = {};
 		if( p == 'CaDashboardPage' ) {
 			if( this.application_service.logged_in_or_not() ) {
 				redirect = CaDashboardPage;

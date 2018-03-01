@@ -32,9 +32,9 @@ export class HomePage {
 		
 		var redirect = false;
 		var parameters = false;
-		if( p == 'CaClientDashboardPage' ) {
+		if( p == 'CaDashboardPage' ) {
 			if( this.application_service.logged_in_or_not() ) {
-				redirect = CaClientDashboardPage;
+				redirect = CaDashboardPage;
 			} else {
 				redirect = LoginPage;
 			}
