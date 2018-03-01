@@ -29,7 +29,7 @@ import { OcBusinessDashboardPage } from '../pages/oc-business-dashboard/oc-busin
 export class MyApp {
   @ViewChild(Nav) nav: Nav;
 
-  rootPage: any = LoginPage;
+  rootPage: any = HomePage;
 	
 	public logged_in: boolean;
 	
@@ -131,7 +131,7 @@ export class MyApp {
 	
 
 	openPostListByCategory(id,name='') {
-		localStorage.setItem('list_by_category_page_category',JSON.stringify({id:id}));
+		localStorage.setItem('list_by_category_page_category',JSON.stringify({id:id,name:name}));
 		this.nav.setRoot(PostListByCategoryPage);
 	}
 	

@@ -29,7 +29,7 @@ import { OcBusinessDashboardPage } from '../pages/oc-business-dashboard/oc-busin
 export class MyApp {
   @ViewChild(Nav) nav: Nav;
 
-  rootPage: any = LoginPage;
+  rootPage: any = HomePage;
 	
 	public logged_in: boolean;
 	
@@ -125,7 +125,8 @@ export class MyApp {
 		if( component == 'HomePage' ) {
 			this.nav.setRoot(this.components[component]);
 		} else {
-			this.nav.push(this.components[component]);
+			//this.nav.push(this.components[component]);
+			this.nav.setRoot(this.components[component]);
 		}
 	}
 	

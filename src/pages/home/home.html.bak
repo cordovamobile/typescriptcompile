@@ -13,30 +13,44 @@
 
 <ion-content padding>
 
-	<h3>Host Books GST Billing App.</h3>
-
-	<p>
-		You can create sales invoices and purchase invoices using this mobile app.
-	</p>
-
-	<button ion-button secondary menuToggle>Go To Menu</button>
-	
-	<ion-slides>
-	  <ion-slide>
-		
-		<a href="">
-			<img src="assets/imgs/logo.png" />
-		</a>
-		
-	  </ion-slide>
-	  <ion-slide>
-		<h1>Slide 2</h1>
-	  </ion-slide>
-	  <ion-slide>
-		<h1>Slide 3</h1>
-	  </ion-slide>
-	</ion-slides>
-	
+	<ion-grid>
+		<ion-row>
+			<ion-col>
+				<ion-card>
+					<img src="assets/imgs/home/expert_forum.png" />
+				</ion-card>
+			</ion-col>
+			<ion-col>
+				<ion-card (click)="openPage('NewsPage')">
+					<img src="assets/imgs/home/latest_news.png" />
+				</ion-card>
+			</ion-col>
+		</ion-row>
+		<ion-row>
+			<ion-col>
+				<ion-card>
+					<img src="assets/imgs/home/resources.png" />
+				</ion-card>
+			</ion-col>
+			<ion-col>
+				<ion-card>
+					<img src="assets/imgs/home/utilities.png" />
+				</ion-card>
+			</ion-col>
+		</ion-row>
+		<ion-row>
+			<ion-col>
+				<ion-card>
+					<img src="assets/imgs/home/expenses.png" />
+				</ion-card>
+			</ion-col>
+			<ion-col>
+				<ion-card (click)="openPage('CaClientDashboardPage')">
+					<img src="assets/imgs/home/invoice_management.png" />
+				</ion-card>
+			</ion-col>
+		</ion-row>
+	</ion-grid>
 	
 	
 </ion-content>

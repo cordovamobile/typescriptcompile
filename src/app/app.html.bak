@@ -122,7 +122,7 @@
 			<div><!-- News List Page -->
 			
 				<a 
-					[class.hide]="!logged_in"
+					[class.hide]="logged_in"
 					class="home_menu" 
 					menuClose 
 					ion-item 
@@ -132,7 +132,7 @@
 						<ion-icon name="apps"></ion-icon>
 					</span>
 					<span class="menu_item_title">
-						Blog
+						News
 					</span>
 				</a>
 				
