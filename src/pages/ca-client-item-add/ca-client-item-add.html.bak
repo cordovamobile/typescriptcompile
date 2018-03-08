@@ -11,7 +11,7 @@
 <ion-content padding>
 	
 	
-	<ion-grid>
+	<!--ion-grid>
 		
 		<ion-row>
 			<ion-col>
@@ -19,18 +19,18 @@
 			</ion-col>
 		</ion-row>
 	
-	</ion-grid>
+	</ion-grid-->
 	
 	
 	
-	<form [formGroup]="form">
+	<div class="hbgst_form">
 		
 		<ion-grid>
 			<ion-row>
 				<ion-col>
 					<ion-item>
-						<ion-label floating>Item Description <small>(Required)</small></ion-label>
-						<ion-input type="text" [(ngModel)]="item.item_description" [required]="true"></ion-input>
+						<ion-label stacked>Item Description <small>(Required)</small></ion-label>
+						<ion-input type="text" [(ngModel)]="item.item_description"></ion-input>
 					</ion-item>
 				</ion-col>
 			</ion-row>
@@ -194,6 +194,6 @@
 			</ion-row>
 		</ion-grid>
 		
-	</form>
+	</div>
 
 </ion-content>

@@ -403,3 +403,21 @@ ion-button {
 	border-bottom: 2px #00D3FF solid;
 }
 
+
+
+.hbgst_form ion-grid {
+	background-color: #fff;
+	padding: 0px;
+}
+.hbgst_form ion-col {
+	padding: 0px;
+	border-bottom: 1px #aaa solid;
+}
+.hbgst_form ion-label ,
+.hbgst_form ion-select ,
+.hbgst_form ion-input {
+	padding: 0px 15px;
+}
+.hbgst_form .label-md[stacked] {
+    font-size: 1.7rem;
+}
