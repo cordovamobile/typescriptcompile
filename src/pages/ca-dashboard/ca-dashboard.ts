@@ -6,7 +6,8 @@ import { Dataprovider } from '../../providers/dataprovider';
 import { ApplicationService } from '../../providers/application-service';
 
 import { CaClientAddPage } from '../../pages/ca-client-add/ca-client-add';
-import { CaClientDashboardPage } from '../../pages/ca-client-dashboard/ca-client-dashboard';
+//import { CaClientDashboardPage } from '../../pages/ca-client-dashboard/ca-client-dashboard';
+import { CaClientItemListPage } from '../../pages/ca-client-item-list/ca-client-item-list';
 import { CaClientGstinAddPage } from '../../pages/ca-client-gstin-add/ca-client-gstin-add';
 /*
 import { BusinessAddPage } from '../../pages/business-add/business-add';
@@ -133,7 +134,9 @@ export class CaDashboardPage {
 	
 	open_client_dashboard_page(c) {
 		this.applicationservice.current_client_or_business_set(c);
-		this.nav.setRoot( CaClientDashboardPage , { "client" : c } );
+		
+		//this.nav.setRoot( CaClientDashboardPage , { "client" : c } );
+		//this.nav.setRoot( CaClientItemListPage , { "client" : c } );
 	}
 	
 	open_client_add_page() {

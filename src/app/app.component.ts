@@ -18,8 +18,12 @@ import { UserDetailsSavePage } from '../pages/user-details-save/user-details-sav
 import { CaDashboardPage } from '../pages/ca-dashboard/ca-dashboard';
 import { OcDashboardPage } from '../pages/oc-dashboard/oc-dashboard';
 
+/*
 import { CaClientDashboardPage } from '../pages/ca-client-dashboard/ca-client-dashboard';
 import { OcBusinessDashboardPage } from '../pages/oc-business-dashboard/oc-business-dashboard';
+*/
+import { CaClientSaleinvoiceListPage } from '../pages/ca-client-saleinvoice-list/ca-client-saleinvoice-list';
+//import { OcBusinessSaleinvoiceListPage } from '../pages/oc-business-saleinvoice-list/oc-business-saleinvoice-list';
 
 @Component({
 	templateUrl: 'app.html',
@@ -169,9 +173,9 @@ export class MyApp {
 			redirect_page = UserDetailsSavePage;
 		} else {
 			if( userdata.bu_type == 'CA' ) {
-				redirect_page = CaClientDashboardPage;
+				redirect_page = CaClientSaleinvoiceListPage;
 			} else if( userdata.bu_type == 'OC' ) {
-				redirect_page = OcBusinessDashboardPage;
+				//redirect_page = OcBusinessSaleinvoiceListPage;
 			}
 		}
 		

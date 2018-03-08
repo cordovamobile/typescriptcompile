@@ -14,7 +14,7 @@
 				<ion-col text-center (click)="openPage('CaClientItemListPage')">
 					Items
 				</ion-col>
-				<ion-col text-center>
+				<ion-col text-center class="active">
 					Clients
 				</ion-col>
 			</ion-row>
@@ -25,9 +25,13 @@
 
 <ion-content padding>
 	
+	<ion-fab bottom right>
+		<button ion-fab color="danger" (click)="open_contact_add_page()">
+			<ion-icon name="add"></ion-icon>
+		</button>
+	</ion-fab>
 	
-	
-	<ion-card>
+	<!--ion-card>
 
 		<ion-card-content>
 			
@@ -39,17 +43,23 @@
 			
 		</ion-card-content>
 
-	</ion-card>
+	</ion-card-->
 	
 	<ion-list>
 		
-		<ion-item *ngFor="let i of contacts">
-			{{i.name}}
-			<a (click)="edit_contact(i)" style="float: right;">
-				<ion-icon name="create"></ion-icon>
-				Edit
-			</a>
-		</ion-item>
+		<ion-card *ngFor="let i of contacts" class="border-left">
+			<ion-card-content>
+				{{i.name}}
+				<a (click)="delete_contact(i,n)" style="float: right;">
+					<ion-icon name="trash"></ion-icon>
+					Delete
+				</a>
+				<a (click)="edit_contact(i)" style="float: right; padding-right: 20px;">
+					<ion-icon name="create"></ion-icon>
+					Edit
+				</a>
+			</ion-card-content>
+		</ion-card>
 	
 	</ion-list>
 	

@@ -8,7 +8,7 @@
 	<div class="tabs_navbar">
 		<ion-grid>
 			<ion-row>
-				<ion-col text-center (click)="">
+				<ion-col text-center class="active">
 					Sales
 				</ion-col>
 				<ion-col text-center (click)="openPage('CaClientItemListPage')">
@@ -25,9 +25,13 @@
 
 <ion-content padding>
 	
+	<ion-fab bottom right>
+		<button ion-fab color="danger" (click)="open_saleinvoice_add_page()">
+			<ion-icon name="add"></ion-icon>
+		</button>
+	</ion-fab>
 	
-	
-	<ion-card>
+	<!--ion-card>
 
 		<ion-card-content>
 			
@@ -39,17 +43,19 @@
 			
 		</ion-card-content>
 
-	</ion-card>
+	</ion-card-->
 	
 	<ion-list>
 		
-		<ion-item *ngFor="let i of saleinvoices">
-			{{i.customer_billing_name}}vxcv
-			<a (click)="edit_saleinvoice(i)" style="float: right;">
-				<ion-icon name="create"></ion-icon>
-				Edit
-			</a>
-		</ion-item>
+		<ion-card *ngFor="let i of saleinvoices" class="border-left">
+			<ion-card-content>
+				{{i.customer_billing_name}}vxcv
+				<a (click)="edit_saleinvoice(i)" style="float: right;">
+					<ion-icon name="create"></ion-icon>
+					Edit
+				</a>
+			</ion-card-content>
+		</ion-card>
 	
 	</ion-list>
 	

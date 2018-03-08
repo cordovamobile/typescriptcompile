@@ -348,6 +348,12 @@ ion-card {
     width: 100% !important;
     margin: 10px 0px !important;
 }
+ion-card.border-left {
+    border-top: none !important;
+    border-left: 4px solid #256c9b !important;
+    width: 100% !important;
+    margin: 10px 0px !important;
+}
 
 .vertical-center > *
 {

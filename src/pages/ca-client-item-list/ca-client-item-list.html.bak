@@ -11,7 +11,7 @@
 				<ion-col text-center (click)="openPage('CaClientSaleinvoiceListPage')">
 					Sales
 				</ion-col>
-				<ion-col text-center (click)="">
+				<ion-col text-center class="active">
 					Items
 				</ion-col>
 				<ion-col text-center (click)="openPage('CaClientContactListPage')">
@@ -25,9 +25,13 @@
 
 <ion-content padding>
 	
+	<ion-fab bottom right>
+		<button ion-fab color="danger">
+			<ion-icon name="add"></ion-icon>
+		</button>
+	</ion-fab>
 	
-	
-	<ion-card>
+	<!--ion-card class="border-left">
 
 		<ion-card-content>
 			
@@ -39,21 +43,23 @@
 			
 		</ion-card-content>
 
-	</ion-card>
+	</ion-card-->
 	
 	<ion-list>
 		
-		<ion-item *ngFor="let i of items; let n = index">
-			{{i.item_description}}
-			<a (click)="delete_item(i,n)" style="float: right;">
-				<ion-icon name="trash"></ion-icon>
-				Delete
-			</a>
-			<a (click)="edit_item(i)" style="float: right; padding-right: 20px;">
-				<ion-icon name="create"></ion-icon>
-				Edit
-			</a>
-		</ion-item>
+		<ion-card *ngFor="let i of items; let n = index" class="border-left">
+			<ion-card-content>
+				{{i.item_description}}
+				<a (click)="delete_item(i,n)" style="float: right;">
+					<ion-icon name="trash"></ion-icon>
+					Delete
+				</a>
+				<a (click)="edit_item(i)" style="float: right; padding-right: 20px;">
+					<ion-icon name="create"></ion-icon>
+					Edit
+				</a>
+			</ion-card-content>
+		</ion-card>
 	
 	</ion-list>
 	
