@@ -246,7 +246,7 @@
 			<ion-row>
 				<ion-col>
 					<ion-item>
-						<ion-label floating>flag_reverse_charge</ion-label>
+						<ion-label floating>Flag Reverse Charge</ion-label>
 						<ion-input type="text" [(ngModel)]="saleinvoice.flag_reverse_charge"></ion-input>
 					</ion-item>
 				</ion-col>
@@ -255,7 +255,7 @@
 			<ion-row>
 				<ion-col>
 					<ion-item>
-						<ion-label floating>flag_status</ion-label>
+						<ion-label floating>Flag Status</ion-label>
 						<ion-input type="text" [(ngModel)]="saleinvoice.flag_status"></ion-input>
 					</ion-item>
 				</ion-col>
@@ -264,7 +264,7 @@
 			<ion-row>
 				<ion-col>
 					<ion-item>
-						<ion-label floating>flag_sub_type</ion-label>
+						<ion-label floating>Flag Sub Type</ion-label>
 						<ion-input type="text" [(ngModel)]="saleinvoice.flag_sub_type"></ion-input>
 					</ion-item>
 				</ion-col>
@@ -273,7 +273,7 @@
 			<ion-row>
 				<ion-col>
 					<ion-item>
-						<ion-label floating>total_discount_value</ion-label>
+						<ion-label floating>Total Discount Value</ion-label>
 						<ion-input type="text" [(ngModel)]="saleinvoice.total_discount_value"></ion-input>
 					</ion-item>
 				</ion-col>
@@ -282,7 +282,7 @@
 			<ion-row>
 				<ion-col>
 					<ion-item>
-						<ion-label floating>flag_sub_type</ion-label>
+						<ion-label floating>Flag Sub Type</ion-label>
 						<ion-input type="text" [(ngModel)]="saleinvoice.flag_sub_type"></ion-input>
 					</ion-item>
 				</ion-col>
@@ -291,7 +291,7 @@
 			<ion-row>
 				<ion-col>
 					<ion-item>
-						<ion-label floating>total_taxable_value</ion-label>
+						<ion-label floating>Total Taxable Value</ion-label>
 						<ion-input type="text" [(ngModel)]="saleinvoice.total_taxable_value"></ion-input>
 					</ion-item>
 				</ion-col>
@@ -300,7 +300,7 @@
 			<ion-row>
 				<ion-col>
 					<ion-item>
-						<ion-label floating>total_cgst_amount</ion-label>
+						<ion-label floating>Total CGST Amount</ion-label>
 						<ion-input type="text" [(ngModel)]="saleinvoice.total_cgst_amount"></ion-input>
 					</ion-item>
 				</ion-col>
@@ -309,7 +309,7 @@
 			<ion-row>
 				<ion-col>
 					<ion-item>
-						<ion-label floating>total_sgst_amount</ion-label>
+						<ion-label floating>Total Sgst Amount</ion-label>
 						<ion-input type="text" [(ngModel)]="saleinvoice.total_sgst_amount"></ion-input>
 					</ion-item>
 				</ion-col>
@@ -318,7 +318,7 @@
 			<ion-row>
 				<ion-col>
 					<ion-item>
-						<ion-label floating>total_igst_amount</ion-label>
+						<ion-label floating>Total IGST Amount</ion-label>
 						<ion-input type="text" [(ngModel)]="saleinvoice.total_igst_amount"></ion-input>
 					</ion-item>
 				</ion-col>
@@ -327,7 +327,7 @@
 			<ion-row>
 				<ion-col>
 					<ion-item>
-						<ion-label floating>total</ion-label>
+						<ion-label floating>Total</ion-label>
 						<ion-input type="text" [(ngModel)]="saleinvoice.total"></ion-input>
 					</ion-item>
 				</ion-col>
@@ -336,7 +336,7 @@
 			<ion-row>
 				<ion-col>
 					<ion-item>
-						<ion-label floating>net_total</ion-label>
+						<ion-label floating>Net Total</ion-label>
 						<ion-input type="text" [(ngModel)]="saleinvoice.net_total"></ion-input>
 					</ion-item>
 				</ion-col>
@@ -345,7 +345,7 @@
 			<ion-row>
 				<ion-col>
 					<ion-item>
-						<ion-label floating>flag_invoice_type</ion-label>
+						<ion-label floating>Flag Invoice Type</ion-label>
 						<ion-input type="text" [(ngModel)]="saleinvoice.flag_invoice_type"></ion-input>
 					</ion-item>
 				</ion-col>
@@ -354,7 +354,7 @@
 			<ion-row>
 				<ion-col>
 					<ion-item>
-						<ion-label floating>itemdata</ion-label>
+						<ion-label floating>Item Data</ion-label>
 						<ion-input type="text" [(ngModel)]="saleinvoice.itemdata"></ion-input>
 					</ion-item>
 				</ion-col>

@@ -15,7 +15,7 @@
 		
 		<ion-row>
 			<ion-col>
-				<h5>Enter Item details:</h5>
+				<h5>Enter Contact details:</h5>
 			</ion-col>
 		</ion-row>
 	

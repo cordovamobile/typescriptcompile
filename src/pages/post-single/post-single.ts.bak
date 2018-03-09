@@ -65,7 +65,7 @@ export class PostSinglePage {
 			this.post.title.rendered = this.navParams.get('title');
 		}
 		if (this.navParams.get('content')) {
-			this.post.content = this.navParams.get('content');
+			this.post.content.rendered = this.navParams.get('content');
 		}
 		
 		

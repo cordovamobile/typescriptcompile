@@ -83,6 +83,7 @@ export class PostSinglePage {
 				console.log( 'requestAPI Response: ' + JSON.stringify( response ) );
 				console.log( 'requestAPI Response Type' + response.type );
 				
+				response.date = new Date( response.date );
 				
 				self.post = response;
 				self.loading_post = false;

@@ -23,13 +23,13 @@
 	
 	
 	
-	<div>
+	<div class="hbgst_form">
 		
 		<ion-grid>
 			<ion-row>
 				<ion-col>
 					<ion-item>
-						<ion-label floating>Item Description <small>(Required)</small></ion-label>
+						<ion-label stacked>Item Description <small>(Required)</small></ion-label>
 						<ion-input type="text" [(ngModel)]="item.item_description"></ion-input>
 					</ion-item>
 				</ion-col>
@@ -37,7 +37,7 @@
 			<ion-row>
 				<ion-col>
 					<ion-item>
-						<ion-label floating>Item Type <small>(Required)</small></ion-label>
+						<ion-label stacked>Item Type <small>(Required)</small></ion-label>
 						<ion-select type="text" [(ngModel)]="item.item_type">
 							<ion-option>Goods</ion-option>
 							<ion-option>Services</ion-option>
@@ -48,7 +48,7 @@
 			<ion-row>
 				<ion-col>
 					<ion-item>
-						<ion-label floating>HSN/SAC Code
+						<ion-label stacked>HSN/SAC Code
 							<small>
 								<a href="#">Find HSN/SAC</a>
 							</small>
@@ -60,7 +60,7 @@
 			<ion-row>
 				<ion-col>
 					<ion-item>
-						<ion-label floating>SKU</ion-label>
+						<ion-label stacked>SKU</ion-label>
 						<ion-input type="text" [(ngModel)]="item.item_sku_code"></ion-input>
 					</ion-item>
 				</ion-col>
@@ -68,7 +68,7 @@
 			<ion-row>
 				<ion-col>
 					<ion-item>
-						<ion-label floating>Tax Rate <small>(optional)</small></ion-label>
+						<ion-label stacked>Tax Rate <small>(optional)</small></ion-label>
 						<ion-select type="text" [(ngModel)]="item.tax_rate">
 							<ion-option value="0.00">NIL</ion-option>
 							<ion-option value="0.25">0.25%</ion-option>
@@ -92,7 +92,7 @@
 			<ion-row>
 				<ion-col>
 					<ion-item>
-						<ion-label floating>Cess Amount <small>(optional)</small></ion-label>
+						<ion-label stacked>Cess Amount <small>(optional)</small></ion-label>
 						<ion-input type="text" [(ngModel)]="item.cess_amount"></ion-input>
 					</ion-item>
 				</ion-col>
@@ -100,7 +100,7 @@
 			<ion-row>
 				<ion-col>
 					<ion-item>
-						<ion-label floating>Purchase Price <small>(optional)</small></ion-label>
+						<ion-label stacked>Purchase Price <small>(optional)</small></ion-label>
 						<ion-input type="text" [(ngModel)]="item.purchase_price"></ion-input>
 					</ion-item>
 				</ion-col>
@@ -108,7 +108,7 @@
 			<ion-row>
 				<ion-col>
 					<ion-item>
-						<ion-label floating>Selling Price <small>(optional)</small></ion-label>
+						<ion-label stacked>Selling Price <small>(optional)</small></ion-label>
 						<ion-input type="text" [(ngModel)]="item.selling_price"></ion-input>
 					</ion-item>
 				</ion-col>
@@ -116,7 +116,7 @@
 			<ion-row>
 				<ion-col>
 					<ion-item>
-						<ion-label floating>Unit <small>(optional)</small></ion-label>
+						<ion-label stacked>Unit <small>(optional)</small></ion-label>
 						<ion-select type="text" [(ngModel)]="item.unit">
 							<ion-option value="BOU">BOU</ion-option>
 							<ion-option value="BGS">Bags</ion-option>
@@ -169,7 +169,7 @@
 			<ion-row>
 				<ion-col>
 					<ion-item>
-						<ion-label floating>Discount <small>(optional)</small></ion-label>
+						<ion-label stacked>Discount <small>(optional)</small></ion-label>
 						<ion-input type="text" [(ngModel)]="item.discount"></ion-input>
 					</ion-item>
 				</ion-col>
@@ -177,7 +177,7 @@
 			<ion-row>
 				<ion-col>
 					<ion-item>
-						<ion-label floating>Item Notes <small>(optional)</small></ion-label>
+						<ion-label stacked>Item Notes <small>(optional)</small></ion-label>
 						<ion-input type="text" [(ngModel)]="item.item_notes"></ion-input>
 					</ion-item>
 				</ion-col>

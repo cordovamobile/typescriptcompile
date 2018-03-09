@@ -9,36 +9,47 @@
 
 
 <ion-content padding>
+		
+	<div *ngIf="initial_loading">
+		
+		<h6 text-center>
+			Refreshing 
+			<ion-icon name="refresh" class="ion-spin-animation"></ion-icon>
+		</h6>
+		
+	</div>
+	
+	<div>
+		
+		<img src="{{ posts[0].better_featured_image.media_details.sizes.thumbnail.source_url }}" *ngIf="p.better_featured_image" />
+		
+	</div>
 
 	<ion-list>
 		
-		<div *ngIf="initial_loading">
-			
-			<h6 text-center>
-				Refreshing 
-				<ion-icon name="refresh" class="ion-spin-animation"></ion-icon>
-			</h6>
-			
+		<div *ngFor="let p of posts | slice:1; let i=index">
+			<ion-card>
+				<ion-card-content>
+				
+					<a 
+						class="" 
+						menuClose 
+						ion-item 
+						(click)="openPost( p )"
+						style="
+							cursor: pointer;
+						"
+					>
+						<span class="menu_item_icon">
+							<img src="{{ p.better_featured_image.media_details.sizes.thumbnail.source_url }}" *ngIf="p.better_featured_image" />
+						</span>
+						<span class="menu_item_title" [innerHtml]="p.title.rendered"></span>
+					</a>
+					
+				</ion-card-content>
+			</ion-card>
 		</div>
 		
-		<div *ngFor="let p of posts">
-		
-			<a 
-				class="" 
-				menuClose 
-				ion-item 
-				(click)="openPost( p )"
-				style="
-					cursor: pointer;
-				"
-			>
-				<span class="menu_item_icon">
-					<img src="{{ p.better_featured_image.media_details.sizes.thumbnail.source_url }}" *ngIf="p.better_featured_image" />
-				</span>
-				<span class="menu_item_title" [innerHtml]="p.title.rendered"></span>
-			</a>
-			
-		</div>
 		
 		<div text-center>
 			<button *ngIf="display_view_more_posts_button && !loading_more_posts && !initial_loading" (click)="show_more_posts()" ion-button small>

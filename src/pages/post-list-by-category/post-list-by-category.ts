@@ -83,6 +83,10 @@ export class PostListByCategoryPage {
 				if( ! (response instanceof Array) ) {
 					response = [];
 				}
+				
+				for(var i=0; i<response.length; i++) {
+					response[i].date = new Date( response[i].date );
+				}
 					
 					
 				self.posts = response;
@@ -114,6 +118,7 @@ export class PostListByCategoryPage {
 			{
 				"id"		: p.id,
 				"thumbnail"	: p.better_featured_image.media_details.sizes.thumbnail.source_url,
+				"medium"	: p.better_featured_image.media_details.sizes.medium.source_url,
 				"title"		: p.title.rendered,
 				"content"	: p.content.rendered,
 				
@@ -146,6 +151,10 @@ export class PostListByCategoryPage {
 					
 				if( ! (response instanceof Array) ) {
 					response = [];
+				}
+				
+				for(var i=0; i<response.length; i++) {
+					response[i].date = new Date( response[i].date );
 				}
 
 				self.posts.push.apply(

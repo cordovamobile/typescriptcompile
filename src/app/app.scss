@@ -414,9 +414,13 @@ ion-button {
 	border-bottom: 1px #aaa solid;
 }
 .hbgst_form ion-label ,
-.hbgst_form ion-select ,
+.hbgst_form ion-checkbox ,
 .hbgst_form ion-input {
-	padding: 0px 15px;
+	padding: 0px 15px !important;
+}
+.hbgst_form .select-text {
+	padding-left: 15px !important;
+	padding-right: 15px !important;
 }
 .hbgst_form .label-md[stacked] {
     font-size: 1.7rem;
