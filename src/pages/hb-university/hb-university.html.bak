@@ -60,11 +60,11 @@
 				GST Rule
 			</div>
 			<hr />
-			<div>
+			<div (click)="openPostListByCategory(69,'GST Law')">
 				GST Law
 			</div>
 			<hr />
-			<div>
+			<div (click)="openPostListByCategory(63,'GST Schedule')">
 				GST Schedule
 			</div>
 			<hr />
