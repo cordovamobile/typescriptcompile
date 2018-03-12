@@ -125,6 +125,24 @@
 					class="home_menu" 
 					menuClose 
 					ion-item 
+					(click)="openComponent('HbUniversityPage')"
+				>
+					<span class="menu_item_icon">
+						<ion-icon name="apps"></ion-icon>
+					</span>
+					<span class="menu_item_title">
+						Resources
+					</span>
+				</a>
+				
+			</div>
+		
+			<div><!-- News List Page -->
+			
+				<a 
+					class="home_menu" 
+					menuClose 
+					ion-item 
 					(click)="openPostListByCategory(70,'News')"
 				>
 					<span class="menu_item_icon">

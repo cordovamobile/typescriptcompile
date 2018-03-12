@@ -7,6 +7,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 
 /* Pages to be linked in the menu */
 import { HomePage } from '../pages/home/home';
+import { HbUniversityPage } from '../pages/hb-university/hb-university';
 //import { PostListPage } from '../pages/post-list/post-list';
 import { PostListByCategoryPage } from '../pages/post-list-by-category/post-list-by-category';
 import { LoginPage } from '../pages/login/login';
@@ -71,6 +72,7 @@ export class MyApp {
 		/* List of pages for menu */
 		this.components = {
 			HomePage : HomePage,
+			HbUniversityPage : HbUniversityPage,
 			//PostListPage : PostListPage,
 			PostListByCategoryPage : PostListByCategoryPage,
 			LoginPage : LoginPage,
@@ -136,7 +138,7 @@ export class MyApp {
 
 	openPostListByCategory(id,name='') {
 		localStorage.setItem('list_by_category_page_category',JSON.stringify({id:id,name:name}));
-		this.nav.setRoot(PostListByCategoryPage);
+		this.nav.setRoot(PostListByCategoryPage,{id:70,name:'News'});
 	}
 	
 	

@@ -8,6 +8,7 @@ import { ApplicationService } from '../../providers/application-service';
 import { LoginPage } from '../../pages/login/login';
 import { CaDashboardPage } from '../../pages/ca-dashboard/ca-dashboard';
 import { PostListByCategoryPage } from '../../pages/post-list-by-category/post-list-by-category';
+import { HbUniversityPage } from '../../pages/hb-university/hb-university';
 
 @Component({
   selector: 'page-home',
@@ -42,6 +43,11 @@ export class HomePage {
 		if( p == 'NewsPage' ) {
 			redirect = PostListByCategoryPage;
 			parameters = {id:70,name:'News'};
+			localStorage.setItem('list_by_category_page_category',JSON.stringify({id:70,name:'News'}));
+		}
+		if( p == 'HbUniversityPage' ) {
+			redirect = HbUniversityPage;
+			parameters = {};
 		}
 		
 		if( redirect ) {

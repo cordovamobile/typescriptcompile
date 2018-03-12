@@ -7,6 +7,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 
 /* Pages to be linked in the menu */
 import { HomePage } from '../pages/home/home';
+import { HbUniversityPage } from '../pages/hb-university/hb-university';
 //import { PostListPage } from '../pages/post-list/post-list';
 import { PostListByCategoryPage } from '../pages/post-list-by-category/post-list-by-category';
 import { LoginPage } from '../pages/login/login';
@@ -23,7 +24,7 @@ import { CaClientDashboardPage } from '../pages/ca-client-dashboard/ca-client-da
 import { OcBusinessDashboardPage } from '../pages/oc-business-dashboard/oc-business-dashboard';
 */
 import { CaClientSaleinvoiceListPage } from '../pages/ca-client-saleinvoice-list/ca-client-saleinvoice-list';
-import { OcBusinessSaleinvoiceListPage } from '../pages/oc-business-saleinvoice-list/oc-business-saleinvoice-list';
+//import { OcBusinessSaleinvoiceListPage } from '../pages/oc-business-saleinvoice-list/oc-business-saleinvoice-list';
 
 @Component({
 	templateUrl: 'app.html',
@@ -71,6 +72,7 @@ export class MyApp {
 		/* List of pages for menu */
 		this.components = {
 			HomePage : HomePage,
+			HbUniversityPage : HbUniversityPage,
 			//PostListPage : PostListPage,
 			PostListByCategoryPage : PostListByCategoryPage,
 			LoginPage : LoginPage,

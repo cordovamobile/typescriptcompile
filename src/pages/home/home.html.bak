@@ -28,7 +28,7 @@
 		</ion-row>
 		<ion-row>
 			<ion-col>
-				<ion-card>
+				<ion-card (click)="openPage('CaDashboardPage')">
 					<img src="assets/imgs/home/resources.png" />
 				</ion-card>
 			</ion-col>
@@ -45,7 +45,7 @@
 				</ion-card>
 			</ion-col>
 			<ion-col>
-				<ion-card (click)="openPage('CaClientDashboardPage')">
+				<ion-card (click)="openPage('CaDashboardPage')">
 					<img src="assets/imgs/home/invoice_management.png" />
 				</ion-card>
 			</ion-col>

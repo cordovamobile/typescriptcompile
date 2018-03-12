@@ -1,0 +1,37 @@
+
+import { Component } from '@angular/core';
+import { Nav, LoadingController, /*IonicPage,*/ NavController, NavParams, ToastController, AlertController  } from 'ionic-angular';
+
+import { Dataprovider } from '../../providers/dataprovider';
+import { ApplicationService } from '../../providers/application-service';
+
+/**
+ * Generated class for the ResourcesPage page.
+ *
+ * See https://ionicframework.com/docs/components/#navigation for more info on
+ * Ionic pages and navigation.
+ */
+
+// @IonicPage()
+@Component({
+  selector: 'page-resources',
+  templateUrl: 'resources.html',
+})
+export class ResourcesPage {
+
+	constructor(
+		public navCtrl: NavController,
+		public navParams: NavParams,
+		public dataprovider: Dataprovider,			
+		public toastCtrl: ToastController,
+		public alertCtrl: AlertController ,
+		public nav: Nav,
+		public application_service: ApplicationService
+	) {
+	}
+
+	ionViewDidLoad() {
+		console.log('ionViewDidLoad ResourcesPage');
+	}
+
+}

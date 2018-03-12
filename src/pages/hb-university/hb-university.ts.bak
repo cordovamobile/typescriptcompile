@@ -1,0 +1,48 @@
+
+import { Component } from '@angular/core';
+import { Nav, LoadingController, /*IonicPage,*/ NavController, NavParams, ToastController, AlertController  } from 'ionic-angular';
+
+import { Dataprovider } from '../../providers/dataprovider';
+import { ApplicationService } from '../../providers/application-service';
+
+import { PostListByCategoryPage } from '../../pages/post-list-by-category/post-list-by-category';
+
+/**
+ * Generated class for the HbUniversityPage page.
+ *
+ * See https://ionicframework.com/docs/components/#navigation for more info on
+ * Ionic pages and navigation.
+ */
+
+// @IonicPage()
+@Component({
+  selector: 'page-hb-university',
+  templateUrl: 'hb-university.html',
+})
+export class HbUniversityPage {
+	
+	show_gst_sub_menu: boolean;
+
+	constructor(
+		public navCtrl: NavController,
+		public navParams: NavParams,
+		public dataprovider: Dataprovider,			
+		public toastCtrl: ToastController,
+		public alertCtrl: AlertController ,
+		public nav: Nav,
+		public application_service: ApplicationService
+	) {
+		
+		this.show_gst_sub_menu = false;
+		
+	}
+
+	ionViewDidLoad() {
+		console.log('ionViewDidLoad HbUniversityPage');
+	}
+	
+	openPostListByCategory( id , name ) {
+		this.nav.setRoot( PostListByCategoryPage , {id:id,name:name} );
+	}
+
+}

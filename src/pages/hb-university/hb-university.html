@@ -1,0 +1,81 @@
+<ion-header>
+	<ion-navbar>
+		<button ion-button menuToggle>
+			<ion-icon name="menu"></ion-icon>
+		</button>
+		<ion-title>Resources</ion-title>
+	</ion-navbar>
+	<div class="tabs_navbar">
+		<ion-grid>
+			<ion-row>
+				<ion-col text-center class="active">
+					HB University
+				</ion-col>
+				<ion-col text-center>
+					Blogs
+				</ion-col>
+				<ion-col text-center>
+					Case Study
+				</ion-col>
+			</ion-row>
+		</ion-grid>
+	</div>
+</ion-header>
+
+
+<ion-content padding>
+	
+	
+	<ion-card style="border-bottom: 1px rgba(0,0,0,.15) solid;" style="border-top: none !important;">
+
+		<ion-card-header style="border-left: 4px #256C9B solid;">
+			<ion-grid>
+				<ion-row>
+					<ion-col>
+						GST
+					</ion-col>
+					<ion-col text-right>
+			
+						<div text-center (click)="show_gst_sub_menu = true" *ngIf="!show_gst_sub_menu">
+							<ion-icon name="arrow-dropdown"></ion-icon>
+						</div>
+						
+						<div text-center (click)="show_gst_sub_menu = false" *ngIf="show_gst_sub_menu">
+							<ion-icon name="arrow-dropup"></ion-icon>
+						</div>
+						
+					</ion-col>
+				</ion-row>
+			</ion-grid>
+		</ion-card-header>
+
+		<ion-card-content style="padding-bottom: 0px;" *ngIf="show_gst_sub_menu">
+			
+			<hr />
+			<div (click)="openPostListByCategory(64,'Knowledge Base')">
+				Knowledge Base
+			</div>
+			<hr />
+			<div>
+				GST Rule
+			</div>
+			<hr />
+			<div>
+				GST Law
+			</div>
+			<hr />
+			<div (click)="openPostListByCategory(63,'GST Schedule')">
+				GST Schedule
+			</div>
+			<hr />
+			<div>
+				FAQ
+			</div>
+			<hr />
+			
+		</ion-card-content>
+
+	</ion-card>
+	
+	
+</ion-content>
