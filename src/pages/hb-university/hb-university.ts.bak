@@ -6,6 +6,7 @@ import { Dataprovider } from '../../providers/dataprovider';
 import { ApplicationService } from '../../providers/application-service';
 
 import { PostListByCategoryPage } from '../../pages/post-list-by-category/post-list-by-category';
+import { GstLawListPage } from '../../pages/gst-law-list/gst-law-list';
 
 /**
  * Generated class for the HbUniversityPage page.
@@ -42,7 +43,24 @@ export class HbUniversityPage {
 	}
 	
 	openPostListByCategory( id , name ) {
+		localStorage.setItem('list_by_category_page_category',JSON.stringify({id:id,name:name}));
 		this.nav.setRoot( PostListByCategoryPage , {id:id,name:name} );
+	}
+	
+	openPage(p) {
+		
+		var redirect = {};
+		var parameters = {};
+		
+		if( p == 'GstLawListPage' ) {
+			redirect = GstLawListPage;
+			parameters = {};
+		}
+		
+		if( redirect ) {
+			this.nav.setRoot(redirect,parameters);
+		}
+		
 	}
 
 }

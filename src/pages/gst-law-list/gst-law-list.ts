@@ -6,10 +6,10 @@ import { Dataprovider } from '../../providers/dataprovider';
 import { ApplicationService } from '../../providers/application-service';
 
 import { PostListByCategoryPage } from '../../pages/post-list-by-category/post-list-by-category';
-import { GstLawListPage } from '../../pages/gst-law-list/gst-law-list';
+import { GstLawSinglePage } from '../../pages/gst-law-single/gst-law-single';
 
 /**
- * Generated class for the HbUniversityPage page.
+ * Generated class for the GstLawListPage page.
  *
  * See https://ionicframework.com/docs/components/#navigation for more info on
  * Ionic pages and navigation.
@@ -17,12 +17,10 @@ import { GstLawListPage } from '../../pages/gst-law-list/gst-law-list';
 
 // @IonicPage()
 @Component({
-  selector: 'page-hb-university',
-  templateUrl: 'hb-university.html',
+  selector: 'page-gst-law-list',
+  templateUrl: 'gst-law-list.html',
 })
-export class HbUniversityPage {
-	
-	show_gst_sub_menu: boolean;
+export class GstLawListPage {
 
 	constructor(
 		public navCtrl: NavController,
@@ -31,35 +29,17 @@ export class HbUniversityPage {
 		public toastCtrl: ToastController,
 		public alertCtrl: AlertController ,
 		public nav: Nav,
-		public application_service: ApplicationService
+		public application_service: ApplicationService,
 	) {
-		
-		this.show_gst_sub_menu = false;
-		
 	}
 
 	ionViewDidLoad() {
-		console.log('ionViewDidLoad HbUniversityPage');
+		console.log('ionViewDidLoad GstLawListPage');
 	}
 	
-	openPostListByCategory( id , name ) {
-		localStorage.setItem('list_by_category_page_category',JSON.stringify({id:id,name:name}));
-		this.nav.setRoot( PostListByCategoryPage , {id:id,name:name} );
-	}
-	
-	openPage(p) {
+	openBlogPage(id) {
 		
-		var redirect = {};
-		var parameters = {};
-		
-		if( p == 'GstLawListPage' ) {
-			redirect = GstLawListPage;
-			parameters = {};
-		}
-		
-		if( redirect ) {
-			this.nav.setRoot(redirect,parameters);
-		}
+		this.nav.setRoot(GstLawSinglePage,{id:id});
 		
 	}
 

@@ -10,6 +10,8 @@ import { MyApp } from './app.component';
 /* Pages */
 import { HomePage } from '../pages/home/home';
 import { HbUniversityPage } from '../pages/hb-university/hb-university';
+import { GstLawListPage } from '../pages/gst-law-list/gst-law-list';
+import { GstLawSinglePage } from '../pages/gst-law-single/gst-law-single';
 import { PostListPage } from '../pages/post-list/post-list';
 import { PostListByCategoryPage } from '../pages/post-list-by-category/post-list-by-category';
 import { PostSinglePage } from '../pages/post-single/post-single';
@@ -63,6 +65,8 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 		MyApp,
 		HomePage,
 		HbUniversityPage,
+		GstLawListPage,
+		GstLawSinglePage,
 		PostListPage,
 		PostListByCategoryPage,
 		PostSinglePage,
@@ -110,6 +114,8 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 		MyApp,
 		HomePage,
 		HbUniversityPage,
+		GstLawListPage,
+		GstLawSinglePage,
 		PostListPage,
 		PostListByCategoryPage,
 		PostSinglePage,

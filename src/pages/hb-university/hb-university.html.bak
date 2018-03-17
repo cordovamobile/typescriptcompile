@@ -56,7 +56,7 @@
 				Knowledge Base
 			</div>
 			<hr />
-			<div>
+			<div (click)="openPostListByCategory(62,'GST Rule')">
 				GST Rule
 			</div>
 			<hr />
@@ -68,7 +68,7 @@
 				GST Schedule
 			</div>
 			<hr />
-			<div>
+			<div (click)="openPostListByCategory(60,'FAQ')">
 				FAQ
 			</div>
 			<hr />
