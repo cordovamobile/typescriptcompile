@@ -11,10 +11,10 @@
 				<ion-col text-center class="active">
 					Sales
 				</ion-col>
-				<ion-col text-center (click)="openPage('OcBusinessItemListPage')">
+				<ion-col text-center (click)="openPage('CaClientItemListPage')">
 					Items
 				</ion-col>
-				<ion-col text-center (click)="openPage('OcBusinessContactListPage')">
+				<ion-col text-center (click)="openPage('CaClientContactListPage')">
 					Business
 				</ion-col>
 			</ion-row>

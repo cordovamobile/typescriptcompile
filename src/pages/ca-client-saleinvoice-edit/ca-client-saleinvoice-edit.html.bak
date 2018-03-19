@@ -3,7 +3,7 @@
 		<button ion-button menuToggle>
 			<ion-icon name="menu"></ion-icon>
 		</button>
-		<ion-title>{{business.business_name}} Add New Saleinvoice</ion-title>
+		<ion-title>{{client.business_name}} Add New Saleinvoice</ion-title>
 	</ion-navbar>
 </ion-header>
 
@@ -365,7 +365,7 @@
 		<ion-grid>
 			<ion-row>
 				<ion-col text-right>
-					<button (click)="save_saleinvoice()" ion-button color="secondary">
+					<button (click)="update_saleinvoice()" ion-button color="secondary">
 						Save Saleinvoice
 					</button>
 				</ion-col>
