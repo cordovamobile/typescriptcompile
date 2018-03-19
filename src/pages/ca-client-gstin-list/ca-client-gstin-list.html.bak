@@ -18,19 +18,11 @@
 
 			<ion-card-header>
 				{{g.gstin}}
-				<a (click)="edit_gstin(g)">
+				<a (click)="edit_gstin(g)" style="float: right;">
 					<ion-icon name="create"></ion-icon>
 					Edit
 				</a>
 			</ion-card-header>
-
-			<ion-card-content>
-				{{g.gstin}}
-				<a (click)="edit_gstin(g)">
-					<ion-icon name="create"></ion-icon>
-					Edit
-				</a>
-			</ion-card-content>
 
 		</ion-card>
 	

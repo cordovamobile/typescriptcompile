@@ -8,6 +8,9 @@ import { ApplicationService } from '../../providers/application-service';
 import { OcBusinessEditPage } from '../../pages/oc-business-edit/oc-business-edit';
 import { OcBusinessGstinAddPage } from '../../pages/oc-business-gstin-add/oc-business-gstin-add';
 import { OcBusinessGstinListPage } from '../../pages/oc-business-gstin-list/oc-business-gstin-list';
+import { OcBusinessItemListPage } from '../../pages/oc-business-item-list/oc-business-item-list';
+import { OcBusinessContactListPage } from '../../pages/oc-business-contact-list/oc-business-contact-list';
+import { OcBusinessSaleinvoiceListPage } from '../../pages/oc-business-saleinvoice-list/oc-business-saleinvoice-list';
 /*
 import { BusinessAddPage } from '../../pages/business-add/business-add';
 import { BusinessListPage } from '../../pages/business-list/business-list';
@@ -88,7 +91,7 @@ export class OcBusinessDashboardPage {
 		console.log('ionViewDidLoad OcBusinessDashboardPage');
 	}
 	
-	openPage( page , business ) {
+	openPage( page ) {
 		var redirect;
 		if( page == 'OcBusinessEditPage' ) {
 			redirect = OcBusinessEditPage;
@@ -99,7 +102,16 @@ export class OcBusinessDashboardPage {
 		if( page == 'OcBusinessGstinListPage' ) {
 			redirect = OcBusinessGstinListPage;
 		}
-		this.navCtrl.push( redirect, { "business" : business } );
+		if( page == 'OcBusinessItemListPage' ) {
+			redirect = OcBusinessItemListPage;
+		}
+		if( page == 'OcBusinessContactListPage' ) {
+			redirect = OcBusinessContactListPage;
+		}
+		if( page == 'OcBusinessSaleinvoiceListPage' ) {
+			redirect = OcBusinessSaleinvoiceListPage;
+		}
+		this.navCtrl.setRoot( redirect, { "business" : this.business } );
 	}
 
 }

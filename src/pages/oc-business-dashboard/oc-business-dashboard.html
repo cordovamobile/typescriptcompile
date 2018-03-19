@@ -5,6 +5,21 @@
 		</button>
 		<ion-title>{{business.business_name}} Dashboard</ion-title>
 	</ion-navbar>
+	<div class="tabs_navbar">
+		<ion-grid>
+			<ion-row>
+				<ion-col text-center (click)="openPage('OcBusinessSaleinvoiceListPage')">
+					Sales
+				</ion-col>
+				<ion-col text-center (click)="openPage('OcBusinessItemListPage')">
+					Items
+				</ion-col>
+				<ion-col text-center (click)="openPage('OcBusinessContactListPage')">
+					Business
+				</ion-col>
+			</ion-row>
+		</ion-grid>
+	</div>
 </ion-header>
 
 
@@ -20,9 +35,12 @@
 		<ion-card-content text-center>
 			<p>Business Name: {{business.business_name}}</p>
 			<p>Business PAN: {{business.pan}}</p>
+			<p>Business Name: {{business.primary_contact_person}}</p>
+			<p>Email Address: {{business.email_address}}</p>
+			<p>Phone Number: {{business.primary_contact_personph}}</p>
 			<div>
 				GSTINs:-
-				<div *ngFor="let g of business.data">{{g.gstin}}</div>
+				<div *ngFor="let g of business.data">{{g.gstin}} ({{g.gstin_name}})</div>
 			</div>
 			
 		</ion-card-content>
@@ -40,7 +58,7 @@
 			
 			<div style="padding: 10px;">
 				
-				<button (click)="openPage('OcBusinessEditPage',business)" ion-button color="light" small>
+				<button (click)="openPage('OcBusinessEditPage')" ion-button color="light" small>
 					<ion-icon name="create"></ion-icon>
 					&nbsp;
 					Edit Business Details
@@ -50,7 +68,7 @@
 			
 			<div style="padding: 10px;">
 				
-				<button (click)="openPage('OcBusinessGstinAddPage',business)" ion-button color="light" small>
+				<button (click)="openPage('OcBusinessGstinAddPage')" ion-button color="light" small>
 					<ion-icon name="create"></ion-icon>
 					&nbsp;
 					Add New GSTIN
@@ -60,7 +78,7 @@
 			
 			<div style="padding: 10px;">
 				
-				<button (click)="openPage('OcBusinessGstinListPage',business)" ion-button color="light" small>
+				<button (click)="openPage('OcBusinessGstinListPage')" ion-button color="light" small>
 					<ion-icon name="create"></ion-icon>
 					&nbsp;
 					GSTINs List
@@ -68,9 +86,39 @@
 				
 			</div>
 			
+			<div style="padding: 10px;">
+				
+				<button (click)="openPage('OcBusinessItemListPage')" ion-button color="light" small>
+					<ion-icon name="create"></ion-icon>
+					&nbsp;
+					Items List
+				</button>
+				
+			</div>
+			
+			<div style="padding: 10px;">
+				
+				<button (click)="openPage('OcBusinessContactListPage')" ion-button color="light" small>
+					<ion-icon name="create"></ion-icon>
+					&nbsp;
+					Contacts
+				</button>
+				
+			</div>
+			
+			<div style="padding: 10px;">
+				
+				<button (click)="openPage('OcBusinessSaleinvoiceListPage')" ion-button color="light" small>
+					<ion-icon name="create"></ion-icon>
+					&nbsp;
+					Sales Invoices
+				</button>
+				
+			</div>
+			
 			<!--div style="padding: 10px;">
 				
-				<button (click)="openPage('',business)" ion-button color="light" small>
+				<button (click)="openPage('')" ion-button color="light" small>
 					<ion-icon name="cart"></ion-icon>
 					&nbsp;
 					Create Sales Invoice
@@ -80,7 +128,7 @@
 			
 			<div style="padding: 10px;">
 				
-				<button (click)="openPage('',business)" ion-button color="light" small>
+				<button (click)="openPage('')" ion-button color="light" small>
 					<ion-icon name="cash"></ion-icon>
 					&nbsp;
 					Create Purchase Invoice

@@ -145,7 +145,7 @@ export class OcBusinessGstinEditPage {
 				if( response.status == 'success' ) {
 					
 					
-					self.nav.setRoot( OcBusinessDashboardPage , { "business" : self.business } );
+					self.nav.setRoot( CabusinessDashboardPage , { "business" : self.business } );
 					
 					
 				} else {

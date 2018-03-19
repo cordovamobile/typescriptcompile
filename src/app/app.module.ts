@@ -46,6 +46,12 @@ import { OcBusinessGstinEditPage } from '../pages/oc-business-gstin-edit/oc-busi
 import { OcBusinessItemAddPage } from '../pages/oc-business-item-add/oc-business-item-add';
 import { OcBusinessItemListPage } from '../pages/oc-business-item-list/oc-business-item-list';
 import { OcBusinessItemEditPage } from '../pages/oc-business-item-edit/oc-business-item-edit';
+import { OcBusinessContactAddPage } from '../pages/oc-business-contact-add/oc-business-contact-add';
+import { OcBusinessContactListPage } from '../pages/oc-business-contact-list/oc-business-contact-list';
+import { OcBusinessContactEditPage } from '../pages/oc-business-contact-edit/oc-business-contact-edit';
+import { OcBusinessSaleinvoiceAddPage } from '../pages/oc-business-saleinvoice-add/oc-business-saleinvoice-add';
+import { OcBusinessSaleinvoiceListPage } from '../pages/oc-business-saleinvoice-list/oc-business-saleinvoice-list';
+import { OcBusinessSaleinvoiceEditPage } from '../pages/oc-business-saleinvoice-edit/oc-business-saleinvoice-edit';
 
 
 /* Providers */
@@ -101,6 +107,12 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 		OcBusinessItemAddPage,
 		OcBusinessItemListPage,
 		OcBusinessItemEditPage,
+		OcBusinessContactAddPage,
+		OcBusinessContactListPage,
+		OcBusinessContactEditPage,
+		OcBusinessSaleinvoiceAddPage,
+		OcBusinessSaleinvoiceListPage,
+		OcBusinessSaleinvoiceEditPage,
 	],
 	imports: [
 		BrowserModule,
@@ -150,6 +162,12 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 		OcBusinessItemAddPage,
 		OcBusinessItemListPage,
 		OcBusinessItemEditPage,
+		OcBusinessContactAddPage,
+		OcBusinessContactListPage,
+		OcBusinessContactEditPage,
+		OcBusinessSaleinvoiceAddPage,
+		OcBusinessSaleinvoiceListPage,
+		OcBusinessSaleinvoiceEditPage,
 	],
 	providers: [
 		StatusBar,

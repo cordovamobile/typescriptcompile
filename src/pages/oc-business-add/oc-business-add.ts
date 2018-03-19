@@ -8,10 +8,10 @@ import { ApplicationService } from '../../providers/application-service';
 //import { BusinessListPage } from '../../pages/business-list/business-list';
 import { OcDashboardPage } from '../../pages/oc-dashboard/oc-dashboard';
 
-@IonicPage()
+//@IonicPage()
 @Component({
-  selector: 'page-oc-business-add',
-  templateUrl: 'oc-business-add.html',
+  selector: 'page-oc-Business-add',
+  templateUrl: 'oc-Business-add.html',
 })
 export class OcBusinessAddPage {
 	
@@ -29,6 +29,7 @@ export class OcBusinessAddPage {
 	) {
 		
 		this.business = {};
+		this.statelist = {};
 		
 		this.business.gstins = [
 			{
@@ -79,6 +80,7 @@ export class OcBusinessAddPage {
 
 			}
 		);
+		
 		
 		
 		
@@ -162,7 +164,7 @@ export class OcBusinessAddPage {
 			
 			if( this.statelist[i].State_Code == State_Code ) {
 				g.displayname = this.statelist[i].State_Name;
-				g.statecode = this.statelist[i].State_Code;
+				g.statecode = this.statelist[i].gstinstatecode;
 			}
 			
 		}
