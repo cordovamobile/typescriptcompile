@@ -7,9 +7,9 @@ import { ApplicationService } from '../../providers/application-service';
 
 import { LoginPage } from '../../pages/login/login';
 import { CaDashboardPage } from '../../pages/ca-dashboard/ca-dashboard';
+import { OcDashboardPage } from '../../pages/oc-dashboard/oc-dashboard';
 import { PostListByCategoryPage } from '../../pages/post-list-by-category/post-list-by-category';
 import { HbUniversityPage } from '../../pages/hb-university/hb-university';
-import { GstLawListPage } from '../../pages/gst-law-list/gst-law-list';
 
 @Component({
   selector: 'page-home',
@@ -50,14 +50,14 @@ export class HomePage {
 			redirect = HbUniversityPage;
 			parameters = {};
 		}
-		if( p == 'GstLawListPage' ) {
-			redirect = GstLawListPage;
-			parameters = {};
-		}
 		
 		if( redirect ) {
 			this.nav.setRoot(redirect,parameters);
 		}
+		
+	}
+	
+	openDashboard() {
 		
 	}
 

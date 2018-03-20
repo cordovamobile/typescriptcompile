@@ -7,6 +7,7 @@ import { ApplicationService } from '../../providers/application-service';
 
 import { LoginPage } from '../../pages/login/login';
 import { CaDashboardPage } from '../../pages/ca-dashboard/ca-dashboard';
+import { OcDashboardPage } from '../../pages/oc-dashboard/oc-dashboard';
 import { PostListByCategoryPage } from '../../pages/post-list-by-category/post-list-by-category';
 import { HbUniversityPage } from '../../pages/hb-university/hb-university';
 
@@ -53,6 +54,27 @@ export class HomePage {
 		if( redirect ) {
 			this.nav.setRoot(redirect,parameters);
 		}
+		
+	}
+	
+	openDashboard() {
+		
+		var redirect_page;
+		
+		var userdata = JSON.parse( localStorage.getItem("userdata") );
+		
+		
+		if( typeof userdata.bu_type == 'undefined' ) { // If login_count does not exist
+			redirect_page = UserDetailsSavePage;
+		} else {
+			if( userdata.bu_type == 'CA' ) {
+				redirect_page = CaDashboardPage;
+			} else if( userdata.bu_type == 'OC' ) {
+				redirect_page = OcDashboardPage;
+			}
+		}
+			
+		this.nav.setRoot( redirect_page );
 		
 	}
 

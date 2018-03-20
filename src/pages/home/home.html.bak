@@ -28,7 +28,7 @@
 		</ion-row>
 		<ion-row>
 			<ion-col>
-				<ion-card (click)="openPage('CaDashboardPage')">
+				<ion-card (click)="openPage('HbUniversityPage')">
 					<img src="assets/imgs/home/resources.png" />
 				</ion-card>
 			</ion-col>

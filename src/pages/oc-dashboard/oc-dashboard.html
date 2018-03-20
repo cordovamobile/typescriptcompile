@@ -3,7 +3,7 @@
 		<button ion-button menuToggle>
 			<ion-icon name="menu"></ion-icon>
 		</button>
-		<ion-title>OC Dashboard</ion-title>
+		<ion-title>Business List</ion-title>
 	</ion-navbar>
 </ion-header>
 
@@ -11,8 +11,14 @@
 <ion-content padding>
 	
 	
+	<ion-fab right bottom>
+		<button ion-fab color="danger" (click)="open_business_add_page()">
+			<ion-icon name="add"></ion-icon>
+		</button>
+	</ion-fab>
 	
-	<ion-card>
+	
+	<!--ion-card>
 
 		<ion-card-header>
 			Welcome to {{application_service.userdata.full_name}}'s Dashboard.
@@ -23,36 +29,82 @@
 			<button (click)="open_business_add_page()" ion-button color="danger" small>
 				<ion-icon name="add"></ion-icon>
 				&nbsp;
-				Add Business
+				Add Client
 			</button>
 			
 		</ion-card-content>
 
-	</ion-card>
+	</ion-card-->
 	
 	
 		
-	<ion-card>
+	<ion-card *ngFor="let c of business" style="border-bottom: 1px rgba(0,0,0,.15) solid;">
 
 		<ion-card-header>
-			My Businesses
-		</ion-card-header>
-
-		<ion-card-content>
-			
-			<div *ngFor="let c of businesss" style="border-bottom: 1px rgba(0,0,0,.15) solid;">
-				<ion-row class="vertical-center">
-					<ion-col text-left>
+			<ion-grid>
+				<ion-row>
+					<ion-col>
 						{{c.business_name}}
 					</ion-col>
 					<ion-col text-right>
-						<button (click)="open_business_dashboard_page(c)" ion-button color="danger" small>
+						<button (click)="open_business_dashboard_page(c)" ion-button color="primary" small
+							style="background-color: #0277BD;"
+						>
 							Dashboard
-							&nbsp;
-							<ion-icon name="arrow-dropright"></ion-icon>
 						</button>
 					</ion-col>
 				</ion-row>
+			</ion-grid>
+		</ion-card-header>
+
+		<ion-card-content style="padding-bottom: 0px;">
+			
+			<div *ngIf="c.show_gstins">
+				
+				<div *ngFor="let g of c.data" style="border-bottom: 1px #eee solid;">
+					<ion-grid>
+						<ion-row>
+							<ion-col ion-text color="primary">
+								{{ g.gstin_name }}
+							</ion-col>
+						</ion-row>
+						<ion-row>
+							<ion-col>
+								{{ g.gstin }}
+							</ion-col>
+						</ion-row>
+					</ion-grid>
+				</div>
+				
+				<div>
+					<ion-grid>
+						<ion-row class="vertical-center">
+							<ion-col col-3>
+								<button ion-fab mini color="dark" small style="background-color: #B2B2B2;"
+									(click)="openPage( 'OcBusinessGstinAddPage' , c )"
+								>
+									<ion-icon name="add"></ion-icon>
+								</button>					
+							</ion-col>
+							<ion-col col-9>
+								<span
+									(click)="openPage( 'OcBusinessGstinAddPage' , c )"
+								>Add another Branch/GSTIN/State</span>
+							</ion-col>
+						</ion-row>
+					</ion-grid>
+				</div>
+				
+			</div>
+			
+			<hr />
+			
+			<div text-center (click)="c.show_gstins = true" *ngIf="!c.show_gstins">
+				<ion-icon name="arrow-dropdown"></ion-icon>
+			</div>
+			
+			<div text-center (click)="c.show_gstins = false" *ngIf="c.show_gstins">
+				<ion-icon name="arrow-dropup"></ion-icon>
 			</div>
 			
 		</ion-card-content>
