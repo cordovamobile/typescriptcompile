@@ -169,7 +169,7 @@ export class MyApp {
 		console.log( JSON.stringify(c) );
 		
 		var redirect_page;
-		var parameters;
+		var parameters = {};
 		
 		var userdata = JSON.parse( localStorage.getItem("userdata") );
 		
@@ -186,7 +186,7 @@ export class MyApp {
 			}
 		}
 		
-		this.nav.setRoot( redirect_page , { "client" : c } );
+		this.nav.setRoot( redirect_page , parameters );
 		this.menuCtrl.close();
 	}
 	

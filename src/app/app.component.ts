@@ -116,7 +116,7 @@ export class MyApp {
 		localStorage.removeItem("userdata");
 		//alert('You have been logged out successfully!');
 		//this.navCtrl.push( LoginPage );
-		this.nav.setRoot(LoginPage);
+		this.nav.setRoot(HomePage);
 		
 		this.logged_in = false;
 	}

@@ -60,6 +60,11 @@ export class HomePage {
 	
 	openDashboard() {
 		
+		if( ! this.application_service.logged_in_or_not() ) {
+			this.nav.setRoot( LoginPage );
+			return;
+		}
+		
 		var redirect_page;
 		
 		var userdata = JSON.parse( localStorage.getItem("userdata") );
