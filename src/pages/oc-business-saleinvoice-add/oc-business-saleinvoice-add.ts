@@ -7,6 +7,7 @@ import { ApplicationService } from '../../providers/application-service';
 
 //import { BusinessListPage } from '../../pages/business-list/business-list';
 import { OcBusinessDashboardPage } from '../../pages/oc-business-dashboard/oc-business-dashboard';
+import { OcBusinessSaleinvoiceListPage } from '../../pages/oc-business-saleinvoice-list/oc-business-saleinvoice-list';
 
 //@IonicPage()
 @Component({
@@ -71,7 +72,7 @@ export class OcBusinessSaleinvoiceAddPage {
 				if( response.status == 'success' ) {
 					
 					
-					self.nav.push( OcBusinessDashboardPage , { "business" : self.business } );
+					self.nav.push( OcBusinessSaleinvoiceListPage , { "business" : self.business } );
 					
 					
 				} else {

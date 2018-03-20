@@ -6,7 +6,7 @@ import { Dataprovider } from '../../providers/dataprovider';
 import { ApplicationService } from '../../providers/application-service';
 
 //import { BusinessListPage } from '../../pages/business-list/business-list';
-import { OcBusinessDashboardPage } from '../../pages/oc-business-dashboard/oc-business-dashboard';
+import { OcDashboardPage } from '../../pages/oc-dashboard/oc-dashboard';
 
 //@IonicPage()
 @Component({

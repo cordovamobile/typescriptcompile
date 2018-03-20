@@ -6,21 +6,17 @@ import { Dataprovider } from '../../providers/dataprovider';
 import { ApplicationService } from '../../providers/application-service';
 
 //import { BusinessListPage } from '../../pages/business-list/business-list';
-import { OcBusinessContactAddPage } from '../../pages/oc-business-contact-add/oc-business-contact-add';
-import { OcBusinessContactEditPage } from '../../pages/oc-business-contact-edit/oc-business-contact-edit';
-import { OcBusinessItemListPage } from '../../pages/oc-business-item-list/oc-business-item-list';
-import { OcBusinessSaleinvoiceListPage } from '../../pages/oc-business-saleinvoice-list/oc-business-saleinvoice-list';
+import { OcBusinessDashboardPage } from '../../pages/oc-business-dashboard/oc-business-dashboard';
 
 //@IonicPage()
 @Component({
-  selector: 'page-oc-business-contact-list',
-  templateUrl: 'oc-business-contact-list.html',
+  selector: 'page-oc-business-contact-edit',
+  templateUrl: 'oc-business-contact-edit.html',
 })
 export class OcBusinessContactEditPage {
 	
 	business: any;
-	statelist: any;
-	contacts: any;
+	contact: any;
 
 	constructor(
 		public navCtrl: NavController,
@@ -32,32 +28,42 @@ export class OcBusinessContactEditPage {
 		public application_service: ApplicationService
 	) {
 		
-		this.business = {};
-		this.statelist = {};
+		this.contact = {};
 		
 		if (this.navParams.get('business')) {
 			this.business = this.navParams.get('business');
 		}
 		console.log( JSON.stringify( this.business ) );
 		
-		this.business.contacts = [
-			{
-				"contact" : "",
-				"contact_name" : "",
-			}
-		];
+		if (this.navParams.get('contact')) {
+			this.contact = this.navParams.get('contact');
+		}
+		console.log( JSON.stringify( this.contact ) );
+		
+	}
+
+	ionViewDidLoad() {
+		console.log('ionViewDidLoad OcBusinessContactEditPage');
+	}
+	
+	update_contact() {
 		
 		
+		console.log( JSON.stringify(this.business) );
 		
 		
 		var self = this;
+		
+		/* Editing two extra attributes */
+		self.contact.buid = self.business.buid;
+		self.contact.lastmodifiyby = self.application_service.userdata.api_token;
 
 		console.log('requestAPI being called...');
 		self.dataprovider.requestAPI(
-			'get',
-			'programming/hbgstapi/trunk/api/getcustomerlistbybid/' + self.business.buid,
-			self.business,
-			'',
+			'post',
+			'programming/hbgstapi/trunk/api/updatecontact',
+			self.contact,
+			'Saving businesses details...',
 			true, /* Token To Not Be Sent To API */
 			
 			function(response) {
@@ -68,9 +74,22 @@ export class OcBusinessContactEditPage {
 				console.log( 'requestAPI Response Type: ' + response.status );
 				
 				
-				self.contacts = response.contactlist;
-				
-				console.log( 'Business Details Retreived : ' + JSON.stringify( self.business ) );
+				if( response.status == 'success' ) {
+					
+					
+					self.nav.push( OcBusinessDashboardPage , { "business" : self.business } );
+					
+					
+				} else {
+					
+					let toast = self.toastCtrl.create({
+						message:	response.message,
+						duration:	10000,
+						cssClass:	"toast-success"
+					});
+					toast.present();
+					
+				}
 				
 				
 
@@ -82,36 +101,6 @@ export class OcBusinessContactEditPage {
 		
 		
 		
-		
 	}
-
-	ionViewDidLoad() {
-		console.log('ionViewDidLoad OcBusinessContactListPage');
-	}
-	
-	open_contact_add_page() {
-		this.nav.push( OcBusinessContactAddPage , { 'business' : this.business } );
-	}
-	
-	
-	
-	edit_contact(i) {
-		
-		this.nav.push( OcBusinessContactEditPage , { 'business' : this.business , 'contact' : i } );
-		
-	}
-	
-	openPage( page ) {
-		var redirect;
-		if( page == 'OcBusinessItemListPage' ) {
-			redirect = OcBusinessItemListPage;
-		}
-		if( page == 'OcBusinessSaleinvoiceListPage' ) {
-			redirect = OcBusinessSaleinvoiceListPage;
-		}
-		this.navCtrl.setRoot( redirect, { "business" : this.business } );
-	}
-	
-	
 
 }

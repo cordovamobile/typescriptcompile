@@ -7,6 +7,7 @@ import { ApplicationService } from '../../providers/application-service';
 
 //import { BusinessListPage } from '../../pages/business-list/business-list';
 import { OcDashboardPage } from '../../pages/oc-dashboard/oc-dashboard';
+import { OcBusinessGstinListPage } from '../../pages/oc-business-gstin-list/oc-business-gstin-list';
 
 //@IonicPage()
 @Component({
@@ -138,7 +139,7 @@ export class OcBusinessGstinAddPage {
 				if( response.status == 'success' ) {
 					
 					
-					self.nav.setRoot( OcDashboardPage , { "business" : self.business } );
+					self.nav.setRoot( OcBusinessGstinListPage , { "business" : self.business } );
 					
 					
 				} else {
