@@ -133,6 +133,9 @@ export class OcDashboardPage {
 	}
 	
 	open_business_dashboard_page(c) {
+		
+		console.log(c);
+		
 		this.applicationservice.current_client_or_business_set(c);
 		
 		//this.nav.setRoot( OcBusinessDashboardPage , { "business" : c } );

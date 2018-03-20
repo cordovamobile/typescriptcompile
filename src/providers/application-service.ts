@@ -200,11 +200,17 @@ export class ApplicationService {
 	
 	current_client_or_business_set(c) {
 		
+		console.log('application_services:');
+		console.log(c);
+		console.log(this.clients_or_businesses);
+		
 		for( var i=0; i<this.clients_or_businesses.length; i++ ) {
 			if( c.buid == this.clients_or_businesses[i].buid ) {
 				this.current_client_or_business = this.clients_or_businesses[i];
 			}
 		}
+		
+		console.log(this.current_client_or_business);
 		
 	}
 	

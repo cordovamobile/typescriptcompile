@@ -164,9 +164,12 @@ export class MyApp {
 	
 	
 	current_client_or_business_changed(c) {
+		
+		console.log( 'current_client_or_business_changed' );
 		console.log( JSON.stringify(c) );
 		
 		var redirect_page;
+		var parameters = {};
 		
 		var userdata = JSON.parse( localStorage.getItem("userdata") );
 		
@@ -176,12 +179,14 @@ export class MyApp {
 		} else {
 			if( userdata.bu_type == 'CA' ) {
 				redirect_page = CaClientSaleinvoiceListPage;
+				parameters = { "client" : c };
 			} else if( userdata.bu_type == 'OC' ) {
 				redirect_page = OcBusinessSaleinvoiceListPage;
+				parameters = { "business" : c };
 			}
 		}
 		
-		this.nav.setRoot( redirect_page , { "client" : c } );
+		this.nav.setRoot( redirect_page , parameters );
 		this.menuCtrl.close();
 	}
 	

@@ -24,7 +24,7 @@ import { CaClientDashboardPage } from '../pages/ca-client-dashboard/ca-client-da
 import { OcBusinessDashboardPage } from '../pages/oc-business-dashboard/oc-business-dashboard';
 */
 import { CaClientSaleinvoiceListPage } from '../pages/ca-client-saleinvoice-list/ca-client-saleinvoice-list';
-//import { OcBusinessSaleinvoiceListPage } from '../pages/oc-business-saleinvoice-list/oc-business-saleinvoice-list';
+import { OcBusinessSaleinvoiceListPage } from '../pages/oc-business-saleinvoice-list/oc-business-saleinvoice-list';
 
 @Component({
 	templateUrl: 'app.html',
@@ -164,9 +164,12 @@ export class MyApp {
 	
 	
 	current_client_or_business_changed(c) {
+		
+		console.log( 'current_client_or_business_changed' );
 		console.log( JSON.stringify(c) );
 		
 		var redirect_page;
+		var parameters;
 		
 		var userdata = JSON.parse( localStorage.getItem("userdata") );
 		
@@ -176,8 +179,10 @@ export class MyApp {
 		} else {
 			if( userdata.bu_type == 'CA' ) {
 				redirect_page = CaClientSaleinvoiceListPage;
+				parameters = { "client" : c };
 			} else if( userdata.bu_type == 'OC' ) {
 				redirect_page = OcBusinessSaleinvoiceListPage;
+				parameters = { "business" : c };
 			}
 		}
 		

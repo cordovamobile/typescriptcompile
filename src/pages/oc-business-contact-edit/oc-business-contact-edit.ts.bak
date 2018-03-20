@@ -16,7 +16,7 @@ import { OcBusinessSaleinvoiceListPage } from '../../pages/oc-business-saleinvoi
   selector: 'page-oc-business-contact-list',
   templateUrl: 'oc-business-contact-list.html',
 })
-export class OcBusinessContactListPage {
+export class OcBusinessContactEditPage {
 	
 	business: any;
 	statelist: any;
