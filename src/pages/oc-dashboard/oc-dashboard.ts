@@ -23,8 +23,8 @@ import { BusinessListPage } from '../../pages/business-list/business-list';
 
 //@IonicPage()
 @Component({
-	selector: 'page-ca-dashboard',
-	templateUrl: 'ca-dashboard.html',
+	selector: 'page-oc-dashboard',
+	templateUrl: 'oc-dashboard.html',
 })
 export class OcDashboardPage {
 	
@@ -76,7 +76,7 @@ export class OcDashboardPage {
 		*/
 		
 		
-		this.applicationservice.get_business_or_businesses();
+		this.applicationservice.get_clients_or_businesses();
 		
 		
 		

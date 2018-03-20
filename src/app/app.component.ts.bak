@@ -138,7 +138,7 @@ export class MyApp {
 
 	openPostListByCategory(id,name='') {
 		localStorage.setItem('list_by_category_page_category',JSON.stringify({id:id,name:name}));
-		this.nav.setRoot(PostListByCategoryPage);
+		this.nav.setRoot(PostListByCategoryPage,{id:70,name:'News'});
 	}
 	
 	
@@ -177,7 +177,7 @@ export class MyApp {
 			if( userdata.bu_type == 'CA' ) {
 				redirect_page = CaClientSaleinvoiceListPage;
 			} else if( userdata.bu_type == 'OC' ) {
-				//redirect_page = OcBusinessSaleinvoiceListPage;
+				redirect_page = OcBusinessSaleinvoiceListPage;
 			}
 		}
 		
