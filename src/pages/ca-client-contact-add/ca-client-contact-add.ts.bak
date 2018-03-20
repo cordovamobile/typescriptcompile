@@ -40,7 +40,7 @@ export class CaClientContactAddPage {
 		console.log('ionViewDidLoad CaClientContactAddPage');
 	}
 	
-	save_item() {
+	save_contact() {
 		
 		
 		console.log( JSON.stringify(this.client) );
@@ -49,14 +49,14 @@ export class CaClientContactAddPage {
 		var self = this;
 		
 		/* Adding two extra attributes */
-		self.item.buid = self.client.buid;
-		self.item.lastmodifiyby = self.application_service.userdata.api_token;
+		self.contact.buid = self.client.buid;
+		self.contact.lastmodifiyby = self.application_service.userdata.api_token;
 
 		console.log('requestAPI being called...');
 		self.dataprovider.requestAPI(
 			'post',
-			'programming/hbgstapi/trunk/api/additem',
-			self.item,
+			'programming/hbgstapi/trunk/api/addcontact',
+			self.contact,
 			'Saving businesses details...',
 			true, /* Token To Not Be Sent To API */
 			
@@ -71,7 +71,7 @@ export class CaClientContactAddPage {
 				if( response.status == 'success' ) {
 					
 					
-					self.nav.push( CaClientDashboardPage , { "client" : self.client } );
+					self.nav.push( CaClientContactListPage , { "client" : self.client } );
 					
 					
 				} else {

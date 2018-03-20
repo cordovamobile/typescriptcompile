@@ -10,13 +10,13 @@ import { CaClientDashboardPage } from '../../pages/ca-client-dashboard/ca-client
 
 //@IonicPage()
 @Component({
-  selector: 'page-ca-client-contact-add',
-  templateUrl: 'ca-client-contact-add.html',
+  selector: 'page-ca-client-saleinvoice-add',
+  templateUrl: 'ca-client-saleinvoice-add.html',
 })
-export class CaClientContactAddPage {
+export class CaClientSaleinvoiceAddPage {
 	
 	client: any;
-	contact: any;
+	saleinvoice: any;
 
 	constructor(
 		public navCtrl: NavController,
@@ -28,7 +28,7 @@ export class CaClientContactAddPage {
 		public application_service: ApplicationService
 	) {
 		
-		this.contact = {};
+		this.saleinvoice = {};
 		
 		if (this.navParams.get('client')) {
 			this.client = this.navParams.get('client');
@@ -37,10 +37,10 @@ export class CaClientContactAddPage {
 	}
 
 	ionViewDidLoad() {
-		console.log('ionViewDidLoad CaClientContactAddPage');
+		console.log('ionViewDidLoad CaClientSaleinvoiceAddPage');
 	}
 	
-	save_contact() {
+	save_saleinvoice() {
 		
 		
 		console.log( JSON.stringify(this.client) );
@@ -49,14 +49,14 @@ export class CaClientContactAddPage {
 		var self = this;
 		
 		/* Adding two extra attributes */
-		self.contact.buid = self.client.buid;
-		self.contact.lastmodifiyby = self.application_service.userdata.api_token;
+		self.saleinvoice.buid = self.client.buid;
+		self.saleinvoice.lastmodifiyby = self.application_service.userdata.api_token;
 
 		console.log('requestAPI being called...');
 		self.dataprovider.requestAPI(
 			'post',
-			'programming/hbgstapi/trunk/api/addcontact',
-			self.contact,
+			'programming/hbgstapi/trunk/api/addsaleinvoice',
+			self.saleinvoice,
 			'Saving businesses details...',
 			true, /* Token To Not Be Sent To API */
 			

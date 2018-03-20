@@ -7,6 +7,7 @@ import { ApplicationService } from '../../providers/application-service';
 
 //import { BusinessListPage } from '../../pages/business-list/business-list';
 import { CaDashboardPage } from '../../pages/ca-dashboard/ca-dashboard';
+import { CaClientGstinListPage } from '../../pages/ca-client-gstin-list/ca-client-gstin-list';
 
 //@IonicPage()
 @Component({
@@ -138,7 +139,7 @@ export class CaClientGstinAddPage {
 				if( response.status == 'success' ) {
 					
 					
-					self.nav.setRoot( CaDashboardPage , { "client" : self.client } );
+					self.nav.setRoot( CaClientGstinListPage , { "client" : self.client } );
 					
 					
 				} else {

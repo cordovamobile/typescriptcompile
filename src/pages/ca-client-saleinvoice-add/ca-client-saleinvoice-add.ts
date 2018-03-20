@@ -7,6 +7,7 @@ import { ApplicationService } from '../../providers/application-service';
 
 //import { BusinessListPage } from '../../pages/business-list/business-list';
 import { CaClientDashboardPage } from '../../pages/ca-client-dashboard/ca-client-dashboard';
+import { CaClientSaleinvoiceListPage } from '../../pages/ca-client-saleinvoice-list/ca-client-saleinvoice-list';
 
 //@IonicPage()
 @Component({
@@ -71,7 +72,7 @@ export class CaClientSaleinvoiceAddPage {
 				if( response.status == 'success' ) {
 					
 					
-					self.nav.push( CaClientDashboardPage , { "client" : self.client } );
+					self.nav.push( CaClientSaleinvoiceListPage , { "client" : self.client } );
 					
 					
 				} else {
