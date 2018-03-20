@@ -59,6 +59,23 @@ export class HomePage {
 	
 	openDashboard() {
 		
+		var redirect_page;
+		
+		var userdata = JSON.parse( localStorage.getItem("userdata") );
+		
+		
+		if( typeof userdata.bu_type == 'undefined' ) { // If login_count does not exist
+			redirect_page = UserDetailsSavePage;
+		} else {
+			if( userdata.bu_type == 'CA' ) {
+				redirect_page = CaDashboardPage;
+			} else if( userdata.bu_type == 'OC' ) {
+				redirect_page = OcDashboardPage;
+			}
+		}
+			
+		this.nav.setRoot( redirect_page );
+		
 	}
 
 }

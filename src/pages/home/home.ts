@@ -6,6 +6,7 @@ import { Dataprovider } from '../../providers/dataprovider';
 import { ApplicationService } from '../../providers/application-service';
 
 import { LoginPage } from '../../pages/login/login';
+import { UserDetailsSavePage } from '../../pages/user-details-save/user-details-save';
 import { CaDashboardPage } from '../../pages/ca-dashboard/ca-dashboard';
 import { OcDashboardPage } from '../../pages/oc-dashboard/oc-dashboard';
 import { PostListByCategoryPage } from '../../pages/post-list-by-category/post-list-by-category';

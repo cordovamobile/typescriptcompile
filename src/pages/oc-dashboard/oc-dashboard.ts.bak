@@ -135,8 +135,8 @@ export class CaDashboardPage {
 	open_business_dashboard_page(c) {
 		this.applicationservice.current_client_or_business_set(c);
 		
-		//this.nav.setRoot( OcBusinessDashboardPage , { "client" : c } );
-		//this.nav.setRoot( OcBusinessItemListPage , { "client" : c } );
+		//this.nav.setRoot( OcBusinessDashboardPage , { "business" : c } );
+		//this.nav.setRoot( OcBusinessItemListPage , { "business" : c } );
 	}
 	
 	open_business_add_page() {

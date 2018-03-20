@@ -26,7 +26,7 @@ import { BusinessListPage } from '../../pages/business-list/business-list';
 	selector: 'page-ca-dashboard',
 	templateUrl: 'ca-dashboard.html',
 })
-export class CaDashboardPage {
+export class OcDashboardPage {
 	
 	business: any;
 
